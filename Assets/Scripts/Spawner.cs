@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     private ValueTuple<Vector2Int, Vector2Int, float>[]? swarm; //TODO - this needs to be a prefab
 
     public int SWARM_SIZE   = 10;
-    public float SWARM_TICK = 60;
+    public float SWARM_TICK = 120;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,16 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < swarm.Length; i++)
         {
-            //TODO - smoothdamp position across swarm, increment tick
+            if (swarm[i].Item3 == SWARM_TICK)
+            {
+                swarm[i].Item1 = swarm[i].Item2;
+                swarm[i].Item2 = pf.agent_path[swarm[i].Item2];
+                swarm[i].Item3 = 0;
+            }
+            else
+            {
+                swarm[i].Item3 += 1;
+            }
         }
     }
 
@@ -54,9 +63,9 @@ public class Spawner : MonoBehaviour
         if (swarm == null) return;
 
         for (int i = 0; i < swarm.Length; i++)
-        {
+        { 
             Vector3 pos = pf.pts[swarm[i].Item1.x, swarm[i].Item1.y] + (swarm[i].Item3 / SWARM_TICK) * (pf.pts[swarm[i].Item2.x, swarm[i].Item2.y] - pf.pts[swarm[i].Item1.x, swarm[i].Item1.y]);
-            Gizmos.DrawSphere(pos, 0.5f);
+            Gizmos.DrawSphere(pos, 2.0f);
         }
     }
 }
