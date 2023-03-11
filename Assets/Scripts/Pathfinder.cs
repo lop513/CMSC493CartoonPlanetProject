@@ -9,10 +9,12 @@ public class Pathfinder : MonoBehaviour
     public Vector3[,] pts;
     public HashSet<Vector2Int> spawn_candidates;
     public Dictionary<Vector2Int, Vector2Int> agent_path;
+    public Vector2Int closestPike;
+    public HashSet<Vector2Int> in_terrain;
 
     private Transform plane;
     private Transform player;
-    private HashSet<Vector2Int> in_terrain;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class Pathfinder : MonoBehaviour
         planes = System.Array.FindAll<Transform>(planes, t => t.tag == "Plane" && t.tag != "gnd");
 
         //now, see if point lies in any
+        //TODO - maybe want to be more conservative about this check?
         in_terrain = new HashSet<Vector2Int>();
         for (int x = 0; x < GRID_SIZE; x++)
         {
@@ -116,7 +119,7 @@ public class Pathfinder : MonoBehaviour
         float cz = playerPosInPlaneSpace.z / plane.localScale.z + 0.5f;
         int ix = Mathf.Clamp(Mathf.RoundToInt(cx * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
         int iz = Mathf.Clamp(Mathf.RoundToInt(cz * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
-        Vector2Int closestPike = new Vector2Int(ix, iz);
+        closestPike = new Vector2Int(ix, iz);
 
         //BFS all reachable nodes
         HashSet<ValueTuple<Vector2Int, Vector2Int>> edges;

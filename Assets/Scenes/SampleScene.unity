@@ -1026,10 +1026,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c6c79e132efbc4da7c0b50c0ce16de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyArr: []
-  enemy: {fileID: 6440754319532196349, guid: c0aad53b82f22db468bd6d0194782964, type: 3}
-  SWARM_SIZE: 10
-  SWARM_TICK: 120
+  enemyPrefab: {fileID: 6440754319532196349, guid: c0aad53b82f22db468bd6d0194782964, type: 3}
+  SWARM_SIZE: 1
+  SWARM_TICK: 240
 --- !u!4 &387406574
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,6 +1697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GRID_SIZE: 25
+  closestPike: {x: 0, y: 0}
 --- !u!1 &517355225
 GameObject:
   m_ObjectHideFlags: 0
