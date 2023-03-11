@@ -23,11 +23,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float walkDeaccelerateZ;
 
-    [HideInInspector]
-    public bool isGrounded = true;
+    public bool isGndGrounded = true;
+    public bool isPlaneGrounded = true;
     Rigidbody playerRgbd;
     public float jumpVelocity = 20;
     float maxSlope = 45;
+
 
     void Awake()
     {
@@ -43,9 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+
+        if (Input.GetKeyDown(KeyCode.Space) && (isGndGrounded || isPlaneGrounded))
         {
-            playerRgbd.AddForce(0, jumpVelocity, 0);
+            playerRgbd.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+            isGndGrounded = false;
+            isPlaneGrounded = false;
         }
     }
 
@@ -63,24 +67,32 @@ public class PlayerMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, cameraObj.GetComponent<CameraScript>().currentY, 0);
 
-        if (isGrounded)
+        if (isGndGrounded || isPlaneGrounded)
         {
-            playerRgbd.AddRelativeForce(Input.GetAxis("Horizontal") * acceleration, 0, Input.GetAxis("Vertical") * acceleration);
-        } 
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
+            Vector3 inputVector = new Vector3(h, 0, v);
+            inputVector.Normalize();
+            inputVector *= acceleration;
+            playerRgbd.AddRelativeForce(inputVector);
+        }
 
         else
         {
             
-           playerRgbd.AddRelativeForce((Input.GetAxis("Horizontal") * acceleration * walkAccelerationRatio)/10, 0,
-           (Input.GetAxis("Vertical") * walkAccelerationRatio * acceleration)/10);
-        }
+            playerRgbd.AddRelativeForce((Input.GetAxis("Horizontal") * acceleration * walkAccelerationRatio) / 10, 0,
+            (Input.GetAxis("Vertical") * acceleration * walkAccelerationRatio) / 10);
+            
 
-        if (isGrounded)
+        }
+        
+        if (isGndGrounded || isPlaneGrounded)
         {
             float xMove = Mathf.SmoothDamp(playerRgbd.velocity.x, 0, ref walkDeaccelerateX, deacclerate);
             float zMove = Mathf.SmoothDamp(playerRgbd.velocity.z, 0, ref walkDeaccelerateZ, deacclerate);
             playerRgbd.velocity = new Vector3(xMove, playerRgbd.velocity.y, zMove);
         }
+        
     }
 
     void OnCollisionEnter(Collision coll)
@@ -89,19 +101,35 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)
             {
-                isGrounded = true;
+                isGndGrounded = true;
+                isPlaneGrounded = true;
             }
+        }
+
+        if (coll.gameObject.tag.Equals("gnd"))
+        {
+            isGndGrounded = true;
+        }
+
+        if (coll.gameObject.tag.Equals("Plane"))
+        {
+            isPlaneGrounded = true;
         }
 
     }
 
     void OnCollisionExit(Collision coll)
     {
-        
-        if (coll.gameObject.name.Equals("Plane"))
+
+        if (coll.gameObject.tag.Equals("gnd"))
         {
-            isGrounded = false;
+            isGndGrounded = false;
         }
-        
+
+        if (coll.gameObject.tag.Equals("Plane"))
+        {
+            isPlaneGrounded = false;
+        }
     }
+
 }

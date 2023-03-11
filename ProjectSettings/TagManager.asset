@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - gnd
+  - Plane
+  - Enemy
   layers:
   - Default
   - TransparentFX

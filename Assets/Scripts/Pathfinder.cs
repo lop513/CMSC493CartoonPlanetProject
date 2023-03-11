@@ -38,7 +38,7 @@ public class Pathfinder : MonoBehaviour
         //calculate grid points inside terrain
         //First, need all terrains
         Transform[] planes = transform.GetComponentsInChildren<Transform>(true /* includeInactive */);
-        planes = System.Array.FindAll<Transform>(planes, t => t.name == "Plane" && t.tag != "gnd");
+        planes = System.Array.FindAll<Transform>(planes, t => t.tag == "Plane" && t.tag != "gnd");
 
         //now, see if point lies in any
         in_terrain = new HashSet<Vector2Int>();

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 157611146}
   - component: {fileID: 157611145}
   - component: {fileID: 157611144}
-  - component: {fileID: 157611143}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -143,22 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &157611143
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157611142}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &157611144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,7 +232,6 @@ GameObject:
   - component: {fileID: 171778106}
   - component: {fileID: 171778105}
   - component: {fileID: 171778104}
-  - component: {fileID: 171778103}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -257,22 +239,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &171778103
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171778102}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &171778104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,7 +329,6 @@ GameObject:
   - component: {fileID: 183581755}
   - component: {fileID: 183581754}
   - component: {fileID: 183581753}
-  - component: {fileID: 183581752}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -371,22 +336,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &183581752
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183581751}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &183581753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -491,7 +440,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255805190}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -575,7 +524,6 @@ GameObject:
   - component: {fileID: 277283309}
   - component: {fileID: 277283308}
   - component: {fileID: 277283307}
-  - component: {fileID: 277283306}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -583,22 +531,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &277283306
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277283305}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &277283307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -689,7 +621,6 @@ GameObject:
   - component: {fileID: 280465083}
   - component: {fileID: 280465082}
   - component: {fileID: 280465081}
-  - component: {fileID: 280465080}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -697,22 +628,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &280465080
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280465079}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &280465081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -803,7 +718,6 @@ GameObject:
   - component: {fileID: 289578352}
   - component: {fileID: 289578351}
   - component: {fileID: 289578350}
-  - component: {fileID: 289578349}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -811,22 +725,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &289578349
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289578348}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &289578350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -917,30 +815,13 @@ GameObject:
   - component: {fileID: 337048139}
   - component: {fileID: 337048138}
   - component: {fileID: 337048137}
-  - component: {fileID: 337048136}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &337048136
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337048135}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &337048137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -948,7 +829,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337048135}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1031,7 +912,6 @@ GameObject:
   - component: {fileID: 373557063}
   - component: {fileID: 373557062}
   - component: {fileID: 373557061}
-  - component: {fileID: 373557060}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1039,22 +919,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &373557060
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373557059}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &373557061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1162,6 +1026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c6c79e132efbc4da7c0b50c0ce16de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyArr: []
+  enemy: {fileID: 6440754319532196349, guid: c0aad53b82f22db468bd6d0194782964, type: 3}
   SWARM_SIZE: 10
   SWARM_TICK: 120
 --- !u!4 &387406574
@@ -1191,7 +1057,6 @@ GameObject:
   - component: {fileID: 395068071}
   - component: {fileID: 395068070}
   - component: {fileID: 395068069}
-  - component: {fileID: 395068068}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1199,22 +1064,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &395068068
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395068067}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &395068069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1305,10 +1154,9 @@ GameObject:
   - component: {fileID: 424049012}
   - component: {fileID: 424049011}
   - component: {fileID: 424049010}
-  - component: {fileID: 424049009}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1328,22 +1176,6 @@ Transform:
   m_Father: {fileID: 490148964}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &424049009
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424049007}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &424049010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1351,7 +1183,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424049007}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1419,7 +1251,6 @@ GameObject:
   - component: {fileID: 438628520}
   - component: {fileID: 438628519}
   - component: {fileID: 438628518}
-  - component: {fileID: 438628517}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1427,22 +1258,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &438628517
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438628516}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &438628518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1533,30 +1348,13 @@ GameObject:
   - component: {fileID: 445687531}
   - component: {fileID: 445687530}
   - component: {fileID: 445687529}
-  - component: {fileID: 445687528}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &445687528
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445687527}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &445687529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1564,7 +1362,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445687527}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1647,7 +1445,6 @@ GameObject:
   - component: {fileID: 463234892}
   - component: {fileID: 463234891}
   - component: {fileID: 463234890}
-  - component: {fileID: 463234889}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1655,22 +1452,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &463234889
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463234888}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &463234890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1960,7 +1741,6 @@ GameObject:
   - component: {fileID: 558113042}
   - component: {fileID: 558113041}
   - component: {fileID: 558113040}
-  - component: {fileID: 558113039}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1968,22 +1748,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &558113039
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558113038}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &558113040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2074,7 +1838,6 @@ GameObject:
   - component: {fileID: 617821495}
   - component: {fileID: 617821494}
   - component: {fileID: 617821493}
-  - component: {fileID: 617821492}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -2082,22 +1845,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &617821492
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617821491}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &617821493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2188,30 +1935,13 @@ GameObject:
   - component: {fileID: 675946602}
   - component: {fileID: 675946601}
   - component: {fileID: 675946600}
-  - component: {fileID: 675946599}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &675946599
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675946598}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &675946600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2219,7 +1949,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675946598}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2396,7 +2126,6 @@ GameObject:
   - component: {fileID: 756769425}
   - component: {fileID: 756769424}
   - component: {fileID: 756769423}
-  - component: {fileID: 756769422}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -2404,22 +2133,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &756769422
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756769421}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &756769423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2510,7 +2223,6 @@ GameObject:
   - component: {fileID: 851138110}
   - component: {fileID: 851138109}
   - component: {fileID: 851138108}
-  - component: {fileID: 851138107}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -2518,22 +2230,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &851138107
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851138106}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &851138108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2624,7 +2320,6 @@ GameObject:
   - component: {fileID: 887039264}
   - component: {fileID: 887039263}
   - component: {fileID: 887039262}
-  - component: {fileID: 887039261}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -2632,22 +2327,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &887039261
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887039260}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &887039262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2738,10 +2417,9 @@ GameObject:
   - component: {fileID: 889837998}
   - component: {fileID: 889837997}
   - component: {fileID: 889837996}
-  - component: {fileID: 889837995}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2761,22 +2439,6 @@ Transform:
   m_Father: {fileID: 490148964}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 44.068, y: -30.281, z: -38.258}
---- !u!54 &889837995
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889837993}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &889837996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2784,7 +2446,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889837993}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2852,7 +2514,6 @@ GameObject:
   - component: {fileID: 927774520}
   - component: {fileID: 927774519}
   - component: {fileID: 927774518}
-  - component: {fileID: 927774517}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -2860,22 +2521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &927774517
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927774516}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &927774518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2966,30 +2611,13 @@ GameObject:
   - component: {fileID: 959970108}
   - component: {fileID: 959970107}
   - component: {fileID: 959970106}
-  - component: {fileID: 959970105}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &959970105
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959970104}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &959970106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2997,7 +2625,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959970104}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3185,7 +2813,6 @@ GameObject:
   - component: {fileID: 972723034}
   - component: {fileID: 972723033}
   - component: {fileID: 972723032}
-  - component: {fileID: 972723031}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3193,22 +2820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &972723031
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972723030}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &972723032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3299,7 +2910,6 @@ GameObject:
   - component: {fileID: 986706142}
   - component: {fileID: 986706141}
   - component: {fileID: 986706140}
-  - component: {fileID: 986706139}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3307,22 +2917,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &986706139
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986706138}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &986706140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3413,7 +3007,6 @@ GameObject:
   - component: {fileID: 1034709961}
   - component: {fileID: 1034709960}
   - component: {fileID: 1034709959}
-  - component: {fileID: 1034709958}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3421,22 +3014,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1034709958
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034709957}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1034709959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3558,30 +3135,13 @@ GameObject:
   - component: {fileID: 1055071015}
   - component: {fileID: 1055071014}
   - component: {fileID: 1055071013}
-  - component: {fileID: 1055071012}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1055071012
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055071011}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1055071013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3589,7 +3149,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055071011}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3672,7 +3232,6 @@ GameObject:
   - component: {fileID: 1092883722}
   - component: {fileID: 1092883721}
   - component: {fileID: 1092883720}
-  - component: {fileID: 1092883719}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3680,22 +3239,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1092883719
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092883718}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1092883720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3786,7 +3329,6 @@ GameObject:
   - component: {fileID: 1149782455}
   - component: {fileID: 1149782454}
   - component: {fileID: 1149782453}
-  - component: {fileID: 1149782452}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3794,22 +3336,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1149782452
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149782451}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1149782453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3900,7 +3426,6 @@ GameObject:
   - component: {fileID: 1249223249}
   - component: {fileID: 1249223248}
   - component: {fileID: 1249223247}
-  - component: {fileID: 1249223246}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -3908,22 +3433,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1249223246
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249223245}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1249223247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4014,7 +3523,6 @@ GameObject:
   - component: {fileID: 1410534783}
   - component: {fileID: 1410534782}
   - component: {fileID: 1410534781}
-  - component: {fileID: 1410534780}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -4022,22 +3530,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1410534780
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410534779}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1410534781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4128,7 +3620,6 @@ GameObject:
   - component: {fileID: 1429990894}
   - component: {fileID: 1429990893}
   - component: {fileID: 1429990892}
-  - component: {fileID: 1429990891}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -4136,22 +3627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1429990891
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429990890}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1429990892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4242,10 +3717,9 @@ GameObject:
   - component: {fileID: 1544936267}
   - component: {fileID: 1544936266}
   - component: {fileID: 1544936265}
-  - component: {fileID: 1544936264}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4265,22 +3739,6 @@ Transform:
   m_Father: {fileID: 490148964}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -7.096, y: 191.837, z: 1.874}
---- !u!54 &1544936264
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544936262}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1544936265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4288,7 +3746,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544936262}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4474,15 +3932,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObj: {fileID: 963194225}
-  acceleration: 2
-  walkAccelerationRatio: 2
-  maxWalkSpeed: 10
+  acceleration: 40
+  walkAccelerationRatio: 1
+  maxWalkSpeed: 8
   deacclerate: 0.5
   horizontalMovement: {x: 0, y: 0}
   walkDeaccelerateX: 0
   walkDeaccelerateZ: 0
-  isGrounded: 1
-  jumpVelocity: 400
+  isGndGrounded: 1
+  isPlaneGrounded: 1
+  jumpVelocity: 10
 --- !u!1 &1652105240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,10 +3954,9 @@ GameObject:
   - component: {fileID: 1652105245}
   - component: {fileID: 1652105244}
   - component: {fileID: 1652105243}
-  - component: {fileID: 1652105242}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4518,22 +3976,6 @@ Transform:
   m_Father: {fileID: 490148964}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 88.572, z: 0}
---- !u!54 &1652105242
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652105240}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1652105243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4541,7 +3983,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652105240}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4622,7 +4064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724987385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.16, z: 2}
+  m_LocalPosition: {x: -0.5, y: 0.16, z: 1}
   m_LocalScale: {x: -0.1433, y: -0.0518, z: -0.1433}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4693,30 +4135,13 @@ GameObject:
   - component: {fileID: 1726931036}
   - component: {fileID: 1726931035}
   - component: {fileID: 1726931034}
-  - component: {fileID: 1726931033}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1726931033
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726931032}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1726931034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4724,7 +4149,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726931032}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4863,7 +4288,6 @@ GameObject:
   - component: {fileID: 1802570605}
   - component: {fileID: 1802570604}
   - component: {fileID: 1802570603}
-  - component: {fileID: 1802570602}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -4871,22 +4295,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1802570602
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802570601}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1802570603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5060,7 +4468,6 @@ GameObject:
   - component: {fileID: 1946088847}
   - component: {fileID: 1946088846}
   - component: {fileID: 1946088845}
-  - component: {fileID: 1946088844}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -5068,22 +4475,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1946088844
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946088843}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &1946088845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5174,7 +4565,6 @@ GameObject:
   - component: {fileID: 2007609497}
   - component: {fileID: 2007609496}
   - component: {fileID: 2007609495}
-  - component: {fileID: 2007609494}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -5182,22 +4572,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2007609494
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007609493}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &2007609495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5288,10 +4662,9 @@ GameObject:
   - component: {fileID: 2022559245}
   - component: {fileID: 2022559244}
   - component: {fileID: 2022559243}
-  - component: {fileID: 2022559242}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5311,22 +4684,6 @@ Transform:
   m_Father: {fileID: 490148964}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2022559242
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022559240}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &2022559243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5334,7 +4691,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022559240}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e2153748390d8ea4d89de77e4491e08e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5402,7 +4759,6 @@ GameObject:
   - component: {fileID: 2132668465}
   - component: {fileID: 2132668464}
   - component: {fileID: 2132668463}
-  - component: {fileID: 2132668462}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -5410,22 +4766,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2132668462
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132668461}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &2132668463
 BoxCollider:
   m_ObjectHideFlags: 0
