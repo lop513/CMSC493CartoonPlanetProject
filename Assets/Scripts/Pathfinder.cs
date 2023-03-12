@@ -14,7 +14,8 @@ public class Pathfinder : MonoBehaviour
 
     private Transform plane;
     private Transform player;
-    
+
+    public Transform[] planes;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class Pathfinder : MonoBehaviour
 
         //calculate grid points inside terrain
         //First, need all terrains
-        Transform[] planes = transform.GetComponentsInChildren<Transform>(true /* includeInactive */);
+        planes = transform.GetComponentsInChildren<Transform>(true /* includeInactive */);
         planes = System.Array.FindAll<Transform>(planes, t => t.tag == "Plane" && t.tag != "gnd");
 
         //now, see if point lies in any
@@ -140,6 +141,8 @@ public class Pathfinder : MonoBehaviour
 
             if (Physics.Raycast(playerOnGround, direction, direction.magnitude)) spawn_candidates.Add(candidate);
         }
+
+
 
         //Draw edges
         foreach (ValueTuple<Vector2Int, Vector2Int> edge in edges)
