@@ -1027,8 +1027,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6440754319532196349, guid: c0aad53b82f22db468bd6d0194782964, type: 3}
-  SWARM_SIZE: 1
+  SWARM_SIZE: 20
   SWARM_TICK: 240
+  spawns:
+  - {x: 7, y: 7}
+  - {x: 12, y: 7}
 --- !u!4 &387406574
 Transform:
   m_ObjectHideFlags: 0
