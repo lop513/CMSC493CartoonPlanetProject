@@ -14,7 +14,8 @@ public class Pathfinder : MonoBehaviour
 
     private Transform plane;
     private Transform player;
-    
+
+    public Transform[] planes;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class Pathfinder : MonoBehaviour
 
         //calculate grid points inside terrain
         //First, need all terrains
-        Transform[] planes = transform.GetComponentsInChildren<Transform>(true /* includeInactive */);
+        planes = transform.GetComponentsInChildren<Transform>(true /* includeInactive */);
         planes = System.Array.FindAll<Transform>(planes, t => t.tag == "Plane" && t.tag != "gnd");
 
         //now, see if point lies in any
@@ -49,10 +50,10 @@ public class Pathfinder : MonoBehaviour
         {
             for (int z = 0; z < GRID_SIZE; z++)
             {
-                foreach(Transform plane in planes)
+                foreach (Transform plane in planes)
                 {
                     Vector3 closest = plane.gameObject.GetComponent<BoxCollider>().ClosestPoint(pts[x, z]);
-                    if(closest == pts[x, z])
+                    if (closest == pts[x, z])
                     {
                         in_terrain.Add(new Vector2Int(x, z));
                         break;
@@ -71,17 +72,17 @@ public class Pathfinder : MonoBehaviour
         Dictionary<Vector2Int, Vector2Int> path = new Dictionary<Vector2Int, Vector2Int>();
         path.Add(start, start);
 
-        while(queue.Count != 0)
+        while (queue.Count != 0)
         {
             Vector2Int v = queue.Dequeue();
 
             //find neighbors
             HashSet<Vector2Int> neighbors = new HashSet<Vector2Int>();
-            for(int dx = -1; dx <= 1; ++dx)
+            for (int dx = -1; dx <= 1; ++dx)
             {
-                for(int dz = -1; dz <= 1; ++dz)
+                for (int dz = -1; dz <= 1; ++dz)
                 {
-                    if(!nine_way && Mathf.Abs(dx) + Mathf.Abs(dz) > 1) continue;
+                    if (!nine_way && Mathf.Abs(dx) + Mathf.Abs(dz) > 1) continue;
 
                     Vector2Int n = new Vector2Int(
                         Mathf.Clamp(v.x + dx, 0, GRID_SIZE - 1),
@@ -91,11 +92,11 @@ public class Pathfinder : MonoBehaviour
                 }
             }
             neighbors.ExceptWith(in_terrain);
-            
+
             //expand BFS wavefront over neighbors
-            foreach(Vector2Int neighbor in neighbors)
+            foreach (Vector2Int neighbor in neighbors)
             {
-                if(!visited.Contains(neighbor))
+                if (!visited.Contains(neighbor))
                 {
                     queue.Enqueue(neighbor);
                     visited.Add(neighbor);
@@ -128,7 +129,7 @@ public class Pathfinder : MonoBehaviour
 
         //Compute set of pikes out of 'player view'
         spawn_candidates = new HashSet<Vector2Int>();
-        foreach(Vector2Int candidate in visited)
+        foreach (Vector2Int candidate in visited)
         {
             Vector3 point = pts[candidate.x, candidate.y];
             Vector3 playerOnGround = new Vector3(
@@ -141,6 +142,8 @@ public class Pathfinder : MonoBehaviour
             if (Physics.Raycast(playerOnGround, direction, direction.magnitude)) spawn_candidates.Add(candidate);
         }
 
+
+
         //Draw edges
         foreach (ValueTuple<Vector2Int, Vector2Int> edge in edges)
         {
@@ -152,20 +155,20 @@ public class Pathfinder : MonoBehaviour
         //Draw debug pikes
         for (int x = 0; x < GRID_SIZE; x++)
         {
-            for(int z = 0; z < GRID_SIZE; z++)
+            for (int z = 0; z < GRID_SIZE; z++)
             {
-                Vector3 point = pts[x,z];
+                Vector3 point = pts[x, z];
                 Vector2Int pair = new Vector2Int(x, z);
 
                 if (pair == closestPike)
                 {
                     Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.green);
                 }
-                else if(in_terrain.Contains(pair))
+                else if (in_terrain.Contains(pair))
                 {
                     Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.red);
                 }
-                else if(spawn_candidates.Contains(pair))
+                else if (spawn_candidates.Contains(pair))
                 {
                     Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.cyan);
                 }
