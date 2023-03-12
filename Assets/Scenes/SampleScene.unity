@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6440754319532196349, guid: c0aad53b82f22db468bd6d0194782964, type: 3}
-  SWARM_SIZE: 1
+  SWARM_SIZE: 0
   SWARM_TICK: 240
 --- !u!4 &387406574
 Transform:
@@ -3939,8 +3939,7 @@ MonoBehaviour:
   horizontalMovement: {x: 0, y: 0}
   walkDeaccelerateX: 0
   walkDeaccelerateZ: 0
-  isGndGrounded: 1
-  isPlaneGrounded: 1
+  grounded: 0
   jumpVelocity: 10
 --- !u!1 &1652105240
 GameObject:
