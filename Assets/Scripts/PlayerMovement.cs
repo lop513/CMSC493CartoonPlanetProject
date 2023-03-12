@@ -79,7 +79,13 @@ public class PlayerMovement : MonoBehaviour
 
         else
         {
-            
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
+            Vector3 inputVector = new Vector3(h, 0, v);
+            inputVector.Normalize();
+            inputVector *= acceleration;
+            playerRgbd.AddRelativeForce(inputVector);
+
             playerRgbd.AddRelativeForce((Input.GetAxis("Horizontal") * acceleration * walkAccelerationRatio) / 10, 0,
             (Input.GetAxis("Vertical") * acceleration * walkAccelerationRatio) / 10);
             
