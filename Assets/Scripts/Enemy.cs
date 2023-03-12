@@ -24,8 +24,6 @@ public class Enemy : MonoBehaviour
         float t = lerp / ENEMY_TICK;
         transform.position = e + t * d;
 
-        return; //TODO: REMOVE
-
         //Update local path
         if (lerp == ENEMY_TICK)
         {

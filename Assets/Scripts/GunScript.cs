@@ -32,21 +32,29 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 e = transform.position;
-        Vector3 d = Vector3.Normalize(transform.forward);
-
-        Color c = Color.white;
+        /*
         if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit r;
-            Physics.Raycast(e, d, out r);
-            c = Color.red;
-
-            //TODO - HIT CODE GOES HERE
-            Transform t = r.transform;
-            Debug.Log(string.Format("Gun hit object: {0}", t));
+            Fire();
         }
+        */
+        /*
+        else if (Input.GetButton("Fire1"))
+        {
+            Fire();
+        }
+        */
+    }
 
-        Debug.DrawLine(e, e + 100 * d, c);
+    void Fire()
+    {
+        GameObject shellCopy = Instantiate<GameObject>(shell, shellSpawnPos.position, Quaternion.identity) as GameObject;
+        RaycastHit variable;
+        bool status = Physics.Raycast(bulletSpawnPos.position, bulletSpawnPos.forward, out variable, 100);
+
+        if (status) 
+        {
+            Debug.Log(variable.collider.gameObject.name);
+        }
     }
 }

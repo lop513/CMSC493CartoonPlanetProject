@@ -23,11 +23,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float walkDeaccelerateZ;
 
-    //public bool isGndGrounded = true;
-    //public bool isPlaneGrounded = true;
-    public bool grounded;
-    private Pathfinder pf;
-    
+    public bool isGndGrounded = true;
+    public bool isPlaneGrounded = true;
     Rigidbody playerRgbd;
     public float jumpVelocity = 20;
     float maxSlope = 45;
@@ -36,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerRgbd = GetComponent<Rigidbody>();
-        pf = GameObject.Find("Level Blocks").GetComponent<Pathfinder>();
-        grounded = false;
     }
 
 
@@ -50,34 +45,11 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && (grounded))
+        if (Input.GetKeyDown(KeyCode.Space) && (isGndGrounded || isPlaneGrounded))
         {
             playerRgbd.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            //isGndGrounded = false;
-            //isPlaneGrounded = false;
-        }
-    }
-
-    void FixedUpdate()
-    { 
-        Vector3 e = transform.position;
-        Vector3 d = new Vector3(0, -1, 0);
-        grounded = Physics.Raycast(e, d, 2);
-
-        foreach(Transform plane in pf.planes)
-        {
-            BoxCollider coll = plane.gameObject.GetComponent<BoxCollider>();
-            Vector3 pt = e + 2 * d;
-            if (coll.ClosestPoint(pt) == pt) //down vector within collider
-            {
-                coll.sharedMaterial.staticFriction  = 2;
-                coll.sharedMaterial.dynamicFriction = 30;
-            }
-            else
-            {
-                coll.sharedMaterial.staticFriction  = 0;
-                coll.sharedMaterial.dynamicFriction = 0;
-            }
+            isGndGrounded = false;
+            isPlaneGrounded = false;
         }
     }
 
@@ -95,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, cameraObj.GetComponent<CameraScript>().currentY, 0);
 
-        if (grounded)
+        if (isGndGrounded || isPlaneGrounded)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
@@ -120,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         
-        if (grounded)
+        if (isGndGrounded || isPlaneGrounded)
         {
             float xMove = Mathf.SmoothDamp(playerRgbd.velocity.x, 0, ref walkDeaccelerateX, deacclerate);
             float zMove = Mathf.SmoothDamp(playerRgbd.velocity.z, 0, ref walkDeaccelerateZ, deacclerate);
@@ -128,8 +100,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
-    /*
 
     void OnCollisionEnter(Collision coll)
     {
@@ -167,5 +137,5 @@ public class PlayerMovement : MonoBehaviour
             isPlaneGrounded = false;
         }
     }
-    */
+
 }

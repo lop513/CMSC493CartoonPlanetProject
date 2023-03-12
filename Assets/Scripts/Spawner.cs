@@ -46,7 +46,6 @@ public class Spawner : MonoBehaviour
         if (swarm == null) //weird synchronization tomfoolery
         {
             swarm = new GameObject[SWARM_SIZE];
-<<<<<<< HEAD
             //List<Vector2Int> spawns; // = pf.spawn_candidates.OrderBy(x => xSpawnLoc).Take(swarm.Length).ToList();
 
             spawns = new Vector2Int[] {
@@ -54,11 +53,6 @@ public class Spawner : MonoBehaviour
             };
 
             for (int i = 0; i < swarm.Length; i++) { 
-=======
-            //List<Vector2Int> spawns = pf.spawn_candidates.OrderBy(x => UnityEngine.Random.value).Take(swarm.Length).ToList();
-            
-            for (int i = 0; i < Mathf.Min(spawns.Length, swarm.Length); i++) { 
->>>>>>> de878a3705360deb1c27119c73e7fbe726f4bb0d
                 swarm[i] = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
                 Enemy script = swarm[i].AddComponent<Enemy>();
                 script.ConfigureState(pf, spawns[i], spawns[i], 0, SWARM_TICK);
