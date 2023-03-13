@@ -13,9 +13,15 @@ public class CameraScript : MonoBehaviour
     [HideInInspector]
     public float xRotV, yRotV;
 
+    void Start()
+    {
+        //Cursor.visible = false;
+    }
 
     void Update()
     {
+        //Cursor.visible = false;
+
         yRot += Input.GetAxis("Mouse X") * lookSensitivity;
         xRot += Input.GetAxis("Mouse Y") * lookSensitivity;
 

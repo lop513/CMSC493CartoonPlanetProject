@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody playerRgbd;
     public float jumpVelocity = 20;
-    float maxSlope = 45;
+    //float maxSlope = 45;
 
 
     void Awake()
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
                 coll.sharedMaterial.dynamicFriction = 0;
             }
 
-            Debug.Log(string.Format("{0},{1},{2}", plane, coll.sharedMaterial.dynamicFriction, pt));
+            //Debug.Log(string.Format("{0},{1},{2}", plane, coll.sharedMaterial.dynamicFriction, pt));
         }
     }
 

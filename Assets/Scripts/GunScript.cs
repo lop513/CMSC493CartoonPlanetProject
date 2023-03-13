@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -11,10 +12,11 @@ public class GunScript : MonoBehaviour
     float targetXRot, targetYRot;
     [HideInInspector]
     float targetXRotV, targetYRotV;
-
+    private Color c = Color.white;
     public GameObject shell;
     public Transform shellSpawnPos, bulletSpawnPos;
     public float rotateSpeed = .3f, holdHeight = -.5f, holdSide = .5f;
+    private int damage = 5;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +37,7 @@ public class GunScript : MonoBehaviour
         Vector3 e = transform.position;
         Vector3 d = Vector3.Normalize(transform.forward);
 
-        Color c = Color.white;
+        //Color c = Color.white;
         if (Input.GetButtonDown("Fire1"))
         {
             RaycastHit r;
@@ -44,8 +46,19 @@ public class GunScript : MonoBehaviour
 
             //TODO - HIT CODE GOES HERE
             Transform t = r.transform;
-            Debug.Log(string.Format("Gun hit object: {0}", t));
+            if (r.collider.CompareTag("Enemy"))
+            {
+                UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
+                r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
         }
+
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            c = Color.white;
+        }
+
 
         Debug.DrawLine(e, e + 100 * d, c);
     }

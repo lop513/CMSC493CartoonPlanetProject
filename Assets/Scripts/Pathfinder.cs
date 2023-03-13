@@ -149,7 +149,7 @@ public class Pathfinder : MonoBehaviour
         {
             Vector3 point1 = pts[edge.Item1.x, edge.Item1.y];
             Vector3 point2 = pts[edge.Item2.x, edge.Item2.y];
-            Debug.DrawLine(point1, point2, Color.yellow);
+            Debug.DrawLine(point1, point2, Color.yellow); // Disable this so gun will be the only drawn line
         }
 
         //Draw debug pikes
@@ -162,19 +162,19 @@ public class Pathfinder : MonoBehaviour
 
                 if (pair == closestPike)
                 {
-                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.green);
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.green); // Disable this so gun will be the only drawn line
                 }
                 else if (in_terrain.Contains(pair))
                 {
-                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.red);
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.red); // Disable this so gun will be the only drawn line
                 }
                 else if (spawn_candidates.Contains(pair))
                 {
-                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.cyan);
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.cyan); // Disable this so gun will be the only drawn line
                 }
                 else
                 {
-                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.white);
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.white); // Disable this so gun will be the only drawn line
                 }
             }
         }
