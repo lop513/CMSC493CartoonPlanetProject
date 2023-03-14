@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -11,7 +13,12 @@ public class EnemyHealth : MonoBehaviour
     public Material fullHealthMat;
     public Material orangeMat;
     public Material redMat;
-    
+    public float thrust = 20;
+
+    private Transform playerTransform;
+    private GameObject player;
+    private Rigidbody playerrgbd;
+
     //Material enemyMat;
 
     public Renderer enemyMeshRend;
@@ -20,6 +27,8 @@ public class EnemyHealth : MonoBehaviour
     {
         //enemyMat = GetComponent<MeshRenderer>().material;
         enemyMeshRend.material = fullHealthMat;
+        player = GameObject.FindWithTag("Player");
+        playerTransform = player.transform;
         //enemyMat = fullHealthMat;
     }
 
@@ -38,6 +47,8 @@ public class EnemyHealth : MonoBehaviour
             enemyMeshRend.material = redMat;
         }
 
+        
+
     }
 
     public void TakeDamage(int damage)
@@ -53,4 +64,17 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.CompareTag("Player"))
+        {
+            playerrgbd = player.GetComponent<Rigidbody>();
+            Vector2 difference = playerrgbd.transform.position - transform.position;
+            difference = difference.normalized * thrust;
+            playerrgbd.AddForce(difference, ForceMode.Impulse);
+            
+        }
+    }
 }
+

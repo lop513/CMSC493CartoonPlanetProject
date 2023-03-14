@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: f45999981e182e24992713b059e14e4f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blast hole sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 2183
+        width: 487
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1c810438d050243a8394ae3aba7987
+      internalID: 66629807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 2238
+        width: 372
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78317a1b99c4ee146ba944517c758034
+      internalID: 1223298747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2289
+        y: 2542
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a59092df8de4445b26cc07326c79ee
+      internalID: 1894469800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 2551
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deea2f3a341461248a2a38ac8b06bb5a
+      internalID: -242479782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 2361
+        width: 132
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e038302e1dbe14983c73bf69d89f9a
+      internalID: 50169395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 2269
+        width: 287
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f104a186102d97468af187c96a48fa3
+      internalID: -1877023888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 2347
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853b508624888f648b8468edfdbbf5b7
+      internalID: 567571741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 2358
+        width: 191
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b0eeb90ad2b9e46a9d91a2542c9b9f
+      internalID: -2346033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 2351
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afd3e293a250cd4992ed9c9bff583f9
+      internalID: 940388888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 2355
+        width: 201
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba28a3a13c98b7458c2eb4e274e6ccc
+      internalID: -570000731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 2237
+        width: 54
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb8a7424738a7d4b99cf66d88985c7a
+      internalID: -881597295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 2236
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e0c81b760f0aa4bb5d327c69000b88
+      internalID: 792818298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2295
+        y: 2226
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b4ee9c522848845a5927f1920dcf55
+      internalID: -1055917858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2474
+        y: 2225
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74d9dc82752a7b4c98e6d88a8ecde5b
+      internalID: 676580183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1823
+        width: 167
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613297bd23e1fc84bbfa3a49b3253915
+      internalID: -130292896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1830
+        width: 152
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e53fa82e012c443827c71ab809d396
+      internalID: 800463486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1828
+        width: 157
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f84545b392b91f46a1323ae5f6eb8db
+      internalID: -1906667242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1828
+        width: 157
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0aab92f37f60ab4597f782d045cbdbe
+      internalID: -444235621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1828
+        width: 175
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a411a358d1b4f48b6080357a4d055e
+      internalID: -1000213263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 1828
+        width: 187
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd998d767ae6c04fb7f3f76e4b2b790
+      internalID: -1038345592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 1827
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc023f2d407f33342aab9b20ec5fc3b5
+      internalID: -371784607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1295
+        width: 198
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ff5bb8012b48e48864edb4478948ff
+      internalID: 1343766611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1300
+        width: 79
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21a13cc7a610964da3b653fbe8c759b
+      internalID: 1735425902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 1300
+        width: 79
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e509f67d320a040b345f7710fcfd9c
+      internalID: 1258188844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1300
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7082950ca764d940aa621f5e8ba9d89
+      internalID: -1681210535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 1300
+        width: 80
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e55f29502f78440a95b41758172d56
+      internalID: -831888807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 1300
+        width: 79
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0dc524a59745b4e95fc3387e3b3a2e
+      internalID: 813782503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1292
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e49362df1232eb43a169eeb1e81d2b2
+      internalID: 1519761002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 767
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056c2806d23680144ab4ca00b2c4f662
+      internalID: 1029814962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 767
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abf25567d721a04987e98b2080b93ee
+      internalID: -1635942916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 767
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b57b2a2a1d1f30499d236ab14150040
+      internalID: 1115627313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 767
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7df60418d020947a036800dc219f9a
+      internalID: -1188574957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 767
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197465bbbf6a15748a26660d6f23dfa1
+      internalID: 566295416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_33
+      rect:
+        serializedVersion: 2
+        x: 2899
+        y: 767
+        width: 76
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504840c52a7620f41942a61bd94c1596
+      internalID: 525323139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blast hole sprite sheet_34
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 236
+        width: 73
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd75f4eadc336649821e6bb8b6d9e38
+      internalID: -584585616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 398272402d955f7408ccf8a8285bad66
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      blast hole sprite sheet_33: 525323139
+      blast hole sprite sheet_21: 1343766611
+      blast hole sprite sheet_0: 66629807
+      blast hole sprite sheet_13: 676580183
+      blast hole sprite sheet_2: 1894469800
+      blast hole sprite sheet_9: -570000731
+      blast hole sprite sheet_14: -130292896
+      blast hole sprite sheet_16: -1906667242
+      blast hole sprite sheet_4: 50169395
+      blast hole sprite sheet_30: 1115627313
+      blast hole sprite sheet_1: 1223298747
+      blast hole sprite sheet_15: 800463486
+      blast hole sprite sheet_20: -371784607
+      blast hole sprite sheet_17: -444235621
+      blast hole sprite sheet_27: 1519761002
+      blast hole sprite sheet_28: 1029814962
+      blast hole sprite sheet_11: 792818298
+      blast hole sprite sheet_32: 566295416
+      blast hole sprite sheet_34: -584585616
+      blast hole sprite sheet_5: -1877023888
+      blast hole sprite sheet_8: 940388888
+      blast hole sprite sheet_19: -1038345592
+      blast hole sprite sheet_23: 1258188844
+      blast hole sprite sheet_6: 567571741
+      blast hole sprite sheet_7: -2346033
+      blast hole sprite sheet_10: -881597295
+      blast hole sprite sheet_31: -1188574957
+      blast hole sprite sheet_26: 813782503
+      blast hole sprite sheet_22: 1735425902
+      blast hole sprite sheet_12: -1055917858
+      blast hole sprite sheet_3: -242479782
+      blast hole sprite sheet_29: -1635942916
+      blast hole sprite sheet_18: -1000213263
+      blast hole sprite sheet_25: -831888807
+      blast hole sprite sheet_24: -1681210535
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

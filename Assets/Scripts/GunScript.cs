@@ -17,10 +17,22 @@ public class GunScript : MonoBehaviour
     public Transform shellSpawnPos, bulletSpawnPos;
     public float rotateSpeed = .3f, holdHeight = -.5f, holdSide = .5f;
     private int damage = 5;
+    public float thrust = 20;
+
+    private Transform EnemyTransform;
+    private GameObject Enemy;
+    public Rigidbody Enemyrgbd;
+
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
+        Enemy = GameObject.FindWithTag("Enemy");
+        Enemyrgbd = Enemy.GetComponent<Rigidbody>();
         Shoot();
 
         targetXRot = Mathf.SmoothDamp(targetXRot, FindObjectOfType<CameraScript>().xRot, ref targetXRotV, rotateSpeed);
@@ -40,6 +52,14 @@ public class GunScript : MonoBehaviour
         //Color c = Color.white;
         if (Input.GetButtonDown("Fire1"))
         {
+            /*
+            gunrgbd = gun.GetComponent<Rigidbody>();
+            Vector2 difference = gunrgbd.transform.position - transform.position;
+            difference = difference.normalized * thrust;
+            gunrgbd.AddForce(difference, ForceMode.Impulse);
+            UnityEngine.Debug.Log("Check");
+            */
+
             RaycastHit r;
             Physics.Raycast(e, d, out r);
             c = Color.red;
@@ -50,6 +70,14 @@ public class GunScript : MonoBehaviour
             {
                 UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
                 r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+                
+                // Enemy gets knockbacked by gun hitting it
+                /*
+                Vector2 difference = Enemyrgbd.transform.position - transform.position;
+                difference = difference.normalized * thrust;
+                Enemyrgbd.AddForce(difference, ForceMode.Impulse);
+                UnityEngine.Debug.Log("Check");
+                */
             }
         }
 

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,15 +11,22 @@ public class Enemy : MonoBehaviour
     private float lerp;
     public float ENEMY_TICK = 60;
 
+    public GameObject player;
+    private PlayerHealth phInstance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //phInstance.enemyKnockedBack = false;
+        //knockBack = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindWithTag("Player");
+        phInstance = player.GetComponent<PlayerHealth>();
         //Lerp
         Vector3 e = pf.pts[prev.x, prev.y];
         Vector3 d = pf.pts[cur.x, cur.y] - e;
@@ -25,7 +34,12 @@ public class Enemy : MonoBehaviour
         transform.position = e + t * d;
 
         //return; //TODO - FIXME
-
+        /*
+        if (!phInstance.enemyKnockedBack)
+        {
+            transform.position = e + t * d;
+        }
+        */
         //Update local path
         if (lerp == ENEMY_TICK)
         {
@@ -53,6 +67,7 @@ public class Enemy : MonoBehaviour
     //TODO - detect when colliding with other enemies, work backward along potentially many hops of path (parent) dict
     void OnCollisionEnter(Collision coll)
     {
+
 
     }
 
