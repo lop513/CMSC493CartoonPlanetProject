@@ -15,7 +15,7 @@ public class GunScript : MonoBehaviour
     private Color c = Color.white;
     public GameObject shell;
     public Transform shellSpawnPos, bulletSpawnPos;
-    public float rotateSpeed = 0.1f, holdHeight = -.5f, holdSide = .5f;
+    public float rotateSpeed = 0.1f, holdHeight = 2, holdSide = .5f;
     private int damage = 5;
     public float thrust = 20;
 
@@ -30,6 +30,8 @@ public class GunScript : MonoBehaviour
 
     public float lastShootTime = -1.0f;
     public const float SHOOT_LOCKOUT = 0.66f;
+
+    private Transform cameraTransform;
 
     void Start()
     {
@@ -59,6 +61,7 @@ public class GunScript : MonoBehaviour
     void Shoot()
     {
         Vector3 e = transform.position;
+        e.y += .05f;
         Vector3 d = Vector3.Normalize(transform.forward);
 
         //Color c = Color.white;
