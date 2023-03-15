@@ -3093,6 +3093,10 @@ PrefabInstance:
       value: Badery
       objectReference: {fileID: 0}
     - target: {fileID: 2304285685687542172, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304285685687542172, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
