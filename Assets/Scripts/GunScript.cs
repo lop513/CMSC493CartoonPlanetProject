@@ -36,6 +36,8 @@ public class GunScript : MonoBehaviour
         ph = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
 
         speaker = GetComponent<AudioSource>();
+
+        Cursor.visible = false; //
     }
 
     // Update is called once per frame
