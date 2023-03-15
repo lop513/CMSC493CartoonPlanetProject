@@ -81,6 +81,15 @@ public class PlayerMovement : MonoBehaviour
 
             //Debug.Log(string.Format("{0},{1},{2}", plane, coll.sharedMaterial.dynamicFriction, pt));
         }
+
+        if (Mathf.Abs(playerRgbd.velocity.y) > 15)
+        {
+            playerRgbd.velocity = new Vector3(
+                playerRgbd.velocity.x,
+                Mathf.Sign(playerRgbd.velocity.y) * 15,
+                playerRgbd.velocity.z
+            );
+        }
     }
 
     void Move()

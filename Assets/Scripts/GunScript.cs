@@ -15,7 +15,7 @@ public class GunScript : MonoBehaviour
     private Color c = Color.white;
     public GameObject shell;
     public Transform shellSpawnPos, bulletSpawnPos;
-    public float rotateSpeed = .3f, holdHeight = -.5f, holdSide = .5f;
+    public float rotateSpeed = 0.1f, holdHeight = -.5f, holdSide = .5f;
     private int damage = 5;
     public float thrust = 20;
 
@@ -23,9 +23,19 @@ public class GunScript : MonoBehaviour
     private GameObject Enemy;
     public Rigidbody Enemyrgbd;
 
+    private PlayerHealth ph;
+
+    public AudioClip gunshot;
+    private AudioSource speaker;
+
+    public float lastShootTime = -1.0f;
+    public const float SHOOT_LOCKOUT = 0.66f;
+
     void Start()
     {
+        ph = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
 
+        speaker = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,8 +60,11 @@ public class GunScript : MonoBehaviour
         Vector3 d = Vector3.Normalize(transform.forward);
 
         //Color c = Color.white;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && ph.playerHealth > 0 && Time.time - SHOOT_LOCKOUT > lastShootTime)
         {
+            lastShootTime = Time.time;
+            speaker.PlayOneShot(gunshot);
+
             /*
             gunrgbd = gun.GetComponent<Rigidbody>();
             Vector2 difference = gunrgbd.transform.position - transform.position;
@@ -68,7 +81,7 @@ public class GunScript : MonoBehaviour
             Transform t = r.transform;
             if (r.collider.CompareTag("Enemy"))
             {
-                UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
+                //UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
                 r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
                 
                 // Enemy gets knockbacked by gun hitting it

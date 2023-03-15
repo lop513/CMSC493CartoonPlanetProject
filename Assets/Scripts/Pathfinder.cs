@@ -120,7 +120,12 @@ public class Pathfinder : MonoBehaviour
         float cz = playerPosInPlaneSpace.z / plane.localScale.z + 0.5f;
         int ix = Mathf.Clamp(Mathf.RoundToInt(cx * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
         int iz = Mathf.Clamp(Mathf.RoundToInt(cz * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
-        closestPike = new Vector2Int(ix, iz);
+        
+        Vector2Int closestPikeCandidate = new Vector2Int(ix, iz);
+        if(!in_terrain.Contains(closestPikeCandidate))
+        {
+            closestPike = closestPikeCandidate;
+        }
 
         //BFS all reachable nodes
         HashSet<ValueTuple<Vector2Int, Vector2Int>> edges;
@@ -149,7 +154,7 @@ public class Pathfinder : MonoBehaviour
         {
             Vector3 point1 = pts[edge.Item1.x, edge.Item1.y];
             Vector3 point2 = pts[edge.Item2.x, edge.Item2.y];
-            //Debug.DrawLine(point1, point2, Color.yellow); // Disable this so gun will be the only drawn line
+            Debug.DrawLine(point1, point2, Color.yellow); // Disable this so gun will be the only drawn line
         }
 
         //Draw debug pikes
@@ -162,19 +167,19 @@ public class Pathfinder : MonoBehaviour
 
                 if (pair == closestPike)
                 {
-                    //Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.green); // Disable this so gun will be the only drawn line
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.green); // Disable this so gun will be the only drawn line
                 }
                 else if (in_terrain.Contains(pair))
                 {
-                    //Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.red); // Disable this so gun will be the only drawn line
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.red); // Disable this so gun will be the only drawn line
                 }
                 else if (spawn_candidates.Contains(pair))
                 {
-                    //Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.cyan); // Disable this so gun will be the only drawn line
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.cyan); // Disable this so gun will be the only drawn line
                 }
                 else
                 {
-                    //Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.white); // Disable this so gun will be the only drawn line
+                    Debug.DrawLine(point, point - new Vector3(0, 1, 0), Color.white); // Disable this so gun will be the only drawn line
                 }
             }
         }
