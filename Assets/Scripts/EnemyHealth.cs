@@ -34,14 +34,14 @@ public class EnemyHealth : MonoBehaviour
 
     public void Update()
     {
-        if (currHealth == 10 && isEnemyDead == false)
+        if (currHealth == 10)// && isEnemyDead == false)
         {
             //enemyMat = orangeMat;
             enemyMeshRend.material = orangeMat;
 
         }
 
-        if (currHealth == 5 && isEnemyDead == false)
+        if (currHealth == 5)// && isEnemyDead == false)
         {
             //enemyMat = redMat;
             enemyMeshRend.material = redMat;
@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currHealth -= damage;
 
-        if(currHealth <= 0 && isEnemyDead == false)
+        if(currHealth <= 0)// && isEnemyDead == false)
         {
             UnityEngine.Debug.Log("Dead: " + currHealth);
             //gameObject.GetComponent<Animator>().Play("DeathAnim");

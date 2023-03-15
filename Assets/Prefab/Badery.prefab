@@ -15,8 +15,12 @@ GameObject:
   - component: {fileID: 5568152673866790947}
   - component: {fileID: -1998623391233547543}
   - component: {fileID: 6778984360918212116}
+<<<<<<< Updated upstream
   - component: {fileID: -580592731570798174}
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Badery
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -146,6 +150,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8.938839
   m_Center: {x: -0.0050373077, y: 8.066007, z: 2.7417645}
+<<<<<<< Updated upstream
 --- !u!54 &-580592731570798174
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,3 +167,5 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> Stashed changes
