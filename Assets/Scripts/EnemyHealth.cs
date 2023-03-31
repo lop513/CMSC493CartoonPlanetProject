@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Enemy enemy;
 
-    //Material enemyMat;
+    public GameObject healthDrop;
 
     public Renderer enemyMeshRend;
 
@@ -80,6 +80,9 @@ public class EnemyHealth : MonoBehaviour
         if(currHealth <= 0)// && isEnemyDead == false)
         {
             playerHealth.playEnemyDie();
+
+            Instantiate(healthDrop, transform.position, transform.rotation);
+    
             /*
             UnityEngine.Debug.Log("Dead: " + currHealth);
             //gameObject.GetComponent<Animator>().Play("DeathAnim");
@@ -91,6 +94,7 @@ public class EnemyHealth : MonoBehaviour
             enemy.reset();
 
             
+
         }
         else
         {

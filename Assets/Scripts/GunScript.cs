@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class GunScript : MonoBehaviour
     private int damage = 5;
     public float thrust = 20;
 
+    public GameObject animController;
+
     private Transform EnemyTransform;
     private GameObject Enemy;
     public Rigidbody Enemyrgbd;
@@ -32,6 +35,8 @@ public class GunScript : MonoBehaviour
     public const float SHOOT_LOCKOUT = 0.66f;
 
     private Transform cameraTransform;
+
+    //private Animation bulletHole;
 
     void Start()
     {
@@ -62,7 +67,7 @@ public class GunScript : MonoBehaviour
     {
         Vector3 e = transform.position;
         e.y += .05f;
-        Vector3 d = Vector3.Normalize(transform.forward);
+        Vector3 d = Vector3.Normalize(Camera.main.transform.forward);
 
         //Color c = Color.white;
         if (Input.GetButtonDown("Fire1") && ph.playerHealth > 0 && Time.time - SHOOT_LOCKOUT > lastShootTime)
@@ -81,6 +86,18 @@ public class GunScript : MonoBehaviour
             RaycastHit r;
             Physics.Raycast(e, d, out r);
             c = Color.red;
+
+            //Bullet Hole Code
+
+            GameObject animContr = Instantiate(animController, r.point + (r.normal * 0.025f), Quaternion.identity) as GameObject;
+
+            if (r.collider.CompareTag("Enemy"))
+            {
+                animContr.transform.parent = r.transform;
+            }
+            animContr.transform.rotation = Quaternion.FromToRotation(Vector3.forward, r.normal);
+            
+
 
             //TODO - HIT CODE GOES HERE
             Transform t = r.transform;

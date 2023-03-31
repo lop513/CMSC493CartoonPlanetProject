@@ -21,7 +21,7 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         //Cursor.visible = false;
-
+        
         yRot += Input.GetAxis("Mouse X") * lookSensitivity;
         xRot += Input.GetAxis("Mouse Y") * lookSensitivity;
 
@@ -31,6 +31,7 @@ public class CameraScript : MonoBehaviour
         xRot = Mathf.Clamp(xRot, -80, 80);
 
         transform.rotation = Quaternion.Euler(-currentX, currentY, 0);
+        
     }
 }
 
