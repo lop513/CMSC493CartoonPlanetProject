@@ -89,8 +89,8 @@ public class GunScript : MonoBehaviour
 
             //Bullet Hole Code
 
-            GameObject animContr = Instantiate(animController, r.point + (r.normal * 0.025f), Quaternion.identity) as GameObject;
-
+            GameObject animContr = Instantiate(animController, r.point + (r.normal * .025f), Quaternion.identity) as GameObject;
+            animContr.transform.position = animContr.transform.position + new Vector3(-.125f, .125f, 0f);
             if (r.collider.CompareTag("Enemy"))
             {
                 animContr.transform.parent = r.transform;

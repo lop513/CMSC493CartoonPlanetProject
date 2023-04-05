@@ -81,7 +81,7 @@ public class EnemyHealth : MonoBehaviour
         {
             playerHealth.playEnemyDie();
 
-            Instantiate(healthDrop, transform.position, transform.rotation);
+            Instantiate(healthDrop, transform.position + new Vector3(1, 1, 0), transform.rotation);
     
             /*
             UnityEngine.Debug.Log("Dead: " + currHealth);

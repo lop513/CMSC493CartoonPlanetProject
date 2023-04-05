@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 106884051}
   - component: {fileID: 106884050}
   m_Layer: 0
-  m_Name: Cargo (21)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,89 +219,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106884048}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &111242057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 111242058}
-  - component: {fileID: 111242060}
-  - component: {fileID: 111242059}
-  m_Layer: 0
-  m_Name: Sight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &111242058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111242057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0.3586}
-  m_LocalScale: {x: -0.0652, y: 0.07617, z: 0.19155}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1139351730}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &111242059
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111242057}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &111242060
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111242057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &136402863
 GameObject:
@@ -497,37 +414,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138749135}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &165853205
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 165853206}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &165853206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165853205}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.068, y: 0.01, z: 1.611}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1139351730}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179591980
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +427,7 @@ GameObject:
   - component: {fileID: 179591983}
   - component: {fileID: 179591982}
   m_Layer: 0
-  m_Name: Cargo (20)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +524,7 @@ GameObject:
   - component: {fileID: 181665954}
   - component: {fileID: 181665953}
   m_Layer: 0
-  m_Name: Cargo (51)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +621,7 @@ GameObject:
   - component: {fileID: 189781149}
   - component: {fileID: 189781148}
   m_Layer: 0
-  m_Name: Cargo (19)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,7 +718,7 @@ GameObject:
   - component: {fileID: 193033789}
   - component: {fileID: 193033788}
   m_Layer: 0
-  m_Name: Cargo (27)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +815,7 @@ GameObject:
   - component: {fileID: 204277223}
   - component: {fileID: 204277222}
   m_Layer: 0
-  m_Name: Cargo (3)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,7 +917,7 @@ GameObject:
   - component: {fileID: 219239320}
   - component: {fileID: 219239319}
   m_Layer: 0
-  m_Name: Cargo (28)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,7 +1208,7 @@ GameObject:
   - component: {fileID: 433712976}
   - component: {fileID: 433712975}
   m_Layer: 0
-  m_Name: Cargo (11)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,7 +1305,7 @@ GameObject:
   - component: {fileID: 443324550}
   - component: {fileID: 443324549}
   m_Layer: 0
-  m_Name: Cargo (35)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1610,7 +1496,7 @@ GameObject:
   - component: {fileID: 469557156}
   - component: {fileID: 469557155}
   m_Layer: 0
-  m_Name: Cargo (32)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1804,7 +1690,7 @@ GameObject:
   - component: {fileID: 482560706}
   - component: {fileID: 482560705}
   m_Layer: 0
-  m_Name: Cargo (31)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1901,7 +1787,7 @@ GameObject:
   - component: {fileID: 503934721}
   - component: {fileID: 503934720}
   m_Layer: 0
-  m_Name: Cargo (12)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1985,37 +1871,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503934718}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &586885503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 586885504}
-  m_Layer: 0
-  m_Name: BulletSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &586885504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586885503}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.14, z: 2.124}
-  m_LocalScale: {x: 0.99999, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1139351730}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598487484 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2939645174854230915, guid: 4ba9742c436f6214c96571b72da3993f, type: 3}
@@ -2034,7 +1889,7 @@ GameObject:
   - component: {fileID: 680572941}
   - component: {fileID: 680572940}
   m_Layer: 0
-  m_Name: Cargo (52)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2131,7 +1986,7 @@ GameObject:
   - component: {fileID: 704863388}
   - component: {fileID: 704863387}
   m_Layer: 0
-  m_Name: Cargo (13)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,7 +2083,7 @@ GameObject:
   - component: {fileID: 714020276}
   - component: {fileID: 714020275}
   m_Layer: 0
-  m_Name: Cargo (14)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2325,7 +2180,7 @@ GameObject:
   - component: {fileID: 774699546}
   - component: {fileID: 774699545}
   m_Layer: 0
-  m_Name: Cargo (33)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2422,7 +2277,7 @@ GameObject:
   - component: {fileID: 785761840}
   - component: {fileID: 785761839}
   m_Layer: 0
-  m_Name: Cargo (8)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2519,7 +2374,7 @@ GameObject:
   - component: {fileID: 798053861}
   - component: {fileID: 798053860}
   m_Layer: 0
-  m_Name: Cargo (34)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,7 +2568,7 @@ GameObject:
   - component: {fileID: 835217345}
   - component: {fileID: 835217344}
   m_Layer: 0
-  m_Name: Cargo (38)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2810,7 +2665,7 @@ GameObject:
   - component: {fileID: 847852609}
   - component: {fileID: 847852608}
   m_Layer: 0
-  m_Name: Cargo (39)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3004,7 +2859,7 @@ GameObject:
   - component: {fileID: 923013312}
   - component: {fileID: 923013311}
   m_Layer: 0
-  m_Name: Cargo (22)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3101,7 +2956,7 @@ GameObject:
   - component: {fileID: 925728117}
   - component: {fileID: 925728116}
   m_Layer: 0
-  m_Name: Cargo (46)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3282,6 +3137,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945190502}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &951067378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951067379}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &951067379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951067378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.14, z: 2.124}
+  m_LocalScale: {x: 0.99999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542051375}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962081408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3181,7 @@ GameObject:
   - component: {fileID: 962081411}
   - component: {fileID: 962081410}
   m_Layer: 0
-  m_Name: Cargo (30)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3392,7 +3278,7 @@ GameObject:
   - component: {fileID: 1052385108}
   - component: {fileID: 1052385107}
   m_Layer: 0
-  m_Name: Cargo (43)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3487,21 +3373,25 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2432090755550338912, guid: c8fecb1ea1a2e1547b82759d79c3ebc5, type: 3}
+    - target: {fileID: -1338517632314124238, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3606307966644101823, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3606307966644101823, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3606307966644101823, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3606307966644101823, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3606307966644101823, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3546,7 +3436,7 @@ PrefabInstance:
     - target: {fileID: 3627236347389416120, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f30dde7c985650d4fad93eeb664de584, type: 2}
+      objectReference: {fileID: 2100000, guid: c540e554bce846440bc5bbad5bea615b, type: 2}
     - target: {fileID: 6375474056605881494, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
       propertyPath: m_Name
       value: Badery
@@ -3561,7 +3451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8133ae5f2295043bff5ba9116c08c6, type: 3}
---- !u!1 &1139351727
+--- !u!1 &1165678449
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3569,155 +3459,81 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1139351730}
-  - component: {fileID: 1139351729}
-  - component: {fileID: 1139351728}
+  - component: {fileID: 1165678450}
+  - component: {fileID: 1165678452}
+  - component: {fileID: 1165678451}
   m_Layer: 0
-  m_Name: Gun
-  m_TagString: Gun
+  m_Name: Sight
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1139351728
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139351727}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1139351729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139351727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a4315aba40ca84ab2527922ea91ffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraObj: {fileID: 206036534}
-  shell: {fileID: 555859258851650296, guid: 0f37bc06105e70d4497d6832ee9b85e4, type: 3}
-  shellSpawnPos: {fileID: 165853206}
-  bulletSpawnPos: {fileID: 586885504}
-  rotateSpeed: 0.1
-  holdHeight: -0.2
-  holdSide: 0.14
-  thrust: 99
-  animController: {fileID: 598487484}
-  Enemyrgbd: {fileID: 0}
-  gunshot: {fileID: 8300000, guid: 08a4b6a3a50791140885e86557d01128, type: 3}
-  lastShootTime: -1
---- !u!4 &1139351730
+  m_IsActive: 0
+--- !u!4 &1165678450
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139351727}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 1.666, z: -16.2}
-  m_LocalScale: {x: 0.30572, y: 1, z: 0.47281}
+  m_GameObject: {fileID: 1165678449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0.3586}
+  m_LocalScale: {x: -0.0652, y: 0.07617, z: 0.19155}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2112490036}
-  - {fileID: 111242058}
-  - {fileID: 165853206}
-  - {fileID: 586885504}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Children: []
+  m_Father: {fileID: 1542051375}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1165678451
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165678449}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1165678452
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165678449}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1260999514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,7 +3547,7 @@ GameObject:
   - component: {fileID: 1260999517}
   - component: {fileID: 1260999516}
   m_Layer: 0
-  m_Name: Cargo (10)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3828,7 +3644,7 @@ GameObject:
   - component: {fileID: 1279091970}
   - component: {fileID: 1279091969}
   m_Layer: 0
-  m_Name: Cargo (44)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3978,7 +3794,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306222817
 GameObject:
@@ -3993,7 +3809,7 @@ GameObject:
   - component: {fileID: 1306222820}
   - component: {fileID: 1306222819}
   m_Layer: 0
-  m_Name: Cargo (18)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4227,6 +4043,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339988029}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1345790276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345790277}
+  - component: {fileID: 1345790279}
+  - component: {fileID: 1345790278}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Gun
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1345790277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345790276}
+  m_LocalRotation: {x: -0.22525437, y: -0.38932315, z: -0.09879625, w: 0.8876527}
+  m_LocalPosition: {x: 0.26995456, y: -1.5060116, z: 1.2099992}
+  m_LocalScale: {x: 5, y: 0.8, z: 0.9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542051375}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -28.478, y: -47.364, z: 0}
+--- !u!23 &1345790278
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345790276}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 55b5906a42e95ea45a1518d344225779, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1345790279
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345790276}
+  m_Mesh: {fileID: -2432090755550338912, guid: c8b75177e59b224409591edb45633cd3, type: 3}
 --- !u!1 &1363079860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4337,7 +4236,7 @@ GameObject:
   - component: {fileID: 1364357536}
   - component: {fileID: 1364357535}
   m_Layer: 0
-  m_Name: Cargo (37)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4434,7 +4333,7 @@ GameObject:
   - component: {fileID: 1382193294}
   - component: {fileID: 1382193293}
   m_Layer: 0
-  m_Name: Cargo (48)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4531,7 +4430,7 @@ GameObject:
   - component: {fileID: 1402151055}
   - component: {fileID: 1402151054}
   m_Layer: 0
-  m_Name: Cargo (56)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4836,7 +4735,7 @@ RectTransform:
   m_GameObject: {fileID: 1436161864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2114631446}
@@ -5079,6 +4978,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461179098}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1497710650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497710651}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1497710651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497710650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.068, y: 0.01, z: 1.611}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542051375}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506551748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5176,6 +5106,163 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506551748}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1542051372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542051375}
+  - component: {fileID: 1542051374}
+  - component: {fileID: 1542051373}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Gun
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1542051373
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542051372}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1542051374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542051372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a4315aba40ca84ab2527922ea91ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraObj: {fileID: 206036534}
+  shell: {fileID: 555859258851650296, guid: 0f37bc06105e70d4497d6832ee9b85e4, type: 3}
+  shellSpawnPos: {fileID: 1497710651}
+  bulletSpawnPos: {fileID: 951067379}
+  rotateSpeed: 0.1
+  holdHeight: -0.2
+  holdSide: 0.14
+  thrust: 99
+  animController: {fileID: 598487484}
+  Enemyrgbd: {fileID: 0}
+  gunshot: {fileID: 8300000, guid: 08a4b6a3a50791140885e86557d01128, type: 3}
+  lastShootTime: -1
+--- !u!4 &1542051375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542051372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 1.666, z: -16.2}
+  m_LocalScale: {x: 0.30572, y: 1, z: 0.47281}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1345790277}
+  - {fileID: 1165678450}
+  - {fileID: 1497710651}
+  - {fileID: 951067379}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554511980
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,7 +5276,7 @@ GameObject:
   - component: {fileID: 1554511983}
   - component: {fileID: 1554511982}
   m_Layer: 0
-  m_Name: Cargo (40)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5383,7 +5470,7 @@ GameObject:
   - component: {fileID: 1587199217}
   - component: {fileID: 1587199216}
   m_Layer: 0
-  m_Name: Cargo (15)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5606,7 +5693,7 @@ Transform:
   m_GameObject: {fileID: 1632905099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.15193339, y: 1.3733368, z: 0.88107836}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2034655994}
@@ -5710,7 +5797,7 @@ GameObject:
   - component: {fileID: 1640215945}
   - component: {fileID: 1640215944}
   m_Layer: 0
-  m_Name: Cargo (54)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5807,7 +5894,7 @@ GameObject:
   - component: {fileID: 1649243026}
   - component: {fileID: 1649243025}
   m_Layer: 0
-  m_Name: Cargo (53)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5904,7 +5991,7 @@ GameObject:
   - component: {fileID: 1654661916}
   - component: {fileID: 1654661915}
   m_Layer: 0
-  m_Name: Cargo (42)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6001,7 +6088,7 @@ GameObject:
   - component: {fileID: 1669776267}
   - component: {fileID: 1669776266}
   m_Layer: 0
-  m_Name: Cargo (16)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6098,7 +6185,7 @@ GameObject:
   - component: {fileID: 1670875612}
   - component: {fileID: 1670875611}
   m_Layer: 0
-  m_Name: Cargo (2)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6195,7 +6282,7 @@ GameObject:
   - component: {fileID: 1673014223}
   - component: {fileID: 1673014222}
   m_Layer: 0
-  m_Name: Cargo (55)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6299,12 +6386,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.020000458
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0000001
+      value: 2.011
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6486,7 +6585,7 @@ GameObject:
   - component: {fileID: 1754379673}
   - component: {fileID: 1754379672}
   m_Layer: 0
-  m_Name: Cargo (24)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6583,7 +6682,7 @@ GameObject:
   - component: {fileID: 1755393563}
   - component: {fileID: 1755393562}
   m_Layer: 0
-  m_Name: Cargo (23)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6900,7 +6999,7 @@ GameObject:
   - component: {fileID: 1794896246}
   - component: {fileID: 1794896245}
   m_Layer: 0
-  m_Name: Cargo (1)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7099,7 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 15
-  fullHealthMat: {fileID: 2100000, guid: f30dde7c985650d4fad93eeb664de584, type: 2}
+  fullHealthMat: {fileID: 2100000, guid: c540e554bce846440bc5bbad5bea615b, type: 2}
   orangeMat: {fileID: 2100000, guid: c6759e6dacd48a24fbc626db7b7ddd1b, type: 2}
   redMat: {fileID: 2100000, guid: e8197b09bc3d88f45931d3647dc45645, type: 2}
   thrust: 20
@@ -7164,7 +7263,7 @@ GameObject:
   - component: {fileID: 1872485902}
   - component: {fileID: 1872485901}
   m_Layer: 0
-  m_Name: Cargo (25)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7281,15 +7380,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2939645174854230914, guid: 4ba9742c436f6214c96571b72da3993f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2939645174854230914, guid: 4ba9742c436f6214c96571b72da3993f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2939645174854230914, guid: 4ba9742c436f6214c96571b72da3993f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2939645174854230914, guid: 4ba9742c436f6214c96571b72da3993f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7355,7 +7454,7 @@ GameObject:
   - component: {fileID: 1894620161}
   - component: {fileID: 1894620160}
   m_Layer: 0
-  m_Name: Cargo (29)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7452,7 +7551,7 @@ GameObject:
   - component: {fileID: 1909263839}
   - component: {fileID: 1909263838}
   m_Layer: 0
-  m_Name: Cargo (45)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7646,7 +7745,7 @@ GameObject:
   - component: {fileID: 1932888571}
   - component: {fileID: 1932888570}
   m_Layer: 0
-  m_Name: Cargo (26)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7743,7 +7842,7 @@ GameObject:
   - component: {fileID: 1934302642}
   - component: {fileID: 1934302641}
   m_Layer: 0
-  m_Name: Cargo (4)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7937,7 +8036,7 @@ GameObject:
   - component: {fileID: 1940867420}
   - component: {fileID: 1940867419}
   m_Layer: 0
-  m_Name: Cargo (5)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8131,7 +8230,7 @@ GameObject:
   - component: {fileID: 1984424905}
   - component: {fileID: 1984424904}
   m_Layer: 0
-  m_Name: Cargo (50)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8228,7 +8327,7 @@ GameObject:
   - component: {fileID: 1985995829}
   - component: {fileID: 1985995828}
   m_Layer: 0
-  m_Name: Cargo (17)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8325,7 +8424,7 @@ GameObject:
   - component: {fileID: 2001276188}
   - component: {fileID: 2001276187}
   m_Layer: 0
-  m_Name: Cargo
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8422,7 +8521,7 @@ GameObject:
   - component: {fileID: 2014886563}
   - component: {fileID: 2014886562}
   m_Layer: 0
-  m_Name: Cargo (47)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8519,7 +8618,7 @@ GameObject:
   - component: {fileID: 2023814976}
   - component: {fileID: 2023814975}
   m_Layer: 0
-  m_Name: Cargo (7)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8811,7 +8910,7 @@ GameObject:
   - component: {fileID: 2039662835}
   - component: {fileID: 2039662834}
   m_Layer: 0
-  m_Name: Cargo (6)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8908,7 +9007,7 @@ GameObject:
   - component: {fileID: 2045475661}
   - component: {fileID: 2045475660}
   m_Layer: 0
-  m_Name: Cargo (36)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9102,7 +9201,7 @@ GameObject:
   - component: {fileID: 2073715071}
   - component: {fileID: 2073715070}
   m_Layer: 0
-  m_Name: Cargo (41)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9199,7 +9298,7 @@ GameObject:
   - component: {fileID: 2080258357}
   - component: {fileID: 2080258356}
   m_Layer: 0
-  m_Name: Cargo (9)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9380,89 +9479,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100972221}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2112490035
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2112490036}
-  - component: {fileID: 2112490038}
-  - component: {fileID: 2112490037}
-  m_Layer: 0
-  m_Name: Barrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2112490036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112490035}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -1.506, z: 1.21}
-  m_LocalScale: {x: 1.9, y: 0.8, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1139351730}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &2112490037
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112490035}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 55b5906a42e95ea45a1518d344225779, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2112490038
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112490035}
-  m_Mesh: {fileID: -2432090755550338912, guid: c8b75177e59b224409591edb45633cd3, type: 3}
 --- !u!1 &2114631442
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,7 +9573,7 @@ RectTransform:
   m_Children:
   - {fileID: 1436161865}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9577,7 +9593,7 @@ GameObject:
   - component: {fileID: 2132750221}
   - component: {fileID: 2132750220}
   m_Layer: 0
-  m_Name: Cargo (49)
+  m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
