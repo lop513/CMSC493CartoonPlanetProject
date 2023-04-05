@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     //public bool isGndGrounded = true;
     //public bool isPlaneGrounded = true;
     public bool grounded;
-    private Pathfinder pf;
+    private PathfinderV2 pf;
 
     Rigidbody playerRgbd;
     public float jumpVelocity = 20;
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerRgbd = GetComponent<Rigidbody>();
-        pf = GameObject.Find("Level Blocks").GetComponent<Pathfinder>();
+        pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
         grounded = false;
     }
 
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 d = new Vector3(0, -1, 0);
         grounded = Physics.Raycast(e, d, 2);
 
-        foreach (Transform plane in pf.planes)
+        foreach (Transform plane in pf.obstacles)
         {
             BoxCollider coll = plane.gameObject.GetComponent<BoxCollider>();
             Vector3 pt = e + 2 * d;

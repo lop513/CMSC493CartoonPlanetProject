@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
     private GameObject player;
     private Rigidbody playerrgbd;
 
-    private Pathfinder pf;
+    private PathfinderV2 pf;
 
     private PlayerHealth playerHealth;
 
@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         playerTransform = player.transform;
         //enemyMat = fullHealthMat;
 
-        pf = GameObject.Find("Level Blocks").GetComponent<Pathfinder>();
+        pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
 
         playerHealth = player.GetComponent<PlayerHealth>();
 
