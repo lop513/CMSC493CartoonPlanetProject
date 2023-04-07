@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StarshipCockpit.unity
+    guid: 3003cbcc0b30ae8459612b45c6fd154e
+  - enabled: 1
+    path: Assets/Scenes/StarshipCargoBay.unity
+    guid: 0d77ecb256d251a4ab1d2f48bd0e0cb2
   m_configObjects: {}

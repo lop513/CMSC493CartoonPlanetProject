@@ -36,6 +36,11 @@ public class GunScript : MonoBehaviour
 
     private Transform cameraTransform;
 
+    private GameObject gunAnimContr;
+    private GameObject animContr;
+
+    public GameObject spawnPoint;
+
     //private Animation bulletHole;
 
     void Start()
@@ -84,13 +89,22 @@ public class GunScript : MonoBehaviour
             */
 
             RaycastHit r;
-            Physics.Raycast(e, d, out r);
+            //Physics.Raycast(e, d, out r);
+            Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out r);
             c = Color.red;
 
-            //Bullet Hole Code
+            //Blast from gun Code
+            Destroy(gunAnimContr);
+            gunAnimContr = Instantiate(animController, new Vector3(transform.position.x, transform.position.y, 
+                transform.position.z), Quaternion.identity) as GameObject;
+            gunAnimContr.transform.parent = spawnPoint.transform;
+            gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
+            gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
 
-            GameObject animContr = Instantiate(animController, r.point + (r.normal * .025f), Quaternion.identity) as GameObject;
-            animContr.transform.position = animContr.transform.position + new Vector3(-.125f, .125f, 0f);
+            //Bullet Hole Code
+            Destroy(animContr);
+            animContr = Instantiate(animController, r.point + (r.normal * .0001f), Quaternion.identity) as GameObject;
+            //animContr.transform.position = animContr.transform.position + new Vector3(-.125f, 0, 0);
             if (r.collider.CompareTag("Enemy"))
             {
                 animContr.transform.parent = r.transform;
@@ -104,8 +118,16 @@ public class GunScript : MonoBehaviour
             if (r.collider.CompareTag("Enemy"))
             {
                 //UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
-                r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
-                
+                if (r.collider.GetComponent<EnemyHealth>() != null)
+                {
+                    r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+                }
+
+                if (r.collider.GetComponent<ThumbsHealth>() != null)
+                {
+                    r.collider.GetComponent<ThumbsHealth>().TakeDamage(damage);
+                }
+
                 // Enemy gets knockbacked by gun hitting it
                 /*
                 Vector2 difference = Enemyrgbd.transform.position - transform.position;

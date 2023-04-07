@@ -6,9 +6,9 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour
+public class ThumbsHealth : MonoBehaviour
 {
-    public int currHealth = 20;
+    public int currHealth = 25;
     public static bool isEnemyDead = false;
     public Material fullHealthMat;
     public Material orangeMat;
@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
 
     public SpriteRenderer healthSpriteRend;
 
+    public Sprite twoFiveHealthSprite;
     public Sprite twentyHealthSprite;
     public Sprite oneFiveHealthSprite;
     public Sprite tenHealthSprite;
@@ -42,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
         enemyMeshRend.material = fullHealthMat;
         player = GameObject.FindWithTag("Player");
         playerTransform = player.transform;
-        
+
         pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
 
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -56,6 +57,10 @@ public class EnemyHealth : MonoBehaviour
         {
             switch (currHealth)
             {
+                case 25:
+                    healthSpriteRend.sprite = twoFiveHealthSprite;
+                    break;
+
                 case 20:
                     healthSpriteRend.sprite = twentyHealthSprite;
                     break;
@@ -85,7 +90,7 @@ public class EnemyHealth : MonoBehaviour
         float pos_diff = Vector3.Magnitude(player.transform.position - transform.position);
 
         if (pos_diff < 1.0f * grid_diff)
-        { 
+        {
             playerrgbd = player.GetComponent<Rigidbody>();
             Vector2 difference = playerrgbd.transform.position - transform.position;
             difference = difference.normalized * thrust;
@@ -98,23 +103,23 @@ public class EnemyHealth : MonoBehaviour
     {
         currHealth -= damage;
 
-        if(currHealth <= 0)// && isEnemyDead == false)
+        if (currHealth <= 0)// && isEnemyDead == false)
         {
             playerHealth.playEnemyDie();
 
             Instantiate(healthDrop, transform.position + new Vector3(1, 1, 0), transform.rotation);
-    
+
             /*
             UnityEngine.Debug.Log("Dead: " + currHealth);
             //gameObject.GetComponent<Animator>().Play("DeathAnim");
             Destroy(gameObject);
             isEnemyDead = true;
             */
-            currHealth = 20;
+            currHealth = 25;
             enemyMeshRend.material = fullHealthMat;
             enemy.reset();
 
-            
+
 
         }
         else

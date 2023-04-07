@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,25 +27,91 @@ public class PlayerHealth : MonoBehaviour
 
     private int healthPackValue = 20;
 
+    public Image healthImg;
+
+    public Sprite fiftyHealthSprite;
+    public Sprite fourFiveHealthSprite;
+    public Sprite fourtyHealthSprite;
+    public Sprite threeFiveHealthSprite;
+    public Sprite thirtyHealthSprite;
+    public Sprite twoFiveHealthSprite;
+    public Sprite twentyHealthSprite;
+    public Sprite oneFiveHealthSprite;
+    public Sprite tenHealthSprite;
+    public Sprite fiveHealthSprite;
+    public Sprite zeroHealthSprite;
+
     void Start()
     {
         playerHealth = maxHealth;
 
         enemy = GameObject.FindWithTag("Enemy");
-        //enemyTransform = enemy.transform;
 
         speaker = GetComponent<AudioSource>();
+    
     }
 
     void Update()
     {
-        //enemyKnockedBack = false;
-        if(playerHealth <= 0)
+        if (healthImg != null)
+        {
+            switch (playerHealth)
+            {
+                case 50:
+                    healthImg.sprite = fiftyHealthSprite;
+                    break;
+
+                case 45:
+                    healthImg.sprite = fourFiveHealthSprite;
+                    
+                    break;
+
+                case 40:
+                    healthImg.sprite = fourtyHealthSprite;
+                    break;
+
+                case 35:
+                    healthImg.sprite = threeFiveHealthSprite;
+                    break;
+
+                case 30:
+                    healthImg.sprite = thirtyHealthSprite;
+                    break;
+
+                case 25:
+                    healthImg.sprite = twoFiveHealthSprite;
+                    break;
+
+                case 20:
+                    healthImg.sprite = twentyHealthSprite;
+                    break;
+
+                case 15:
+                    healthImg.sprite = oneFiveHealthSprite;
+                    break;
+
+                case 10:
+                    healthImg.sprite = tenHealthSprite;
+                    break;
+
+                case 5:
+                    healthImg.sprite = fiveHealthSprite;
+                    break;
+
+                case 0:
+                    healthImg.sprite = zeroHealthSprite;
+                    break;
+
+            }
+        }
+        if (playerHealth <= 0)
         {
             gameObject.GetComponent<PlayerMovement>().acceleration = 0;
             gameObject.GetComponent<PlayerMovement>().jumpVelocity = 0;
             speaker.PlayOneShot(die);
         }
+
+
 
         if(HealthPack.hasPickedUpHealthPack)
         {
@@ -89,7 +158,7 @@ public class PlayerHealth : MonoBehaviour
     {
         speaker.PlayOneShot(enemy_die);
     }
-    /*
+    
     void OnGUI()
     {
         GUI.Label(new Rect(100, 10, 300, 300), "Kill 25 Enemies to win!");
@@ -108,7 +177,7 @@ public class PlayerHealth : MonoBehaviour
             GUI.Label(new Rect(10, 75, 200, 50), "You're Winner!!");
         }
     }
-    */
+    
         /*
         void OnCollisionEnter(Collision coll)
         {
