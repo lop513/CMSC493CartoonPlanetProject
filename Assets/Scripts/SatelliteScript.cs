@@ -13,7 +13,7 @@ public class SatelliteScript : MonoBehaviour
     public bool activated;
     public bool started;
 
-    float timeLeft = 3.0f;
+    float timeLeft = 120.0f;
 
     // Start is called before the first frame update
     void Start()
