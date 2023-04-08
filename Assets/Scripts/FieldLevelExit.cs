@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CargoBayDoor : MonoBehaviour
+public class FieldLevelExit : MonoBehaviour
 {
     private GameObject player;
-    private bool lockCheck;
 
-    public GameObject lockScript;
-
+    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
     }
 
+    // Update is called once per frame
     void Update()
     {
-        lockCheck = lockScript.GetComponent<LockedScript>().unlocked;
+        
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == player && lockCheck == true)
+        if (collision.gameObject == player)
         {
-            SceneManager.LoadScene("FieldLevel");
+            SceneManager.LoadScene("ArenaLevel");
         }
     }
-
 }

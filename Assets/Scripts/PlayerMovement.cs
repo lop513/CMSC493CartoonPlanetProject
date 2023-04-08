@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRgbd;
     public float jumpVelocity = 20;
     //float maxSlope = 45;
+    private Scene currentScene;
+    private string sceneName;
 
 
     void Awake()
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         playerRgbd = GetComponent<Rigidbody>();
         pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
         grounded = false;
+        currentScene = SceneManager.GetActiveScene();
     }
 
 
@@ -45,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
         Move();
+
+        sceneName = currentScene.name;
     }
 
     void Jump()
@@ -66,6 +72,9 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Transform plane in pf.obstacles)
         {
+
+            
+            
             BoxCollider coll = plane.gameObject.GetComponent<BoxCollider>();
             Vector3 pt = e + 2 * d;
             if (coll.ClosestPoint(pt) == pt) //down vector within collider

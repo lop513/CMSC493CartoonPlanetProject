@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public float lastHitTime = -1.0f;
     public const float INVUL_TIME = 0.66f;
 
-    public int kills = 0;
+    public int kills;
 
     //public bool enemyKnockedBack;
     public AudioClip hit, die, enemy_hit, enemy_die;
@@ -48,6 +48,8 @@ public class PlayerHealth : MonoBehaviour
         enemy = GameObject.FindWithTag("Enemy");
 
         speaker = GetComponent<AudioSource>();
+
+        kills = 0;
     
     }
 
@@ -158,7 +160,7 @@ public class PlayerHealth : MonoBehaviour
     {
         speaker.PlayOneShot(enemy_die);
     }
-    
+    /*
     void OnGUI()
     {
         GUI.Label(new Rect(100, 10, 300, 300), "Kill 25 Enemies to win!");
@@ -177,7 +179,7 @@ public class PlayerHealth : MonoBehaviour
             GUI.Label(new Rect(10, 75, 200, 50), "You're Winner!!");
         }
     }
-    
+    */
         /*
         void OnCollisionEnter(Collision coll)
         {
