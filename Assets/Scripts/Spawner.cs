@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     private GameObject[] swarm;
-    public int SWARM_SIZE = 1;
+    public int SWARM_SIZE = 999;
     public float SWARM_TICK = 120;
 
     public Vector2Int[] spawns;
