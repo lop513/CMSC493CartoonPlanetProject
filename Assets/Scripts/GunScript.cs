@@ -40,6 +40,7 @@ public class GunScript : MonoBehaviour
     private GameObject animContr;
 
     public GameObject spawnPoint;
+    public Camera m_Camera;
 
     //private Animation bulletHole;
 
@@ -100,6 +101,8 @@ public class GunScript : MonoBehaviour
             gunAnimContr.transform.parent = spawnPoint.transform;
             gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
             gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
+            gunAnimContr.transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
+                m_Camera.transform.rotation * Vector3.up);
 
             //Bullet Hole Code
             Destroy(animContr);

@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
         Move();
-
+        Cursor.lockState = CursorLockMode.Confined;
         sceneName = currentScene.name;
     }
 

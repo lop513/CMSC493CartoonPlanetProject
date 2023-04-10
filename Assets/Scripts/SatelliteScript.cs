@@ -13,7 +13,16 @@ public class SatelliteScript : MonoBehaviour
     public bool activated;
     public bool started;
 
-    float timeLeft = 120.0f;
+    private GameObject[] thumbsList;
+
+    public GameObject thumbs1;
+    public GameObject thumbs2;
+    public GameObject thumbs3;
+    public GameObject thumbs4;
+    public GameObject thumbs5;
+    public GameObject thumbs6;
+
+    float timeLeft = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +30,8 @@ public class SatelliteScript : MonoBehaviour
         player = GameObject.Find("Player");
         activated = false;
         started = false;
+
+        
     }
 
     // Update is called once per frame
@@ -37,6 +48,13 @@ public class SatelliteScript : MonoBehaviour
         if (started == true)
         {
             // Start countdown
+            thumbs1.SetActive(true);
+            thumbs2.SetActive(true);
+            thumbs3.SetActive(true);
+            thumbs4.SetActive(true);
+            thumbs5.SetActive(true);
+            thumbs6.SetActive(true);
+
             timeLeft -= Time.deltaTime;
 
             if (timeLeft < 0)

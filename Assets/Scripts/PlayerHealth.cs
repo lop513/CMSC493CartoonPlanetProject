@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     private AudioSource speaker;
 
-    private int healthPackValue = 20;
+    private int healthPackValue = 10;
 
     public Image healthImg;
 
@@ -41,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fiveHealthSprite;
     public Sprite zeroHealthSprite;
 
+    public GameObject border;
+    public GameObject borderHit;
+
+    float timeLeft = 1.0f;
+
     void Start()
     {
         playerHealth = maxHealth;
@@ -55,6 +60,14 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0)
+        {
+            border.SetActive(true);
+            borderHit.SetActive(false);
+            timeLeft = .7f;
+        }
+
         if (healthImg != null)
         {
             switch (playerHealth)
@@ -139,6 +152,9 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(fdir * KNOCKBACK_FORCE, ForceMode.Impulse);
 
             speaker.PlayOneShot(hit);
+
+            border.SetActive(false);
+            borderHit.SetActive(true);
         }
     }
 
