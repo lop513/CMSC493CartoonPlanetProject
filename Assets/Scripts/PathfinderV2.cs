@@ -11,8 +11,10 @@ public class PathfinderV2 : MonoBehaviour
 
     //refs
     public  Transform plane;
-    private Transform player;
+    public  Transform player;
     public  Transform[] obstacles;
+
+    public float cell_dim;
 
     //previous state - if changed, recompute
     private Vector3 lastPosition;
@@ -46,7 +48,7 @@ public class PathfinderV2 : MonoBehaviour
                 ));
             }
         }
-
+        cell_dim = Vector3.Distance(points[0, 1], points[0, 0]);
         return points;
     }
 
@@ -81,26 +83,35 @@ public class PathfinderV2 : MonoBehaviour
         foreach (Vector2Int candidate in graph_v)
         {
             Vector3 point = pts[candidate.x, candidate.y];
-            bool hidden = true;
-            for(int i = 0; i < 5; ++i)
-            {
-                Vector3 playerOnGround = new Vector3(
-                    player.position.x,
-                    1.0f + i,
-                    player.position.z
-                );
 
-                Vector3 direction = point - playerOnGround;
-
-                if (!Physics.Raycast(playerOnGround, direction, direction.magnitude))
-                {
-                    hidden = false;
-                    break;
-                }
-            }
-            if(hidden) hidden_points_.Add(candidate);
+            if(!has_los_to_player(point, 1f, 5)) hidden_points_.Add(candidate);
         }
         return hidden_points_;
+    }
+
+    public bool has_los_to_player(Vector3 point, float y_off, int n)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            Vector3 playerOnGround = new Vector3(
+                player.position.x,
+                y_off + i,
+                player.position.z
+            );
+
+            Vector3 direction = point - playerOnGround;
+
+            if (!Physics.Raycast(playerOnGround, direction, direction.magnitude))
+            {
+                return true; //successfully cast ray
+            }
+        }
+        return false;
+    }
+
+    public float dist_to_player(Vector3 point)
+    {
+        return Vector3.Distance(point, player.position);
     }
 
     void make_weighted_graph(out HashSet<Vector2Int> V_, out Dictionary<ValueTuple<Vector2Int, Vector2Int>, float> E_)
@@ -209,10 +220,12 @@ public class PathfinderV2 : MonoBehaviour
         bool changed_cell = false;
 
         Vector3 playerPosInPlaneSpace = plane.InverseTransformPoint(player.position);
-        float cx = playerPosInPlaneSpace.x / plane.localScale.x + 0.5f;
-        float cz = playerPosInPlaneSpace.z / plane.localScale.z + 0.5f;
+        float cx = (playerPosInPlaneSpace.x + 5f) / 10f;
+        float cz = (playerPosInPlaneSpace.z + 5f) / 10f;
         int ix = Mathf.Clamp(Mathf.RoundToInt(cx * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
         int iz = Mathf.Clamp(Mathf.RoundToInt(cz * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
+
+        //Debug.Log(string.Format("{0}, {1}, {2}, {3}", cx, cz, ix, iz));
 
         Vector2Int closestPikeCandidate = new Vector2Int(ix, iz);
         if(!obstructed_pts.Contains(closestPikeCandidate))
@@ -281,7 +294,7 @@ public class PathfinderV2 : MonoBehaviour
         }
 
         //Draw debug pikes
-        if(false)
+        if(true)
         {
             for (int x = 0; x < GRID_SIZE; x++)
             {
@@ -299,7 +312,7 @@ public class PathfinderV2 : MonoBehaviour
                     {
                         c = Color.red;
                     }
-                    else if(hidden_pts.Contains(pt_i))
+                    else if (hidden_pts.Contains(pt_i))
                     {
                         c = Color.magenta;
                     }
@@ -308,6 +321,7 @@ public class PathfinderV2 : MonoBehaviour
                         c = Color.green;
                     }
 
+                    if (c != Color.blue) continue;
                     Debug.DrawLine(point, point + new Vector3(0, 20, 0), c);
                 }
             }
@@ -327,7 +341,7 @@ public class PathfinderV2 : MonoBehaviour
         
 
         //Draw dijkstra edges
-        if(false)
+        if(true)
         {
             foreach (Vector2Int v in graph_v)
             {

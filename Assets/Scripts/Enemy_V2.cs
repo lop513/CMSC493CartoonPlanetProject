@@ -21,28 +21,46 @@ public class Enemy_V2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    //TODO: M* (and / or) variable speed
+    //TODO: M* (and / or) variable speed to avoid stacking
     void Update()
     {
-        //Lerp
-        Vector3 e = pf.pts[cur_pos.x, cur_pos.y];
-        Vector3 d = pf.pts[next_pos.x, next_pos.y] - e;
-        float t = lerp / tick;
-        transform.position = e + t * d;
+        bool los = pf.has_los_to_player(transform.position, 1f, 5);
+        float dist = pf.dist_to_player(transform.position);
+        float cut = 5f * pf.cell_dim;
 
-        //Update local path
-        if (t >= 1)
+        //Debug.Log(string.Format("{0} {1} {2}", los, dist, cut));
+
+        //LOS and close - direct pathing!
+        if (los && dist < cut)
         {
-            Vector2Int? next = pf.prev[next_pos];
-            if (next == null || pf.obstructed_pts.Contains(next.Value)) return;
+            Vector3 e = transform.position;
+            Vector3 d = new Vector3(pf.player.position.x, e.y, pf.player.position.z);
+            d = (d - e).normalized;
 
-            cur_pos = next_pos;
-            next_pos = next.Value;
-            lerp = 0;
+            transform.position = e + (1f / tick) * d;
         }
         else
         {
-            lerp++;
+            //Lerp between Dijkstra SP
+            Vector3 e = pf.pts[cur_pos.x, cur_pos.y];
+            Vector3 d = pf.pts[next_pos.x, next_pos.y] - e;
+            float t = lerp / tick;
+            transform.position = e + t * d;
+
+            //Update local path
+            if (t >= 1)
+            {
+                Vector2Int? next = pf.prev[next_pos];
+                if (next == null || pf.obstructed_pts.Contains(next.Value)) return;
+
+                cur_pos = next_pos;
+                next_pos = next.Value;
+                lerp = 0;
+            }
+            else
+            {
+                lerp++;
+            }
         }
     }
 
