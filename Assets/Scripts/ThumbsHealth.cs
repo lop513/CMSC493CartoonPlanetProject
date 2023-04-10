@@ -94,8 +94,7 @@ public class ThumbsHealth : MonoBehaviour
             playerrgbd = player.GetComponent<Rigidbody>();
             Vector2 difference = playerrgbd.transform.position - transform.position;
             difference = difference.normalized * thrust;
-            playerrgbd.AddForce(difference, ForceMode.Impulse);
-            playerHealth.PlayerTakeDamage(5);
+            playerHealth.PlayerTakeDamage(5, Vector3.zero); //FIX
         }
     }
 

@@ -4338,7 +4338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d23216acddc8e6a428814c37ffd05cdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4800,7 +4800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1896625392532016775, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
-  SWARM_SIZE: 10
+  swarm: []
+  SWARM_SIZE: 1
   SWARM_TICK: 300
   random_seed: 777
 --- !u!1 &1332534258
@@ -5460,7 +5461,7 @@ GameObject:
   - component: {fileID: 1406202876}
   - component: {fileID: 1406202875}
   m_Layer: 8
-  m_Name: Plane (6)
+  m_Name: Ceiling
   m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,14 +9,14 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 125;
     public int playerHealth;
-    public float thrust = 20;
 
     private Transform enemyTransform;
     public GameObject enemy;
     private Rigidbody enemyrgbd;
 
     public float lastHitTime = -1.0f;
-    public const float INVUL_TIME = 0.66f;
+    public float INVUL_TIME = 0.66f;
+    public float KNOCKBACK_FORCE = 4f;
 
     public int kills;
 
@@ -127,13 +127,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void PlayerTakeDamage(int damage)
+    public void PlayerTakeDamage(int damage, Vector3 fdir)
     {
         if(Time.time - INVUL_TIME > lastHitTime)
         {
             lastHitTime = Time.time;
             playerHealth -= damage;
             playerHealth = Mathf.Max(playerHealth, 0);
+
+            //knockback
+            GetComponent<Rigidbody>().AddForce(fdir * KNOCKBACK_FORCE, ForceMode.Impulse);
 
             speaker.PlayOneShot(hit);
         }
@@ -160,7 +163,7 @@ public class PlayerHealth : MonoBehaviour
     {
         speaker.PlayOneShot(enemy_die);
     }
-    /*
+    
     void OnGUI()
     {
         GUI.Label(new Rect(100, 10, 300, 300), "Kill 25 Enemies to win!");
@@ -179,7 +182,7 @@ public class PlayerHealth : MonoBehaviour
             GUI.Label(new Rect(10, 75, 200, 50), "You're Winner!!");
         }
     }
-    */
+    
         /*
         void OnCollisionEnter(Collision coll)
         {

@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour
     public Material fullHealthMat;
     public Material orangeMat;
     public Material redMat;
-    public float thrust = 20;
 
     private Transform playerTransform;
     private GameObject player;
@@ -86,12 +85,12 @@ public class EnemyHealth : MonoBehaviour
 
         if (pos_diff < 1.0f * grid_diff)
         {
-            return; //TODO - fix force calc
+            //return; //TODO - fix force calc
             playerrgbd = player.GetComponent<Rigidbody>();
-            Vector2 difference = playerrgbd.transform.position - transform.position;
-            difference = difference.normalized * thrust;
-            playerrgbd.AddForce(difference, ForceMode.Impulse);
-            playerHealth.PlayerTakeDamage(5);
+            Vector3 difference = playerrgbd.transform.position - transform.position;
+            difference = new Vector3(difference.x, 0f, difference.z);
+            difference = difference.normalized;
+            playerHealth.PlayerTakeDamage(5, difference);
         }
     }
 
