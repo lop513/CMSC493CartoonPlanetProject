@@ -294,7 +294,7 @@ public class PathfinderV2 : MonoBehaviour
         }
 
         //Draw debug pikes
-        if(true)
+        if(false)
         {
             for (int x = 0; x < GRID_SIZE; x++)
             {
@@ -321,7 +321,7 @@ public class PathfinderV2 : MonoBehaviour
                         c = Color.green;
                     }
 
-                    if (c != Color.blue) continue;
+                    //if (c != Color.blue) continue;
                     Debug.DrawLine(point, point + new Vector3(0, 20, 0), c);
                 }
             }
@@ -341,7 +341,7 @@ public class PathfinderV2 : MonoBehaviour
         
 
         //Draw dijkstra edges
-        if(true)
+        if(false)
         {
             foreach (Vector2Int v in graph_v)
             {

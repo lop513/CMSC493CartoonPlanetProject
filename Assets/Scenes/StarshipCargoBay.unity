@@ -6800,7 +6800,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GRID_SIZE: 25
   plane: {fileID: 0}
+  player: {fileID: 0}
   obstacles: []
+  cell_dim: 0
   closestPike: {x: 0, y: 0}
 --- !u!1 &1640215942
 GameObject:
@@ -7417,7 +7419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -115.30859
+      value: -112.56
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7425,7 +7427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9095222
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594373, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7803,9 +7805,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   playerHealth: 0
-  thrust: 9999
   enemy: {fileID: 0}
   lastHitTime: -1
+  INVUL_TIME: 0.66
+  KNOCKBACK_FORCE: 42
   kills: 0
   hit: {fileID: 8300000, guid: fd46cc4cfc6b4e64aa0cd1f168c29201, type: 3}
   die: {fileID: 8300000, guid: 567fddcb8d6dea047817f61ff7bb3fd3, type: 3}

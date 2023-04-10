@@ -135,7 +135,7 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= damage;
             playerHealth = Mathf.Max(playerHealth, 0);
 
-            //knockback
+            //knockback TODO - fix when directly atop enemy
             GetComponent<Rigidbody>().AddForce(fdir * KNOCKBACK_FORCE, ForceMode.Impulse);
 
             speaker.PlayOneShot(hit);
