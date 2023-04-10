@@ -10,7 +10,7 @@ public class PathfinderV2 : MonoBehaviour
     public Vector3[,] pts;
 
     //refs
-    private Transform plane;
+    public  Transform plane;
     private Transform player;
     public  Transform[] obstacles;
 
@@ -21,13 +21,14 @@ public class PathfinderV2 : MonoBehaviour
 
     //Vec2 storing of points
     public Vector2Int closestPike;
-    private HashSet<Vector2Int> obstructed_pts;
+    public HashSet<Vector2Int> obstructed_pts;
+    public HashSet<Vector2Int> hidden_pts;
 
     //Graph
     private HashSet<Vector2Int> graph_v;
     private Dictionary<ValueTuple<Vector2Int, Vector2Int>, float> graph_e;
     private Dictionary<Vector2Int, float> dist;
-    private Dictionary<Vector2Int, Vector2Int> prev;
+    public  Dictionary<Vector2Int, Vector2Int?> prev;
 
 
     Vector3[,] compute_points()
@@ -72,6 +73,34 @@ public class PathfinderV2 : MonoBehaviour
             }
         }
         return in_terrain;
+    }
+
+    HashSet<Vector2Int> compute_hidden_points()
+    {
+        HashSet<Vector2Int> hidden_points_ = new HashSet<Vector2Int>();
+        foreach (Vector2Int candidate in graph_v)
+        {
+            Vector3 point = pts[candidate.x, candidate.y];
+            bool hidden = true;
+            for(int i = 0; i < 5; ++i)
+            {
+                Vector3 playerOnGround = new Vector3(
+                    player.position.x,
+                    1.0f + i,
+                    player.position.z
+                );
+
+                Vector3 direction = point - playerOnGround;
+
+                if (!Physics.Raycast(playerOnGround, direction, direction.magnitude))
+                {
+                    hidden = false;
+                    break;
+                }
+            }
+            if(hidden) hidden_points_.Add(candidate);
+        }
+        return hidden_points_;
     }
 
     void make_weighted_graph(out HashSet<Vector2Int> V_, out Dictionary<ValueTuple<Vector2Int, Vector2Int>, float> E_)
@@ -136,12 +165,43 @@ public class PathfinderV2 : MonoBehaviour
         E_ = E;
     }
 
-    void dijkstra(Vector2Int src, HashSet<Vector2Int> V, Dictionary<ValueTuple<Vector2Int, Vector2Int>, float> E, out Dictionary<Vector2Int, float> dist_, out Dictionary<Vector2Int, Vector2Int> prev_)
+    void dijkstra(Vector2Int src, HashSet<Vector2Int> V, Dictionary<ValueTuple<Vector2Int, Vector2Int>, float> E, out Dictionary<Vector2Int, float> dist_, out Dictionary<Vector2Int, Vector2Int?> prev_)
     {
-        //TODO: ...
+        dist_ = new Dictionary<Vector2Int, float>();
+        prev_ = new Dictionary<Vector2Int, Vector2Int?>();
 
-        dist_ = null;
-        prev_ = null;
+        // Initialize distances and previous vertices
+        foreach (Vector2Int vertex in V)
+        {
+            dist_[vertex] = float.PositiveInfinity;
+            prev_[vertex] = null;
+        }
+
+        dist_[src] = 0;
+
+        PriorityQueue<Vector2Int> pq = new PriorityQueue<Vector2Int>();
+        pq.Enqueue(src, 0);
+
+        while (pq.Count > 0)
+        {
+            Vector2Int current_vertex = pq.Dequeue();
+            float current_distance = dist_[current_vertex];
+
+            foreach (Vector2Int neighbor in V)
+            {
+                if (E.TryGetValue((current_vertex, neighbor), out float edge_weight))
+                {
+                    float tentative_distance = current_distance + edge_weight;
+
+                    if (tentative_distance < dist_[neighbor])
+                    {
+                        dist_[neighbor] = tentative_distance;
+                        prev_[neighbor] = current_vertex;
+                        pq.Enqueue(neighbor, (int)tentative_distance);
+                    }
+                }
+            }
+        }
     }
 
     bool update_closest_pike()
@@ -214,44 +274,73 @@ public class PathfinderV2 : MonoBehaviour
         }
 
         
-        if(update_closest_pike()) //Player moved into different cell, rerun Dijkstra
+        if(update_closest_pike()) //Player moved into different cell, rerun Dijkstra, obstructed points
         {
-            //TODO: 
+            dijkstra(closestPike, graph_v, graph_e, out dist, out prev);
+            hidden_pts = compute_hidden_points();
         }
 
         //Draw debug pikes
-        for (int x = 0; x < GRID_SIZE; x++)
+        if(false)
         {
-            for (int z = 0; z < GRID_SIZE; z++)
+            for (int x = 0; x < GRID_SIZE; x++)
             {
-                Vector3 point = pts[x, z];
-                Vector2Int pt_i = new Vector2Int(x, z);
+                for (int z = 0; z < GRID_SIZE; z++)
+                {
+                    Vector3 point = pts[x, z];
+                    Vector2Int pt_i = new Vector2Int(x, z);
 
-                Color c = Color.green;
-                if(pt_i == closestPike)
-                {
-                    c = Color.blue;
-                }
-                else if(obstructed_pts.Contains(pt_i))
-                {
-                    c = Color.red;
-                }
-                else
-                {
-                    c = Color.green;
-                }
+                    Color c = Color.green;
+                    if (pt_i == closestPike)
+                    {
+                        c = Color.blue;
+                    }
+                    else if (obstructed_pts.Contains(pt_i))
+                    {
+                        c = Color.red;
+                    }
+                    else if(hidden_pts.Contains(pt_i))
+                    {
+                        c = Color.magenta;
+                    }
+                    else
+                    {
+                        c = Color.green;
+                    }
 
-                Debug.DrawLine(point, point + new Vector3(0, 20, 0), c);
+                    Debug.DrawLine(point, point + new Vector3(0, 20, 0), c);
+                }
             }
         }
+        
 
         //Draw graph edges
-        foreach(ValueTuple<Vector2Int, Vector2Int> edge in graph_e.Keys)
+        if(false)
         {
-            Vector3 point1 = pts[edge.Item1.x, edge.Item1.y];
-            Vector3 point2 = pts[edge.Item2.x, edge.Item2.y];
-            Debug.DrawLine(point1, point2, Color.yellow);
+            foreach (ValueTuple<Vector2Int, Vector2Int> edge in graph_e.Keys)
+            {
+                Vector3 point1 = pts[edge.Item1.x, edge.Item1.y];
+                Vector3 point2 = pts[edge.Item2.x, edge.Item2.y];
+                Debug.DrawLine(point1, point2, Color.yellow);
+            }
         }
+        
+
+        //Draw dijkstra edges
+        if(false)
+        {
+            foreach (Vector2Int v in graph_v)
+            {
+                Vector2Int? parent;
+                if ((parent = prev[v]) != null)
+                {
+                    Vector3 point1 = pts[v.x, v.y] + new Vector3(0f, 0.5f, 0f);
+                    Vector3 point2 = pts[parent.Value.x, parent.Value.y] + new Vector3(0f, 0.5f, 0f);
+                    Debug.DrawLine(point1, point2, Color.blue);
+                }
+            }
+        }
+        
 
         /*
         Color c = Color.yellow;

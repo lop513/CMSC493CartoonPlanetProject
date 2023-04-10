@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
-    private Enemy enemy;
+    public Enemy_V2 enemy;
 
     public GameObject healthDrop;
 
@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
 
         playerHealth = player.GetComponent<PlayerHealth>();
 
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<Enemy_V2>();
     }
 
     public void Update()
@@ -85,7 +85,8 @@ public class EnemyHealth : MonoBehaviour
         float pos_diff = Vector3.Magnitude(player.transform.position - transform.position);
 
         if (pos_diff < 1.0f * grid_diff)
-        { 
+        {
+            return; //TODO - fix force calc
             playerrgbd = player.GetComponent<Rigidbody>();
             Vector2 difference = playerrgbd.transform.position - transform.position;
             difference = difference.normalized * thrust;

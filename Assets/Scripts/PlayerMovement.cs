@@ -71,10 +71,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(e, d, 2);
 
         foreach (Transform plane in pf.obstacles)
-        {
-
-            
-            
+        { 
             BoxCollider coll = plane.gameObject.GetComponent<BoxCollider>();
             Vector3 pt = e + 2 * d;
             if (coll.ClosestPoint(pt) == pt) //down vector within collider
@@ -84,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                //coll.sharedMaterial.staticFriction = 0;
-                //coll.sharedMaterial.dynamicFriction = 0;
+                coll.sharedMaterial.staticFriction = 0;
+                coll.sharedMaterial.dynamicFriction = 0;
             }
 
             //Debug.Log(string.Format("{0},{1},{2}", plane, coll.sharedMaterial.dynamicFriction, pt));
