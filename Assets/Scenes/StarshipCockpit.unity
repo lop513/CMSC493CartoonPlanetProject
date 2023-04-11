@@ -317,6 +317,7 @@ RectTransform:
   - {fileID: 809609947}
   - {fileID: 1159043987}
   - {fileID: 1098882385}
+  - {fileID: 1144929645}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -519,7 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GRID_SIZE: 25
+  plane: {fileID: 0}
+  player: {fileID: 0}
   obstacles: []
+  cell_dim: 0
   closestPike: {x: 0, y: 0}
 --- !u!1 &329731200
 GameObject:
@@ -990,7 +994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558251, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: near clip plane
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558252, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1037,26 +1041,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   playerHealth: 0
-  thrust: 9999
   enemy: {fileID: 0}
   lastHitTime: -1
+  INVUL_TIME: 0.66
+  KNOCKBACK_FORCE: 4
   kills: 0
   hit: {fileID: 8300000, guid: fd46cc4cfc6b4e64aa0cd1f168c29201, type: 3}
   die: {fileID: 8300000, guid: 567fddcb8d6dea047817f61ff7bb3fd3, type: 3}
   enemy_hit: {fileID: 8300000, guid: 0e23fe5fa15e227439d2085c7c867ead, type: 3}
   enemy_die: {fileID: 8300000, guid: 70292198e3bbf5b4bb52a50125af0006, type: 3}
-  healthImg: {fileID: 0}
-  fiftyHealthSprite: {fileID: 0}
-  fourFiveHealthSprite: {fileID: 0}
-  fourtyHealthSprite: {fileID: 0}
-  threeFiveHealthSprite: {fileID: 0}
-  thirtyHealthSprite: {fileID: 0}
-  twoFiveHealthSprite: {fileID: 0}
-  twentyHealthSprite: {fileID: 0}
-  oneFiveHealthSprite: {fileID: 0}
-  tenHealthSprite: {fileID: 0}
-  fiveHealthSprite: {fileID: 0}
-  zeroHealthSprite: {fileID: 0}
+  healthImg: {fileID: 809609948}
+  fiftyHealthSprite: {fileID: -1190095278, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  fourFiveHealthSprite: {fileID: 755764799, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  fourtyHealthSprite: {fileID: -1303810617, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  threeFiveHealthSprite: {fileID: 1804513649, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  thirtyHealthSprite: {fileID: 407157765, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  twoFiveHealthSprite: {fileID: 2104337606, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  twentyHealthSprite: {fileID: -1219721346, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  oneFiveHealthSprite: {fileID: 145264282, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  tenHealthSprite: {fileID: 1746569764, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  fiveHealthSprite: {fileID: 1982730382, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  zeroHealthSprite: {fileID: -1280107272, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
+  border: {fileID: 1098882384}
+  borderHit: {fileID: 1144929644}
 --- !u!82 &685801019
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1204,7 +1211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1377,7 +1384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1499,6 +1506,82 @@ Transform:
   m_Father: {fileID: 270486537}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1144929644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144929645}
+  - component: {fileID: 1144929647}
+  - component: {fileID: 1144929646}
+  m_Layer: 5
+  m_Name: DamageBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1144929645
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144929644}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 4.499998, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 40726486}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 789.5, y: 444.00006}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1144929646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144929644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8b99f47d3b36acd4b9b84f16823b005a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1144929647
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144929644}
+  m_CullTransparentMesh: 1
 --- !u!1 &1145678176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2588,7 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2846,6 +2929,7 @@ MonoBehaviour:
   gunshot: {fileID: 8300000, guid: 08a4b6a3a50791140885e86557d01128, type: 3}
   lastShootTime: -1
   spawnPoint: {fileID: 0}
+  m_Camera: {fileID: 0}
 --- !u!4 &1624966165
 Transform:
   m_ObjectHideFlags: 0
@@ -3013,7 +3097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

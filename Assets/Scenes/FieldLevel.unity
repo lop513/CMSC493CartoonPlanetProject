@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -736,7 +736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558251, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: near clip plane
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558252, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2435,7 +2435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378059986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -115.348595, y: 1.666, z: 0.98}
+  m_LocalPosition: {x: -115.348595, y: 1.666, z: 1}
   m_LocalScale: {x: 0.30572, y: 1, z: 0.47281}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2792,7 +2792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3443,6 +3443,34 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6343799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.76672333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.097742535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.011995074
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 77.196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 151.539
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898505353267476514, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 142.582
+      objectReference: {fileID: 0}
     - target: {fileID: 2898505353267476519, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3605,7 +3633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8745172706338785791, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8745172706338785791, guid: 4572f668cfc334653a284296fd7dd9ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3904,7 +3932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4049,7 +4077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
