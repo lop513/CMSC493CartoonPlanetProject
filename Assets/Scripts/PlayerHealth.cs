@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public int kills;
 
     //public bool enemyKnockedBack;
-    public AudioClip hit, die, enemy_hit, enemy_die;
+    public AudioClip hit, die, enemy_hit, enemy_die, thumbs_shoot;
 
     private AudioSource speaker;
 
@@ -170,6 +170,11 @@ public class PlayerHealth : MonoBehaviour
     {
         speaker.PlayOneShot(enemy_hit);
         
+    }
+
+    public void playThumbsShoot()
+    {
+        speaker.PlayOneShot(thumbs_shoot);
     }
 
     public void playEnemyDie()

@@ -321,7 +321,7 @@ public class PathfinderV2 : MonoBehaviour
         }
 
         //Draw debug pikes
-        if(false)
+        if(true)
         {
             for (int x = 0; x < GRID_SIZE; x++)
             {
@@ -356,7 +356,7 @@ public class PathfinderV2 : MonoBehaviour
         
 
         //Draw graph edges
-        if(false)
+        if(true)
         {
             foreach (ValueTuple<Vector2Int, Vector2Int> edge in graph_e.Keys)
             {
