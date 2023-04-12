@@ -144,6 +144,8 @@ public class SatelliteScript : MonoBehaviour
         {
             started = true;
             pressE.SetActive(false);
+            GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
+            GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>().stall = false;
         }
 
         if (started == true)
@@ -420,6 +422,16 @@ public class SatelliteScript : MonoBehaviour
                 activated = true;
                 victCanvas.SetActive(true);
                 timerObj.SetActive(false);
+
+                GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+                List<GameObject> gameObjectsWithMatchingName = new List<GameObject>();
+                foreach (GameObject obj in allGameObjects)
+                {
+                    if (obj.name.Contains("ThumbsV2"))
+                    {
+                        obj.transform.position = new Vector3(-999, -999, -999);
+                    }
+                }
             }
         }
 

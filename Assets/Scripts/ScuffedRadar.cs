@@ -51,6 +51,32 @@ public class ScuffedRadar : MonoBehaviour
     public void press_button()
     {
         hasPressedButton = true;
+
+        Invoke("update_thumbs_s", 1f);
+    }
+
+    void update_thumbs_s()
+    {
+        if (thumbs_s.Count != 0) return;
+
+        //thumbsbs, if any
+        thumbs_s = new List<GameObject>();
+        GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+        List<GameObject> gameObjectsWithMatchingName = new List<GameObject>();
+        foreach (GameObject obj in allGameObjects)
+        {
+            if (obj.name.Contains("ThumbsV2"))
+            {
+                thumbs_s.Add(obj);
+            }
+        }
+
+        foreach (GameObject obj in thumbs_s)
+        {
+            GameObject o = make_child_sphere(Color.magenta);
+            child_thumbs_s.Add(o);
+            o.transform.position = double_transform(obj.transform.position);
+        }
     }
 
     GameObject make_child_sphere(Color c)
@@ -149,15 +175,13 @@ public class ScuffedRadar : MonoBehaviour
         {
             ; //no spawner in level
         }
-        else if (enemies == null && spawner.swarm.Length != 0) //wait exactly three ticks
+        else if (!spawner.stall && enemies == null && spawner.swarm.Length != 0) //wait exactly three ticks
         {
             enemies = new GameObject[spawner.swarm.Length];
             for(int i = 0; i < spawner.swarm.Length; i++)
             {
                 enemies[i] = make_child_sphere(Color.red);
             }
-            goalRenderObj.transform.position = double_transform(GameObject.Find("Exit").transform.position);
-            goalRenderObj.transform.position += new Vector3(0f, 0.3f, 0f);
 
             obstacles = new GameObject[pf.obstacles.Length];
             for(int i = 0; i < pf.obstacles.Length; i++)
@@ -171,7 +195,7 @@ public class ScuffedRadar : MonoBehaviour
                 }
             }
         }
-        else
+        else if(!spawner.stall)
         {
             //Get all spawned enemies and draw them, transformed, to the screen
             for (int i = 0; i < spawner.swarm.Length; i++)

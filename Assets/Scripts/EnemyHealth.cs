@@ -83,7 +83,7 @@ public class EnemyHealth : MonoBehaviour
         float grid_diff = Vector3.Magnitude(pf.pts[0, 1] - pf.pts[0, 0]);
         float pos_diff = Vector3.Magnitude(player.transform.position - transform.position);
 
-        if (pos_diff < 1.0f * grid_diff)
+        if (pos_diff < 0.33f * grid_diff)
         {
             //return; //TODO - fix force calc
             playerrgbd = player.GetComponent<Rigidbody>();

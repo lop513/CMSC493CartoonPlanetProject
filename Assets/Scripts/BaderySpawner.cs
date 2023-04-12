@@ -15,6 +15,8 @@ public class BaderySpawner : MonoBehaviour
     private System.Random random_state;
     public int random_seed = 777;
 
+    public bool stall = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class BaderySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pf.hidden_pts != null && swarm.Length == 0) //wait exactly two ticks
+        if(!stall && pf.hidden_pts != null && swarm.Length == 0) //wait exactly two ticks
         {
             swarm = new GameObject[SWARM_SIZE];
             for (int i = 0; i < swarm.Length; i++)

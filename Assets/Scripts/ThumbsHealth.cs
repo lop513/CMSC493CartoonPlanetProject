@@ -131,7 +131,7 @@ public class ThumbsHealth : MonoBehaviour
                 {
                     //FIRE CODE GOES HERE
                     //UnityEngine.Debug.Log("Fired!");
-                    //playerHealth.PlayerTakeDamage(5, d);
+                    playerHealth.PlayerTakeDamage(5, d);
                 }
                 else if(ticksFiring > 4f * SHOOT_WAIT) {
                     ticksFiring = 0;
