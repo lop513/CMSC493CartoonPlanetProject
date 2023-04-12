@@ -81,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                //coll.sharedMaterial.staticFriction = 0;
-                //coll.sharedMaterial.dynamicFriction = 0;
+                coll.sharedMaterial.staticFriction = 0;
+                coll.sharedMaterial.dynamicFriction = 0;
             }
 
             //Debug.Log(string.Format("{0},{1},{2}", plane, coll.sharedMaterial.dynamicFriction, pt));

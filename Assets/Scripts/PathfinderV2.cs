@@ -215,19 +215,38 @@ public class PathfinderV2 : MonoBehaviour
         }
     }
 
-    bool update_closest_pike()
+    Vector2Int? getClosestPike(Vector3 ws, bool validate_obstructed = false)
     {
-        bool changed_cell = false;
-
-        Vector3 playerPosInPlaneSpace = plane.InverseTransformPoint(player.position);
+        Vector3 playerPosInPlaneSpace = plane.InverseTransformPoint(ws);
         float cx = (playerPosInPlaneSpace.x + 5f) / 10f;
         float cz = (playerPosInPlaneSpace.z + 5f) / 10f;
         int ix = Mathf.Clamp(Mathf.RoundToInt(cx * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
         int iz = Mathf.Clamp(Mathf.RoundToInt(cz * (GRID_SIZE - 1)), 0, GRID_SIZE - 1);
+        Vector2Int rv = new Vector2Int(ix, iz);
+        if (!validate_obstructed) return rv;
+        else
+        {
+            //is it a valid point?
+            if (!obstructed_pts.Contains(rv)) return rv;
 
-        //Debug.Log(string.Format("{0}, {1}, {2}, {3}", cx, cz, ix, iz));
+            //run diagonal check
+            for(int dx = -1; dx <= 1; ++dx)
+            {
+                for(int dz = -1; dz <= 1; ++dz) 
+                {
+                    Vector2Int n_rv = new Vector2Int(rv.x + dx, rv.y + dz);
+                    if (!obstructed_pts.Contains(n_rv)) return n_rv;
+                }
+            }
+        }
+        return null;
+    }
 
-        Vector2Int closestPikeCandidate = new Vector2Int(ix, iz);
+    bool update_closest_pike()
+    {
+        bool changed_cell = false;
+
+        Vector2Int closestPikeCandidate = getClosestPike(player.position).Value;
         if(!obstructed_pts.Contains(closestPikeCandidate))
         {
             if(closestPikeCandidate != closestPike)

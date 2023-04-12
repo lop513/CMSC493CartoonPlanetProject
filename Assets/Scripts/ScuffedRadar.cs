@@ -18,12 +18,19 @@ public class ScuffedRadar : MonoBehaviour
     void Start()
     {
         pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
-        spawner = GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>();
+
+        if(GameObject.Find("Badery Spawner") != null)
+        {
+            spawner = GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>();
+        }
+        
         player = GameObject.Find("Player").transform;
 
         //children
         playerRenderObj = make_child_sphere(Color.cyan);
         goalRenderObj = make_child_sphere(Color.green);
+
+        //children - exit button and exit
         
     }
 
@@ -95,7 +102,11 @@ public class ScuffedRadar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies == null && spawner.swarm.Length != 0) //wait exactly three ticks
+        if(spawner == null)
+        {
+            ; //no spawner in level
+        }
+        else if (enemies == null && spawner.swarm.Length != 0) //wait exactly three ticks
         {
             enemies = new GameObject[spawner.swarm.Length];
             for(int i = 0; i < spawner.swarm.Length; i++)
