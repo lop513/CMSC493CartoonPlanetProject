@@ -12025,6 +12025,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Badery
       objectReference: {fileID: 0}
+    - target: {fileID: 4094274865700874574, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 39282697ba8530f46a8bd740eee365d8, type: 3}
+    - target: {fileID: 6178208622494605962, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 39282697ba8530f46a8bd740eee365d8, type: 3}
     - target: {fileID: 7021746138658633850, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -68,7 +68,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: c8fecb1ea1a2e1547b82759d79c3ebc5, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 39282697ba8530f46a8bd740eee365d8, type: 3}
 --- !u!23 &758647017547376640
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896625392532016775}
-  m_Mesh: {fileID: -2432090755550338912, guid: c8fecb1ea1a2e1547b82759d79c3ebc5, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 39282697ba8530f46a8bd740eee365d8, type: 3}
 --- !u!95 &4094274865700874573
 Animator:
   serializedVersion: 4
@@ -155,7 +155,7 @@ MonoBehaviour:
   fullHealthMat: {fileID: 2100000, guid: c540e554bce846440bc5bbad5bea615b, type: 2}
   orangeMat: {fileID: 2100000, guid: c6759e6dacd48a24fbc626db7b7ddd1b, type: 2}
   redMat: {fileID: 2100000, guid: e8197b09bc3d88f45931d3647dc45645, type: 2}
-  thrust: 20
+  enemy: {fileID: 0}
   healthDrop: {fileID: 8345181250568689931, guid: 4efec84986be68142a13010c4626f68e, type: 3}
   enemyMeshRend: {fileID: 758647017547376640}
   healthSpriteRend: {fileID: 4094274865975330030}
