@@ -1719,6 +1719,7 @@ RectTransform:
   - {fileID: 895522210}
   - {fileID: 1377283442}
   - {fileID: 684098941}
+  - {fileID: 1261218953}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5646,6 +5647,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a478c5c622b54cbaa3f245de274cc3e, type: 3}
+--- !u!1 &1261218952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261218953}
+  - component: {fileID: 1261218955}
+  - component: {fileID: 1261218954}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1261218953
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261218952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 380942718}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -112, y: 4.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1261218954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261218952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d661b0e6e6a90e1488aa2ca75ee22565, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1261218955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261218952}
+  m_CullTransparentMesh: 1
 --- !u!1 &1319532672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6952,6 +7029,68 @@ MonoBehaviour:
   victCanvas: {fileID: 0}
   rescueShip: {fileID: 0}
   victory: 0
+  timerObj: {fileID: 0}
+  timerImage: {fileID: 0}
+  fiveNineSeconds: {fileID: 0}
+  fiveEightSeconds: {fileID: 0}
+  fiveSevenSeconds: {fileID: 0}
+  fiveSixSeconds: {fileID: 0}
+  fiveFiveSeconds: {fileID: 0}
+  fiveFourSeconds: {fileID: 0}
+  fiveThreeSeconds: {fileID: 0}
+  fiveTwoSeconds: {fileID: 0}
+  fiveOneSeconds: {fileID: 0}
+  fiveZeroSeconds: {fileID: 0}
+  fourNineSeconds: {fileID: 0}
+  fourEightSeconds: {fileID: 0}
+  fourSevenSeconds: {fileID: 0}
+  fourSixSeconds: {fileID: 0}
+  fourFiveSeconds: {fileID: 0}
+  fourFourSeconds: {fileID: 0}
+  fourThreeSeconds: {fileID: 0}
+  fourTwoSeconds: {fileID: 0}
+  fourOneSeconds: {fileID: 0}
+  fourZeroSeconds: {fileID: 0}
+  threeNineSeconds: {fileID: 0}
+  threeEightSeconds: {fileID: 0}
+  threeSevenSeconds: {fileID: 0}
+  threeSixSeconds: {fileID: 0}
+  threeFiveSeconds: {fileID: 0}
+  threeFourSeconds: {fileID: 0}
+  threeThreeSeconds: {fileID: 0}
+  threeTwoSeconds: {fileID: 0}
+  threeOneSeconds: {fileID: 0}
+  threeZeroSeconds: {fileID: 0}
+  twoNineSeconds: {fileID: 0}
+  twoEightSeconds: {fileID: 0}
+  twoSevenSeconds: {fileID: 0}
+  twoSixSeconds: {fileID: 0}
+  twoFiveSeconds: {fileID: 0}
+  twoFourSeconds: {fileID: 0}
+  twoThreeSeconds: {fileID: 0}
+  twoTwoSeconds: {fileID: 0}
+  twoOneSeconds: {fileID: 0}
+  twoZeroSeconds: {fileID: 0}
+  oneNineSeconds: {fileID: 0}
+  oneEightSeconds: {fileID: 0}
+  oneSevenSeconds: {fileID: 0}
+  oneSixSeconds: {fileID: 0}
+  oneFiveSeconds: {fileID: 0}
+  oneFourSeconds: {fileID: 0}
+  oneThreeSeconds: {fileID: 0}
+  oneTwoSeconds: {fileID: 0}
+  oneOneSeconds: {fileID: 0}
+  oneZeroSeconds: {fileID: 0}
+  nineSeconds: {fileID: 0}
+  eightSeconds: {fileID: 0}
+  sevenSeconds: {fileID: 0}
+  sixSeconds: {fileID: 0}
+  fiveSeconds: {fileID: 0}
+  fourSeconds: {fileID: 0}
+  threeSeconds: {fileID: 0}
+  twoSeconds: {fileID: 0}
+  oneSeconds: {fileID: 0}
+  zeroSeconds: {fileID: 0}
 --- !u!1 &1586465723
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,6 +8358,68 @@ MonoBehaviour:
   victCanvas: {fileID: 684098940}
   rescueShip: {fileID: 429746885}
   victory: 0
+  timerObj: {fileID: 1261218952}
+  timerImage: {fileID: 1261218954}
+  fiveNineSeconds: {fileID: 21300000, guid: d661b0e6e6a90e1488aa2ca75ee22565, type: 3}
+  fiveEightSeconds: {fileID: 21300000, guid: 53f6982e3022aba4981ebdbd24e9aeb6, type: 3}
+  fiveSevenSeconds: {fileID: 21300000, guid: 2ed4d4326de0b884dbae0bc12982f93e, type: 3}
+  fiveSixSeconds: {fileID: 21300000, guid: bde66e94f2c85374eb0f543bfa52ec96, type: 3}
+  fiveFiveSeconds: {fileID: 21300000, guid: df4bd4beee36b474496235a2adae0181, type: 3}
+  fiveFourSeconds: {fileID: 21300000, guid: 6e15d76567f83a14c864c739b72f9946, type: 3}
+  fiveThreeSeconds: {fileID: 21300000, guid: b7ae3f98bfcd1a3459275760072a9d57, type: 3}
+  fiveTwoSeconds: {fileID: 21300000, guid: 876ba5c3ef73ef94aa2ebed24afe18fb, type: 3}
+  fiveOneSeconds: {fileID: 21300000, guid: 83433586c881d754eb5766b4714d76ab, type: 3}
+  fiveZeroSeconds: {fileID: 21300000, guid: 3c629a3beb03e85498b654ea77e8fe5f, type: 3}
+  fourNineSeconds: {fileID: 21300000, guid: 98a3f7620c972bb45aecf8d8b470e071, type: 3}
+  fourEightSeconds: {fileID: 21300000, guid: be3057d9f08febe4ca4a728bef3cba09, type: 3}
+  fourSevenSeconds: {fileID: 21300000, guid: 0e9623239d651d143b7fb16595edb01c, type: 3}
+  fourSixSeconds: {fileID: 21300000, guid: dc49f64b63343be4e834d6d87d50b428, type: 3}
+  fourFiveSeconds: {fileID: 21300000, guid: 1f9a4d01bc2639147a94e53b500ee4b8, type: 3}
+  fourFourSeconds: {fileID: 21300000, guid: 51ecf63d3b6f0b54a9c9133df07339f6, type: 3}
+  fourThreeSeconds: {fileID: 21300000, guid: 1262f43dd93838d46a15c4a1c7a69d04, type: 3}
+  fourTwoSeconds: {fileID: 21300000, guid: b530c54b87647b64b958c9da6716f64f, type: 3}
+  fourOneSeconds: {fileID: 21300000, guid: eed02fa01a622694db112a8b016696ea, type: 3}
+  fourZeroSeconds: {fileID: 21300000, guid: 5eda39ab2d3eb4f4fae92f6047380390, type: 3}
+  threeNineSeconds: {fileID: 21300000, guid: c966d53ca2b9c5948a19dc78abdcb81f, type: 3}
+  threeEightSeconds: {fileID: 21300000, guid: ec70df3b624ce9a478d4fc8ae0cb4d88, type: 3}
+  threeSevenSeconds: {fileID: 21300000, guid: 61fe6adc712a1f04881407a3eee8a544, type: 3}
+  threeSixSeconds: {fileID: 21300000, guid: 22139307044a7e040a8a44636264b985, type: 3}
+  threeFiveSeconds: {fileID: 21300000, guid: 885119636fdb0db4e8285d34035e0fdd, type: 3}
+  threeFourSeconds: {fileID: 21300000, guid: 19a8f223afd68b24c952ea3d48f9785c, type: 3}
+  threeThreeSeconds: {fileID: 21300000, guid: 2d2448d136ddfaf4997a3f3c825ae659, type: 3}
+  threeTwoSeconds: {fileID: 21300000, guid: fc2996aaf44b9444eb7d78c702ce769f, type: 3}
+  threeOneSeconds: {fileID: 21300000, guid: da40d7f9bcd51a341bd2ad61dbf48f0d, type: 3}
+  threeZeroSeconds: {fileID: 21300000, guid: 065aa3ee1c05365449d36bd04c4ec91b, type: 3}
+  twoNineSeconds: {fileID: 21300000, guid: 056e3aa16e418ea49a918dd1ace20431, type: 3}
+  twoEightSeconds: {fileID: 21300000, guid: b9af11e1470f36b408956719d540132b, type: 3}
+  twoSevenSeconds: {fileID: 21300000, guid: f199979e2fbc27a4cb0a85054a5080b5, type: 3}
+  twoSixSeconds: {fileID: 21300000, guid: 6f34b5f69da49924c9ca619584516aab, type: 3}
+  twoFiveSeconds: {fileID: 21300000, guid: f0d474ffc5f00754aa589f81473ba030, type: 3}
+  twoFourSeconds: {fileID: 21300000, guid: 80a0a33da19224347a4adc58cf75ff9a, type: 3}
+  twoThreeSeconds: {fileID: 21300000, guid: 0e12f15494eb06c4ca100c394b47492c, type: 3}
+  twoTwoSeconds: {fileID: 21300000, guid: 86d1ac7d171557d4594d48109baace7a, type: 3}
+  twoOneSeconds: {fileID: 21300000, guid: 471f3bcb4968c934682a0792add41b7d, type: 3}
+  twoZeroSeconds: {fileID: 21300000, guid: 27ec6fb6ea198ce49a27160b64cb9ec9, type: 3}
+  oneNineSeconds: {fileID: 21300000, guid: 12f8572d7a64da74784d5134da75faf1, type: 3}
+  oneEightSeconds: {fileID: 21300000, guid: 1ffe4fa5574a090499800fc60a600f3e, type: 3}
+  oneSevenSeconds: {fileID: 21300000, guid: de2ba93953bc10a4cbbabdb022f4ce5d, type: 3}
+  oneSixSeconds: {fileID: 21300000, guid: 4a7a4b836f6b3aa4d9007993f16ac308, type: 3}
+  oneFiveSeconds: {fileID: 21300000, guid: efd82338d95202a4fb3958f69e048afb, type: 3}
+  oneFourSeconds: {fileID: 21300000, guid: 203b912f861405d46ba4a5d7489b63b7, type: 3}
+  oneThreeSeconds: {fileID: 21300000, guid: 15b3c0151059300469e36bea8cc22eb6, type: 3}
+  oneTwoSeconds: {fileID: 21300000, guid: c8035ab148fec804fb8b7e4a9b42d163, type: 3}
+  oneOneSeconds: {fileID: 21300000, guid: 54d72bd74ba98a24fb19df78d5517968, type: 3}
+  oneZeroSeconds: {fileID: 21300000, guid: d0a9f0f9c71ccaa418b1ae47c42e1ca2, type: 3}
+  nineSeconds: {fileID: 21300000, guid: f375498168938cf4fb30afb05416d717, type: 3}
+  eightSeconds: {fileID: 21300000, guid: 779f24a44881b0b4b9b7b16e89b07bbb, type: 3}
+  sevenSeconds: {fileID: 21300000, guid: 9a1d2ce5e740a4447a06352139eae198, type: 3}
+  sixSeconds: {fileID: 21300000, guid: 5b55bf93454254c41b5126fa0b80b8bc, type: 3}
+  fiveSeconds: {fileID: 21300000, guid: e7117750e591849488b6e0c90ed15d2c, type: 3}
+  fourSeconds: {fileID: 21300000, guid: 9086f9d6b836cca40ae479a58541609d, type: 3}
+  threeSeconds: {fileID: 21300000, guid: 572eef1db98c833448ee3ca6322c9f31, type: 3}
+  twoSeconds: {fileID: 21300000, guid: e0fd2661aa7fff148be416db24faadb5, type: 3}
+  oneSeconds: {fileID: 21300000, guid: 7b02539c90972bb41a48dced5c352538, type: 3}
+  zeroSeconds: {fileID: 21300000, guid: 4974963de72ac2a4b8cd0439fd29ef3e, type: 3}
 --- !u!1 &2030201414
 GameObject:
   m_ObjectHideFlags: 0
