@@ -22,7 +22,19 @@ public class SatelliteScript : MonoBehaviour
     public GameObject thumbs5;
     public GameObject thumbs6;
 
-    float timeLeft = 5.0f;
+    float timeLeft = 120.0f;
+
+    float timeLeft2 = 3.0f;
+
+    public GameObject pressE;
+    public GameObject beginTimer;
+    public GameObject victCanvas;
+
+    public GameObject rescueShip;
+
+    private Animation rescueAnim;
+
+    public bool victory;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +43,8 @@ public class SatelliteScript : MonoBehaviour
         activated = false;
         started = false;
 
-        
+        //rescueAnim = rescueShip.GetComponent<Animation>();
+
     }
 
     // Update is called once per frame
@@ -40,14 +53,37 @@ public class SatelliteScript : MonoBehaviour
         //timeLeft -= Time.deltaTime;
 
         float distance = Vector3.Distance(player.transform.position, this.transform.position);
+
+        if (distance < 20)
+        {
+            pressE.SetActive(true);
+        }
+
+        else
+        {
+            pressE.SetActive(false);
+        }
+
         if ((distance < 20) && Input.GetKeyDown("e"))
         {
             started = true;
+            pressE.SetActive(false);
         }
 
         if (started == true)
         {
+            pressE.SetActive(false);
+
             // Start countdown
+            beginTimer.SetActive(true);
+
+            timeLeft2 -= Time.deltaTime;
+
+            if (timeLeft2 <= 0)
+            {
+                beginTimer.SetActive(false);
+            }
+
             thumbs1.SetActive(true);
             thumbs2.SetActive(true);
             thumbs3.SetActive(true);
@@ -60,6 +96,7 @@ public class SatelliteScript : MonoBehaviour
             if (timeLeft < 0)
             {
                 activated = true;
+                victCanvas.SetActive(true);
             }
         }
 
@@ -67,10 +104,13 @@ public class SatelliteScript : MonoBehaviour
         if (activated == true) 
         {
             // Stop spawns
-
+            pressE.SetActive(false);
             satMeshRend.material = openMat;
 
+            rescueShip.SetActive(true);
+
             // Player wins game
+            victory = true;
         }
     }
 }

@@ -13,7 +13,6 @@ public class ThumbsHealth : MonoBehaviour
     public Material fullHealthMat;
     public Material orangeMat;
     public Material redMat;
-    public float thrust = 20;
 
     private Transform playerTransform;
     private GameObject player;
@@ -23,7 +22,7 @@ public class ThumbsHealth : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
-    private Enemy enemy;
+    private Enemy_V2 enemy;
 
     public GameObject healthDrop;
 
@@ -48,7 +47,7 @@ public class ThumbsHealth : MonoBehaviour
 
         playerHealth = player.GetComponent<PlayerHealth>();
 
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<Enemy_V2>();
     }
 
     public void Update()
@@ -89,12 +88,24 @@ public class ThumbsHealth : MonoBehaviour
         float grid_diff = Vector3.Magnitude(pf.pts[0, 1] - pf.pts[0, 0]);
         float pos_diff = Vector3.Magnitude(player.transform.position - transform.position);
 
+        /*
         if (pos_diff < 1.0f * grid_diff)
         {
             playerrgbd = player.GetComponent<Rigidbody>();
             Vector2 difference = playerrgbd.transform.position - transform.position;
             difference = difference.normalized * thrust;
             playerHealth.PlayerTakeDamage(5, Vector3.zero); //FIX
+        }
+        */
+
+        if (pos_diff < .2f * grid_diff)
+        {
+            //return; //TODO - fix force calc
+            playerrgbd = player.GetComponent<Rigidbody>();
+            Vector3 difference = playerrgbd.transform.position - transform.position;
+            difference = new Vector3(difference.x, 0f, difference.z);
+            difference = difference.normalized;
+            playerHealth.PlayerTakeDamage(5, difference);
         }
     }
 
@@ -108,15 +119,13 @@ public class ThumbsHealth : MonoBehaviour
 
             Instantiate(healthDrop, transform.position + new Vector3(1, 1, 0), transform.rotation);
 
-            /*
-            UnityEngine.Debug.Log("Dead: " + currHealth);
             //gameObject.GetComponent<Animator>().Play("DeathAnim");
             Destroy(gameObject);
             isEnemyDead = true;
-            */
-            currHealth = 25;
-            enemyMeshRend.material = fullHealthMat;
-            enemy.reset();
+            
+            //currHealth = 25;
+            //enemyMeshRend.material = fullHealthMat;
+            //enemy.reset();
 
 
 

@@ -46,6 +46,8 @@ public class PlayerHealth : MonoBehaviour
 
     float timeLeft = 1.0f;
 
+    public GameObject deathMessage;
+
     void Start()
     {
         playerHealth = maxHealth;
@@ -124,6 +126,7 @@ public class PlayerHealth : MonoBehaviour
             gameObject.GetComponent<PlayerMovement>().acceleration = 0;
             gameObject.GetComponent<PlayerMovement>().jumpVelocity = 0;
             speaker.PlayOneShot(die);
+            deathMessage.SetActive(true);
         }
 
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy_V2 : MonoBehaviour
 {
@@ -11,22 +13,58 @@ public class Enemy_V2 : MonoBehaviour
     private System.Random rand_state;
 
     private EnemyHealth enemy_health;
-    
+
+    private PlayerHealth playerHealthScript;
+
+    private int outdoorKills;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         enemy_health = GetComponent<EnemyHealth>();
         enemy_health.enemy = this;
+
+        player = GameObject.Find("Player");
+
+        playerHealthScript = player.GetComponent<PlayerHealth>();
+
     }
 
     // Update is called once per frame
     //TODO: M* (and / or) variable speed to avoid stacking
     void Update()
     {
+        if (playerHealthScript != null)
+        {
+            outdoorKills = playerHealthScript.kills;
+        }
+        Scene currScene = SceneManager.GetActiveScene();
+        string sceneName = currScene.name;
+
         bool los = pf.has_los_to_player(transform.position, 1f, 5);
         float dist = pf.dist_to_player(transform.position);
         float cut = 5f * pf.cell_dim;
+
+        if(outdoorKills >= 15 && sceneName == "FieldLevel")
+        {
+            transform.position = transform.position + new Vector3(-9999, -9999, -9999);
+            return;
+        }
+
+        if(sceneName == "ArenaLevel")
+        {
+            GameObject satellite = GameObject.Find("SatelliteDish");
+            SatelliteScript satScript;
+            satScript = satellite.GetComponent<SatelliteScript>();
+            bool victCheck = satScript.victory;
+
+            if(victCheck)
+            {
+                transform.position = transform.position + new Vector3(-9999, -9999, -9999);
+                return;
+            }
+        }
 
         //Debug.Log(string.Format("{0} {1} {2}", los, dist, cut));
 

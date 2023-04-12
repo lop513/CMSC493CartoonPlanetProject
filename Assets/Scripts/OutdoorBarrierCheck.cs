@@ -15,6 +15,10 @@ public class OutdoorBarrierCheck : MonoBehaviour
 
     private GameObject[] enemies;
 
+    private GameObject player;
+    public GameObject doorOpen;
+    public GameObject remainingEnemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +39,17 @@ public class OutdoorBarrierCheck : MonoBehaviour
         if (outdoorKills >= 15)
         {
             // Turn off spawner
+            remainingEnemy.SetActive(true);
 
             if (enemies.Length == 2) // Currently two enemy prefabs that will
                                      // not be killed, need to increase if more prefabs
             {
+                remainingEnemy.SetActive(false);
+                doorOpen.SetActive(true);
                 barrier.SetActive(false);
                 exitMeshRend.material = purpleMat;
+
+
             }
         }
         

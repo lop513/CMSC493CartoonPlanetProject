@@ -22,6 +22,8 @@ public class GunScript : MonoBehaviour
 
     public GameObject animController;
 
+    public GameObject shootAnimController;
+
     private Transform EnemyTransform;
     private GameObject Enemy;
     public Rigidbody Enemyrgbd;
@@ -96,48 +98,54 @@ public class GunScript : MonoBehaviour
 
             //Blast from gun Code
             Destroy(gunAnimContr);
-            gunAnimContr = Instantiate(animController, new Vector3(transform.position.x, transform.position.y, 
+            gunAnimContr = Instantiate(shootAnimController, new Vector3(transform.position.x, transform.position.y, 
                 transform.position.z), Quaternion.identity) as GameObject;
-            gunAnimContr.transform.parent = spawnPoint.transform;
+            gunAnimContr.transform.parent = this.transform;
             gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
-            gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
-            gunAnimContr.transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
-                m_Camera.transform.rotation * Vector3.up);
+            gunAnimContr.transform.localScale = spawnPoint.transform.localScale;
+            gunAnimContr.transform.localRotation = spawnPoint.transform.localRotation;
+            //gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
+            //gunAnimContr.transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
+             //  m_Camera.transform.rotation * Vector3.up);
 
             //Bullet Hole Code
             Destroy(animContr);
             animContr = Instantiate(animController, r.point + (r.normal * .0001f), Quaternion.identity) as GameObject;
             //animContr.transform.position = animContr.transform.position + new Vector3(-.125f, 0, 0);
-            if (r.collider.CompareTag("Enemy"))
+            if (r.collider != null)
             {
-                animContr.transform.parent = r.transform;
+                if (r.collider.CompareTag("Enemy"))
+                {
+                    animContr.transform.parent = r.transform;
+                }
+                animContr.transform.rotation = Quaternion.FromToRotation(Vector3.forward, r.normal);
             }
-            animContr.transform.rotation = Quaternion.FromToRotation(Vector3.forward, r.normal);
-            
-
 
             //TODO - HIT CODE GOES HERE
             Transform t = r.transform;
-            if (r.collider.CompareTag("Enemy"))
+            if (r.collider != null)
             {
-                //UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
-                if (r.collider.GetComponent<EnemyHealth>() != null)
+                if (r.collider.CompareTag("Enemy"))
                 {
-                    r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
-                }
+                    //UnityEngine.Debug.Log(string.Format("Gun hit object: {0}" + damage, t));
+                    if (r.collider.GetComponent<EnemyHealth>() != null)
+                    {
+                        r.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    }
 
-                if (r.collider.GetComponent<ThumbsHealth>() != null)
-                {
-                    r.collider.GetComponent<ThumbsHealth>().TakeDamage(damage);
-                }
+                    if (r.collider.GetComponent<ThumbsHealth>() != null)
+                    {
+                        r.collider.GetComponent<ThumbsHealth>().TakeDamage(damage);
+                    }
 
-                // Enemy gets knockbacked by gun hitting it
-                /*
-                Vector2 difference = Enemyrgbd.transform.position - transform.position;
-                difference = difference.normalized * thrust;
-                Enemyrgbd.AddForce(difference, ForceMode.Impulse);
-                UnityEngine.Debug.Log("Check");
-                */
+                    // Enemy gets knockbacked by gun hitting it
+                    /*
+                    Vector2 difference = Enemyrgbd.transform.position - transform.position;
+                    difference = difference.normalized * thrust;
+                    Enemyrgbd.AddForce(difference, ForceMode.Impulse);
+                    UnityEngine.Debug.Log("Check");
+                    */
+                }
             }
         }
 
