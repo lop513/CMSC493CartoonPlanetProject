@@ -37,6 +37,28 @@ public class ThumbsHealth : MonoBehaviour
     public Sprite fiveHealthSprite;
     public Sprite zeroHealthSprite;
 
+    private LineRenderer lineRenderer;
+
+    private Vector3 e, target;
+    private Vector3 swingVelocity = Vector3.zero;
+    private float ticksRelativelyOnTarget = 0f;
+    private float thresh = 5.0f;
+    private float ticksFiring = 0f;
+
+    private const float TARGET_WAIT = 5f;
+    private const float SHOOT_WAIT = 500f;
+
+    /*
+    void OnDrawGizmos()
+    {
+        if (e == null) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(e, 1f);
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(target, 1f);
+    }
+    */
+
     public void Start()
     {
         enemyMeshRend.material = fullHealthMat;
@@ -48,10 +70,82 @@ public class ThumbsHealth : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
 
         enemy = GetComponent<Enemy_V2>();
+
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }
 
     public void Update()
     {
+        //move target
+        if (target == null) target = pf.player.transform.position + new Vector3(0f, 0.1f, 0f);
+        else if(ticksFiring < SHOOT_WAIT)
+        {
+            target = Vector3.SmoothDamp(target, pf.player.transform.position + new Vector3(0f, 0.1f, 0f), ref swingVelocity, 0.15f);
+        }
+
+        //Calculate target line
+        e = transform.position + new Vector3(0f, 1.9f, 0f);
+        Vector3 d = (target - e);
+
+        //Calculate LOS
+        bool has_los;
+        RaycastHit r;
+        if (!Physics.Raycast(e + 0.05f * d, d, out r, 0.95f * Vector3.Magnitude(d))) 
+        {
+            has_los = true;
+            lineRenderer.positionCount = 2;
+            lineRenderer.startWidth = 0.05f;
+            lineRenderer.endWidth = 0.01f;
+            lineRenderer.SetPosition(0, e);
+            lineRenderer.SetPosition(1, e + d);
+        }
+        else
+        {
+            has_los = false;
+            lineRenderer.positionCount = 0;
+        }
+
+        //see if we're on-target
+        if (has_los && Vector3.Magnitude(swingVelocity) < thresh)
+        {
+            ticksRelativelyOnTarget += 1;
+        }
+        else
+        {
+            ticksRelativelyOnTarget = 0;
+            ticksFiring = 0;
+        }
+
+        //if we're on target, do some things
+        if(ticksRelativelyOnTarget > TARGET_WAIT)
+        {
+            lineRenderer.startColor = Color.red;
+            lineRenderer.endColor = Color.red;
+            ticksFiring += 1;
+            if(ticksFiring >= SHOOT_WAIT)
+            {
+                lineRenderer.startColor = Color.cyan;
+                lineRenderer.endColor = Color.cyan;
+                if(ticksFiring == SHOOT_WAIT)
+                {
+                    //FIRE CODE GOES HERE
+                    UnityEngine.Debug.Log("Fired!");
+                }
+                else if(ticksFiring > 2f * SHOOT_WAIT) {
+                    ticksFiring = 0;
+                }
+            }
+        }
+        else
+        {
+            lineRenderer.startColor = Color.yellow;
+            lineRenderer.endColor = Color.yellow;
+            ticksFiring = 0;
+        }
+
+
+        //etc
         if (healthSpriteRend != null)
         {
             switch (currHealth)
