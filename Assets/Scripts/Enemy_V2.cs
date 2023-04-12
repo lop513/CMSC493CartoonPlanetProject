@@ -8,7 +8,7 @@ public class Enemy_V2 : MonoBehaviour
 {
     private PathfinderV2 pf;
     private Vector2Int cur_pos, next_pos;
-    private float tick, lerp;
+    private float base_tick, tick, lerp;
 
     private System.Random rand_state;
 
@@ -110,6 +110,9 @@ public class Enemy_V2 : MonoBehaviour
         cur_pos = wrapped[rand_state.Next(wrapped.Count)];
         transform.position = pf.pts[cur_pos.x, cur_pos.y];
 
+        //set tick to random, between 50% and 150% of base
+        this.tick = rand_state.Next((int)this.base_tick) + (this.base_tick * 0.5f);
+
         next_pos = cur_pos; //force update on tick 0
         lerp = tick;
     }
@@ -118,7 +121,7 @@ public class Enemy_V2 : MonoBehaviour
     {
         this.pf = pf;
         this.rand_state = random_state;
-        this.tick = tick;
+        this.base_tick = tick;
         this.lerp = 0;
         reset();
     }
