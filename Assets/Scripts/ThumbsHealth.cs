@@ -130,10 +130,10 @@ public class ThumbsHealth : MonoBehaviour
                 if(ticksFiring == SHOOT_WAIT)
                 {
                     //FIRE CODE GOES HERE
-                    UnityEngine.Debug.Log("Fired!");
-                    playerHealth.PlayerTakeDamage(5, d);
+                    //UnityEngine.Debug.Log("Fired!");
+                    //playerHealth.PlayerTakeDamage(5, d);
                 }
-                else if(ticksFiring > 2f * SHOOT_WAIT) {
+                else if(ticksFiring > 4f * SHOOT_WAIT) {
                     ticksFiring = 0;
                 }
             }
@@ -215,15 +215,17 @@ public class ThumbsHealth : MonoBehaviour
             Instantiate(healthDrop, transform.position + new Vector3(1, 1, 0), transform.rotation);
 
             //gameObject.GetComponent<Animator>().Play("DeathAnim");
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            transform.position = new Vector3(-999, -999, -999);
             isEnemyDead = true;
-            
+
             //currHealth = 25;
             //enemyMeshRend.material = fullHealthMat;
             //enemy.reset();
 
-
-
+            GameObject o = GameObject.Find("FakeBarrier");
+            if (o == null) return;
+            o.GetComponent<OutdoorBarrierCheck>().make_outdoor_kill();
         }
         else
         {

@@ -12,6 +12,9 @@ public class ScuffedRadar : MonoBehaviour
     private GameObject goalRenderObj;
     private GameObject[] enemies = null;
 
+    private List<GameObject> thumbs_s = null;
+    private List<GameObject> child_thumbs_s = new List<GameObject>();
+
     private bool hasPressedButton = false;
     private GameObject doorButton = null;
     private GameObject door = null;
@@ -19,6 +22,8 @@ public class ScuffedRadar : MonoBehaviour
     private GameObject[] obstacles = null;
 
     private LineRenderer lineRenderer;
+
+    public bool drawObstacles = true;
 
     // Start is called before the first frame update
     void Start()
@@ -118,6 +123,28 @@ public class ScuffedRadar : MonoBehaviour
     {
         if (pf.prev == null) return; //TODO - fix this garbage by explicitly setting update order
 
+        if(thumbs_s == null)
+        {
+            //thumbsbs, if any
+            thumbs_s = new List<GameObject>();
+            GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+            List<GameObject> gameObjectsWithMatchingName = new List<GameObject>();
+            foreach (GameObject obj in allGameObjects)
+            {
+                if (obj.name.Contains("ThumbsV2"))
+                {
+                    thumbs_s.Add(obj);
+                }
+            }
+
+            foreach (GameObject obj in thumbs_s)
+            {
+                GameObject o = make_child_sphere(Color.magenta);
+                child_thumbs_s.Add(o);
+                o.transform.position = double_transform(obj.transform.position);
+            }
+        }
+
         if(spawner == null)
         {
             ; //no spawner in level
@@ -136,7 +163,12 @@ public class ScuffedRadar : MonoBehaviour
             for(int i = 0; i < pf.obstacles.Length; i++)
             {
                 obstacles[i] = make_child_cube(pf.obstacles[i]);
-                obstacles[i].transform.position = double_transform(pf.obstacles[i].position);
+
+                if(drawObstacles) obstacles[i].transform.position = double_transform(pf.obstacles[i].position);
+                else
+                {
+                    obstacles[i].transform.position = new Vector3(-999, -999, -999);
+                }
             }
         }
         else
@@ -153,64 +185,71 @@ public class ScuffedRadar : MonoBehaviour
         playerRenderObj.transform.position = double_transform(player.position);
         playerRenderObj.transform.position += new Vector3(0f, 0.3f, 0f);
 
-        //Draw player 'path'
-        Vector3 start;
-        Vector2Int startPike, targetPike;
-
-        startPike = pf.getClosestPike(pf.player.transform.position, true).Value;
-        start = double_transform(
-            pf.pikeToWs(
-                startPike
-            )
-        );
-
-        if(!hasPressedButton)
+        //Draw path to exit
+        if(door != null || doorButton != null)
         {
-            targetPike = pf.getClosestPike(doorButton.transform.position, true).Value;
+            if (!hasPressedButton && doorButton == null) return;
+            if (hasPressedButton && door == null) return;
+
+            //Draw player 'path'
+            Vector3 start;
+            Vector2Int startPike, targetPike;
+
+            startPike = pf.getClosestPike(pf.player.transform.position, true).Value;
+            start = double_transform(
+                pf.pikeToWs(
+                    startPike
+                )
+            );
+
+            if (!hasPressedButton)
+            {
+                targetPike = pf.getClosestPike(doorButton.transform.position, true).Value;
+            }
+            else
+            {
+                targetPike = pf.getClosestPike(door.transform.position, true).Value;
+            }
+
+            //TODO - create an array of intermediate transformed points (Vector3), starting from targetPike to startPike
+            //Use Dijkstra dictionary, defined as: public Dictionary<Vector2Int, Vector2Int?> prev
+            //Because we used getClosestPike with arg2=true, don't need to worry about null value, always a valid pike!
+            List<Vector3> pathPoints = new List<Vector3>();
+            Vector2Int currentPike = targetPike;
+
+            //Debug.Log(string.Format("{0}, {1}", targetPike, startPike));
+            //Debug.Log(pf.prev);
+
+            while (currentPike != startPike)
+            {
+                Vector3 p = double_transform(pf.pikeToWs(currentPike));
+                p.y = playerRenderObj.transform.position.y;
+                pathPoints.Add(p);
+
+                if (!pf.prev.ContainsKey(currentPike) || pf.prev[currentPike] == null) return; //TODO - This should never happen??? Why does it???
+                currentPike = pf.prev[currentPike].Value;
+            }
+
+            pathPoints.Add(start); // Add the start point to the path
+
+
+            lineRenderer.startColor = Color.yellow;
+            lineRenderer.endColor = Color.yellow;
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+
+            //render!
+            lineRenderer.positionCount = pathPoints.Count;
+            for (int i = 0; i < pathPoints.Count; i++)
+            {
+                lineRenderer.SetPosition(i, pathPoints[i]);
+            }
+
+            //render direction
+            lineRenderer.startColor = Color.yellow;
+            lineRenderer.endColor = Color.yellow;
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
         }
-        else
-        {
-            targetPike = pf.getClosestPike(door.transform.position, true).Value;
-        }
-
-        //TODO - create an array of intermediate transformed points (Vector3), starting from targetPike to startPike
-        //Use Dijkstra dictionary, defined as: public Dictionary<Vector2Int, Vector2Int?> prev
-        //Because we used getClosestPike with arg2=true, don't need to worry about null value, always a valid pike!
-        List<Vector3> pathPoints = new List<Vector3>();
-        Vector2Int currentPike = targetPike;
-
-        //Debug.Log(string.Format("{0}, {1}", targetPike, startPike));
-        //Debug.Log(pf.prev);
-
-        while (currentPike != startPike)
-        {
-            Vector3 p = double_transform(pf.pikeToWs(currentPike));
-            p.y = playerRenderObj.transform.position.y;
-            pathPoints.Add(p);
-
-            if (!pf.prev.ContainsKey(currentPike) || pf.prev[currentPike] == null) return; //TODO - This should never happen??? Why does it???
-            currentPike = pf.prev[currentPike].Value;
-        }
-
-        pathPoints.Add(start); // Add the start point to the path
-
-
-        lineRenderer.startColor = Color.yellow;
-        lineRenderer.endColor = Color.yellow;
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
-
-        //render!
-        lineRenderer.positionCount = pathPoints.Count;
-        for (int i = 0; i < pathPoints.Count; i++)
-        {
-            lineRenderer.SetPosition(i, pathPoints[i]);
-        }
-
-        //render direction
-        lineRenderer.startColor = Color.yellow;
-        lineRenderer.endColor = Color.yellow;
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
     }
 }

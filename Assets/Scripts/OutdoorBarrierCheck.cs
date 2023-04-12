@@ -26,32 +26,32 @@ public class OutdoorBarrierCheck : MonoBehaviour
         barrier = GameObject.Find("FakeBarrier");
     }
 
+    public void make_outdoor_kill()
+    {
+        outdoorKills += 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        
-
-        outdoorKills = playerHealthScript.GetComponent<PlayerHealth>().kills;
-
         // Spawn enemies until then, need to set to how many enemies we want to kill
-        if (outdoorKills >= 15)
+        if (outdoorKills >= 5)
         {
-            // Turn off spawner
-            remainingEnemy.SetActive(true);
+            doorOpen.SetActive(true);
+            barrier.SetActive(false);
+            exitMeshRend.material = purpleMat;
 
-            if (enemies.Length == 2) // Currently two enemy prefabs that will
-                                     // not be killed, need to increase if more prefabs
-            {
-                remainingEnemy.SetActive(false);
-                doorOpen.SetActive(true);
-                barrier.SetActive(false);
-                exitMeshRend.material = purpleMat;
-
-
-            }
+            //trigger door open on radar
+            GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
         }
         
+    }
+
+    void OnGUI()
+    {
+        string text = string.Format("Snipers killed: {0} out of 5", outdoorKills);
+        GUI.Label(new Rect(10, 10, 300, 20), text);
     }
 }
