@@ -10,6 +10,7 @@ public class ThumbsHealth : MonoBehaviour
 {
     public int currHealth = 25;
     public static bool isEnemyDead = false;
+    private bool isEnemyDeadLocal = false;
     public Material fullHealthMat;
     public Material orangeMat;
     public Material redMat;
@@ -45,8 +46,8 @@ public class ThumbsHealth : MonoBehaviour
     private float thresh = 5.0f;
     private float ticksFiring = 0f;
 
-    private const float TARGET_WAIT = 5f;
-    private const float SHOOT_WAIT = 500f;
+    private const float TARGET_WAIT = 2f;
+    private const float SHOOT_WAIT = 200f;
 
     /*
     void OnDrawGizmos()
@@ -118,7 +119,7 @@ public class ThumbsHealth : MonoBehaviour
         }
 
         //if we're on target, do some things
-        if(ticksRelativelyOnTarget > TARGET_WAIT)
+        if(!isEnemyDeadLocal && ticksRelativelyOnTarget > TARGET_WAIT)
         {
             lineRenderer.startColor = Color.red;
             lineRenderer.endColor = Color.red;
@@ -218,6 +219,7 @@ public class ThumbsHealth : MonoBehaviour
             //Destroy(gameObject);
             transform.position = new Vector3(-999, -999, -999);
             isEnemyDead = true;
+            isEnemyDeadLocal = true;
 
             //currHealth = 25;
             //enemyMeshRend.material = fullHealthMat;

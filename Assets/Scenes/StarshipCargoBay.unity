@@ -5477,9 +5477,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1896625392532016775, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
   swarm: []
-  SWARM_SIZE: 10
-  SWARM_TICK: 300
+  SWARM_SIZE: 20
+  SWARM_TICK: 100
   random_seed: 777
+  stall: 0
 --- !u!1 &1332534258
 GameObject:
   m_ObjectHideFlags: 0
@@ -6151,7 +6152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406202873}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 51.1, y: 43.7, z: -22.8}
+  m_LocalPosition: {x: 23, y: 43.7, z: -22.8}
   m_LocalScale: {x: 241.49956, y: 2, z: 161.7707}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8367,7 +8368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594375, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: acceleration
-      value: 18
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558251, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: orthographic
@@ -8722,6 +8723,7 @@ MonoBehaviour:
   die: {fileID: 8300000, guid: 567fddcb8d6dea047817f61ff7bb3fd3, type: 3}
   enemy_hit: {fileID: 8300000, guid: 0e23fe5fa15e227439d2085c7c867ead, type: 3}
   enemy_die: {fileID: 8300000, guid: 70292198e3bbf5b4bb52a50125af0006, type: 3}
+  thumbs_shoot: {fileID: 0}
   healthImg: {fileID: 1332534260}
   fiftyHealthSprite: {fileID: -1190095278, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
   fourFiveHealthSprite: {fileID: 755764799, guid: d9496055fa679f74db76cc0096458f7f, type: 3}

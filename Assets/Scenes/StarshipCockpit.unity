@@ -1086,7 +1086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594375, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: acceleration
-      value: 8
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594375, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: jumpVelocity
@@ -1154,6 +1154,7 @@ MonoBehaviour:
   die: {fileID: 8300000, guid: 567fddcb8d6dea047817f61ff7bb3fd3, type: 3}
   enemy_hit: {fileID: 8300000, guid: 0e23fe5fa15e227439d2085c7c867ead, type: 3}
   enemy_die: {fileID: 8300000, guid: 70292198e3bbf5b4bb52a50125af0006, type: 3}
+  thumbs_shoot: {fileID: 0}
   healthImg: {fileID: 809609948}
   fiftyHealthSprite: {fileID: -1190095278, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
   fourFiveHealthSprite: {fileID: 755764799, guid: d9496055fa679f74db76cc0096458f7f, type: 3}
@@ -4351,6 +4352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2aef9bc7f0a65488761bf8ff3c5238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawObstacles: 1
 --- !u!33 &8945084055111294378
 MeshFilter:
   m_ObjectHideFlags: 0

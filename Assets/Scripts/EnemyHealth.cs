@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -83,8 +84,9 @@ public class EnemyHealth : MonoBehaviour
         float grid_diff = Vector3.Magnitude(pf.pts[0, 1] - pf.pts[0, 0]);
         float pos_diff = Vector3.Magnitude(player.transform.position - transform.position);
 
-        if (pos_diff < 0.33f * grid_diff)
+        if (pos_diff < 0.33f * grid_diff || (SceneManager.GetActiveScene().buildIndex == 1 && pos_diff < 2f))
         {
+
             //return; //TODO - fix force calc
             playerrgbd = player.GetComponent<Rigidbody>();
             Vector3 difference = playerrgbd.transform.position - transform.position;

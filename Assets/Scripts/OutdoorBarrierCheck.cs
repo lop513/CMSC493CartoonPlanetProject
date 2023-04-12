@@ -19,6 +19,8 @@ public class OutdoorBarrierCheck : MonoBehaviour
     public GameObject doorOpen;
     public GameObject remainingEnemy;
 
+    private GUIStyle labelStyle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,10 @@ public class OutdoorBarrierCheck : MonoBehaviour
 
     void OnGUI()
     {
+        labelStyle = new GUIStyle(GUI.skin.label);
+        labelStyle.fontSize = 50; 
+        labelStyle.normal.textColor = Color.yellow;
         string text = string.Format("Snipers killed: {0} out of 5", outdoorKills);
-        GUI.Label(new Rect(10, 10, 300, 20), text);
+        GUI.Label(new Rect(668, 100, 600, 300), text, labelStyle);
     }
 }

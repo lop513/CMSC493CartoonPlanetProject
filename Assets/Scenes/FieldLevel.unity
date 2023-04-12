@@ -1081,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056959253857594375, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: acceleration
-      value: 40
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6056959254487558249, guid: b5515dcfd753333418e3fe4d25fe3f63, type: 3}
       propertyPath: m_Layer
@@ -3079,8 +3079,9 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1896625392532016775, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
   swarm: []
   SWARM_SIZE: 12
-  SWARM_TICK: 200
+  SWARM_TICK: 100
   random_seed: 777
+  stall: 0
 --- !u!4 &1460818855
 Transform:
   m_ObjectHideFlags: 0
