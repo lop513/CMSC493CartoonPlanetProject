@@ -39,7 +39,7 @@ public class OutdoorBarrierCheck : MonoBehaviour
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         // Spawn enemies until then, need to set to how many enemies we want to kill
-        if (outdoorKills >= 5)
+        if (outdoorKills >= 15)
         {
             doorOpen.SetActive(true);
             barrier.SetActive(false);
