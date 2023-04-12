@@ -215,7 +215,7 @@ public class PathfinderV2 : MonoBehaviour
         }
     }
 
-    Vector2Int? getClosestPike(Vector3 ws, bool validate_obstructed = false)
+    public Vector2Int? getClosestPike(Vector3 ws, bool validate_obstructed = false)
     {
         Vector3 playerPosInPlaneSpace = plane.InverseTransformPoint(ws);
         float cx = (playerPosInPlaneSpace.x + 5f) / 10f;
@@ -229,18 +229,26 @@ public class PathfinderV2 : MonoBehaviour
             //is it a valid point?
             if (!obstructed_pts.Contains(rv)) return rv;
 
-            //run diagonal check
-            for(int dx = -1; dx <= 1; ++dx)
+            //check neighbors
+            //TODO - this is grossly inefficient, but it works for now
+            for(int ring = 1; ring < GRID_SIZE; ++ring)
             {
-                for(int dz = -1; dz <= 1; ++dz) 
+                for (int dx = -ring; dx <= ring; ++dx)
                 {
-                    Vector2Int n_rv = new Vector2Int(rv.x + dx, rv.y + dz);
-                    if (!obstructed_pts.Contains(n_rv)) return n_rv;
+                    for (int dz = -ring; dz <= ring; ++dz)
+                    {
+                        Vector2Int n_rv = new Vector2Int(rv.x + dx, rv.y + dz);
+                        if (n_rv.x < 0 || n_rv.x >= GRID_SIZE || n_rv.y < 0 || n_rv.y >= GRID_SIZE) continue;
+                        if (!obstructed_pts.Contains(n_rv)) return n_rv;
+                    }
                 }
             }
+            
         }
         return null;
     }
+
+    public Vector3 pikeToWs(Vector2Int pike) => pts[pike.x, pike.y];
 
     bool update_closest_pike()
     {

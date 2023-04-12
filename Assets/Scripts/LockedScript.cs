@@ -50,6 +50,9 @@ public class LockedScript : MonoBehaviour
             buttonMeshRend.material = openMat;
             unlocked = true;
             pressE.SetActive(false);
+
+            //update radar
+            GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
         }
 
         if (unlocked)
