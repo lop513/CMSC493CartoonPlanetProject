@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 
@@ -22,6 +23,7 @@ public class LockedScript : MonoBehaviour
 
     float timeLeft = 3.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,27 +36,33 @@ public class LockedScript : MonoBehaviour
     {
         float distance = Vector3.Distance(player.transform.position, this.transform.position);
 
-        if(distance < 3 && unlocked != true)
+        RaycastHit ray;
+        Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out ray);
+
+        if (ray.collider != null)
         {
-            pressE.SetActive(true);
+
+            if (distance < 3 && unlocked != true && ray.collider.CompareTag("Button"))
+            {
+                pressE.SetActive(true);
+            }
+
+            else
+            {
+                pressE.SetActive(false);
+            }
+
+            if ((distance < 3) && Input.GetKeyDown("e") && ray.collider.CompareTag("Button"))
+            {
+                doorMeshRend.material = openMat;
+                buttonMeshRend.material = openMat;
+                unlocked = true;
+                pressE.SetActive(false);
+
+                //update radar
+                GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
+            }
         }
-
-        else
-        {
-            pressE.SetActive(false);
-        }
-
-        if ((distance < 3) && Input.GetKeyDown("e"))
-        {
-            doorMeshRend.material = openMat;
-            buttonMeshRend.material = openMat;
-            unlocked = true;
-            pressE.SetActive(false);
-
-            //update radar
-            GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
-        }
-
         if (unlocked)
         {
             pressE.SetActive(false);

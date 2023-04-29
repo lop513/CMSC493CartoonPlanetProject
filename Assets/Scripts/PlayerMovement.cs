@@ -35,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
     private Scene currentScene;
     private string sceneName;
 
+    void Start()
+    {
+        acceleration = 5;
+        maxWalkSpeed = 5;
+    }
 
     void Awake()
     {
@@ -42,11 +47,49 @@ public class PlayerMovement : MonoBehaviour
         pf = GameObject.Find("Level Blocks").GetComponent<PathfinderV2>();
         grounded = false;
         currentScene = SceneManager.GetActiveScene();
+
     }
 
 
     void Update()
     {
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+
+        if (Input.GetButtonUp("Shift")) {
+            acceleration = 5;
+            maxWalkSpeed = 5;
+        }
+
+        if(sceneName == "StarshipCockpit" && Input.GetButtonDown("Shift"))
+        {
+            acceleration = 50;
+            maxWalkSpeed = 8;
+        }
+
+        if (sceneName == "StarshipCargoBay" && Input.GetButtonDown("Shift"))
+        {
+            acceleration = 60;
+            maxWalkSpeed = 8;
+        }
+
+
+        if (sceneName == "FieldLevel" && Input.GetButtonDown("Shift"))
+        {
+            acceleration = 75;
+            maxWalkSpeed = 8;
+        }
+
+
+        if (sceneName == "ArenaLevel" && Input.GetButtonDown("Shift"))
+        {
+            acceleration = 75;
+            maxWalkSpeed = 8;
+        }
+
+
         Jump();
         Move();
         Cursor.lockState = CursorLockMode.Confined;

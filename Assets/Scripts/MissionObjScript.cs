@@ -8,10 +8,12 @@ public class MissionObjScript : MonoBehaviour
 
     public GameObject obj;
 
+    private bool check;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        check = false;
     }
 
     // Update is called once per frame
@@ -19,11 +21,19 @@ public class MissionObjScript : MonoBehaviour
     {
         obj.SetActive(true);
 
-        timeLeft -= Time.deltaTime;
-
-        if (timeLeft <= 0)
+        if (Input.GetButtonDown("Vertical") || Input.GetButtonDown("Horizontal"))
         {
-            obj.SetActive(false);
+            check = true;
+        }
+         
+        if(check) { 
+
+            timeLeft -= Time.deltaTime;
+
+            if (timeLeft <= 0)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }

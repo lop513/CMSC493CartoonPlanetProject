@@ -119,33 +119,37 @@ public class SatelliteScript : MonoBehaviour
         activated = false;
         started = false;
 
-        //rescueAnim = rescueShip.GetComponent<Animation>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //timeLeft -= Time.deltaTime;
+        RaycastHit ray;
+        Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out ray);
 
         float distance = Vector3.Distance(player.transform.position, this.transform.position);
 
-        if (distance < 20)
+        if (ray.collider != null)
         {
-            pressE.SetActive(true);
-        }
+            
+            if (distance < 20 && ray.collider.CompareTag("Button"))
+            {
+                UnityEngine.Debug.Log("Test");
+                pressE.SetActive(true);
+            }
 
-        else
-        {
-            pressE.SetActive(false);
-        }
+            else
+            {
+                pressE.SetActive(false);
+            }
 
-        if ((distance < 20) && Input.GetKeyDown("e"))
-        {
-            started = true;
-            pressE.SetActive(false);
-            GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
-            GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>().stall = false;
+            if ((distance < 20) && Input.GetKeyDown("e") && ray.collider.CompareTag("Button"))
+            {
+                started = true;
+                pressE.SetActive(false);
+                GameObject.Find("ScuffedRadar").GetComponent<ScuffedRadar>().press_button();
+                GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>().stall = false;
+            }
         }
 
         if (started == true)

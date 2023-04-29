@@ -52,7 +52,7 @@ public class GunScript : MonoBehaviour
 
         speaker = GetComponent<AudioSource>();
 
-        Cursor.visible = false; //
+        Cursor.visible = false; 
     }
 
     // Update is called once per frame
