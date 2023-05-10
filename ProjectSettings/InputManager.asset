@@ -74,7 +74,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
@@ -295,12 +295,20 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Shift
+<<<<<<< Updated upstream
     descriptiveName: 
+=======
+    descriptiveName: Sprint Button
+>>>>>>> Stashed changes
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
     altNegativeButton: 
+<<<<<<< Updated upstream
     altPositiveButton: joystick button 1
+=======
+    altPositiveButton: 
+>>>>>>> Stashed changes
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -309,4 +317,8 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+<<<<<<< Updated upstream
   m_UsePhysicalKeys: 0
+=======
+  m_UsePhysicalKeys: 1
+>>>>>>> Stashed changes
