@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ScuffedRadar : MonoBehaviour
@@ -43,7 +44,14 @@ public class ScuffedRadar : MonoBehaviour
 
         //children - exit button and exit
         doorButton = GameObject.Find("DoorButton");
+
+        /*
+        Transform[] allTransforms = GameObject.FindObjectsOfType<Transform>(); //the exit may not be active!
+        Transform door_t = allTransforms.FirstOrDefault(t => t.name == "Exit");
+        door = door_t != null ? door_t.gameObject : null;
+        */
         door = GameObject.Find("Exit");
+
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }

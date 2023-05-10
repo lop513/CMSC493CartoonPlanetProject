@@ -61,7 +61,7 @@ public class Enemy_V2 : MonoBehaviour
 
             if(victCheck)
             {
-                transform.position = transform.position + new Vector3(-9999, -9999, -9999);
+                //transform.position = transform.position + new Vector3(-9999, -9999, -9999);
                 return;
             }
         }

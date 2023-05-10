@@ -29,6 +29,12 @@ public class SatelliteScript : MonoBehaviour
 
     float timeLeft2 = 3.0f;
 
+    //kill animation
+    private int currentPointHit = -1;
+    public int frameDelaySpaceshipKillLaser = 5;
+    private Vector3[] laserPts;
+    private LineRenderer lineRenderer;
+
     public GameObject pressE;
     public GameObject beginTimer;
     public GameObject victCanvas;
@@ -39,7 +45,7 @@ public class SatelliteScript : MonoBehaviour
 
     public bool victory;
 
-    float test = 60.0f;
+    float test = 5.0f;
 
     public GameObject timerObj;
 
@@ -119,6 +125,9 @@ public class SatelliteScript : MonoBehaviour
         activated = false;
         started = false;
 
+
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
     }
 
     // Update is called once per frame
@@ -134,7 +143,6 @@ public class SatelliteScript : MonoBehaviour
             
             if (distance < 20 && ray.collider.CompareTag("Button"))
             {
-                UnityEngine.Debug.Log("Test");
                 pressE.SetActive(true);
             }
 
@@ -428,13 +436,29 @@ public class SatelliteScript : MonoBehaviour
                 timerObj.SetActive(false);
 
                 GameObject[] allGameObjects = GameObject.FindObjectsOfType<GameObject>();
-                List<GameObject> gameObjectsWithMatchingName = new List<GameObject>();
                 foreach (GameObject obj in allGameObjects)
                 {
                     if (obj.name.Contains("ThumbsV2"))
                     {
                         obj.transform.position = new Vector3(-999, -999, -999);
                     }
+                }
+
+                //Save current position of all enemies, to draw lines
+                if(currentPointHit < 0)
+                {
+                    BaderySpawner sp = GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>();
+                    laserPts = new Vector3[sp.SWARM_SIZE];
+                    for (int i = 0; i < sp.SWARM_SIZE; ++i)
+                    {
+                        laserPts[i] = new Vector3(
+                            sp.swarm[i].transform.position.x,
+                            sp.swarm[i].transform.position.y,
+                            sp.swarm[i].transform.position.z
+                        );
+                    }
+                    currentPointHit = 0;
+                    GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>().stall = true;
                 }
             }
         }
@@ -450,6 +474,38 @@ public class SatelliteScript : MonoBehaviour
 
             // Player wins game
             victory = true;
+        }
+
+        if(currentPointHit >= 0 && currentPointHit < laserPts.Length * frameDelaySpaceshipKillLaser)
+        {
+            Vector3 point = laserPts[(int)(currentPointHit / frameDelaySpaceshipKillLaser)];
+
+
+            //Debug.DrawLine(point, point + new Vector3(0f, 10f, 0f));
+            //Debug.Log(point);
+
+            Vector3 e = rescueShip.transform.position + new Vector3(0f, 20f, 0f);
+            Vector3 d = point - e;
+
+            lineRenderer.startColor = Color.red;
+            lineRenderer.endColor = Color.red;
+
+            lineRenderer.positionCount = 2;
+            lineRenderer.startWidth = 1.5f;
+            lineRenderer.endWidth = 1.5f;
+            lineRenderer.SetPosition(0, e);
+            lineRenderer.SetPosition(1, e + d);
+
+            GameObject.Find("Badery Spawner").GetComponent<BaderySpawner>().swarm[(int)(currentPointHit / frameDelaySpaceshipKillLaser)].transform.position = new Vector3(-9999f, -9999f, -9999f);
+
+            currentPointHit++;
+        }
+        else
+        {
+            lineRenderer.startWidth = 0f;
+            lineRenderer.endWidth = 0f;
+            
+            if(currentPointHit < 0) rescueShip.SetActive(false); //synchronization tomfoolery
         }
     }
 }
