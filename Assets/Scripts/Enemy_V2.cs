@@ -19,6 +19,8 @@ public class Enemy_V2 : MonoBehaviour
     private int outdoorKills;
     private GameObject player;
 
+    private GameObject[] swarm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +101,27 @@ public class Enemy_V2 : MonoBehaviour
             {
                 lerp++;
             }
+
+            //ensure we are not too close to another badery - if so, iteratively update away
+            bool done = false;
+            int max_iter = 10, it = 0;
+            Vector3 diff = Vector3.zero;
+            do
+            {
+                foreach (GameObject other in swarm)
+                {
+                    if (this == other) continue;
+
+                    dist = Vector3.Distance(this.transform.position, other.transform.position);
+                    if (dist < 0.5f * pf.cell_dim)
+                    {
+                        //move away
+                        diff += 0.005f * (this.transform.position - other.transform.position);
+                        done = false;
+                    }
+                }
+                transform.position += diff;
+            } while (!done && it++ < max_iter);
         }
     }
 
@@ -117,12 +140,13 @@ public class Enemy_V2 : MonoBehaviour
         lerp = tick;
     }
 
-    public void ConfigureState(PathfinderV2 pf, System.Random random_state, float tick)
+    public void ConfigureState(PathfinderV2 pf, System.Random random_state, float tick, GameObject[] swarm)
     {
         this.pf = pf;
         this.rand_state = random_state;
         this.base_tick = tick;
         this.lerp = 0;
+        this.swarm = swarm;
         reset();
     }
 }

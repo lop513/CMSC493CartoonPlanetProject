@@ -36,7 +36,7 @@ public class BaderySpawner : MonoBehaviour
                 Enemy_V2 script = swarm[i].AddComponent<Enemy_V2>();
 
                 //sideload in variables
-                script.ConfigureState(pf, random_state, SWARM_TICK);
+                script.ConfigureState(pf, random_state, SWARM_TICK, swarm);
             }
         }
     }

@@ -8462,7 +8462,7 @@ MonoBehaviour:
   thumbs4: {fileID: 1826693272}
   thumbs5: {fileID: 962534867}
   thumbs6: {fileID: 190637984}
-  frameDelaySpaceshipKillLaser: 20
+  frameDelaySpaceshipKillLaser: 10
   pressE: {fileID: 895522209}
   beginTimer: {fileID: 664522328}
   victCanvas: {fileID: 684098940}
