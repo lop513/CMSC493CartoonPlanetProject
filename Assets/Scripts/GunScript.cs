@@ -17,7 +17,7 @@ public class GunScript : MonoBehaviour
     public GameObject shell;
     public Transform shellSpawnPos, bulletSpawnPos;
     public float rotateSpeed = 0.1f, holdHeight = 2, holdSide = .5f;
-    private int damage = 5;
+    private float damage = .5f;
     public float thrust = 20;
 
     public GameObject animController;
@@ -44,6 +44,18 @@ public class GunScript : MonoBehaviour
     public GameObject spawnPoint;
     public Camera m_Camera;
 
+    int overheat = 0;
+    int minHeat = 0;
+    int maxHeat = 1000;
+    int decVal = 1;
+    int incVal = 1;
+    bool heating = false;
+    bool notFiring = true;
+    float timeLeft = 5.0f;
+
+    float gunAnimTimeLeft = 0.0f;
+    float animTimeLeft = 0.0f;
+
     //private Animation bulletHole;
 
     void Start()
@@ -57,7 +69,8 @@ public class GunScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+
         Enemy = GameObject.FindWithTag("Enemy");
         Enemyrgbd = Enemy.GetComponent<Rigidbody>();
         Shoot();
@@ -69,6 +82,37 @@ public class GunScript : MonoBehaviour
 
         float clampedX = Mathf.Clamp(targetXRot, -70, 80);
         transform.rotation = Quaternion.Euler(-clampedX, targetYRot, rotateSpeed);
+
+        if (overheat >= maxHeat)
+        {
+            UnityEngine.Debug.Log("OVERHEATED");
+            heating = false;
+
+            timeLeft -= Time.deltaTime;
+
+            if (timeLeft <= 0)
+            {
+                overheat = 0;
+            }
+
+        }
+
+        else if (overheat <= minHeat)
+        {
+            overheat = minHeat;
+            heating = true;
+        }
+
+        if (heating && notFiring)
+        {
+            overheat -= decVal;// decrease the value from overheat
+        }
+
+        if(timeLeft <= 0)
+        {
+            timeLeft = 5.0f;
+        }
+
     }
 
     void Shoot()
@@ -78,9 +122,14 @@ public class GunScript : MonoBehaviour
         Vector3 d = Vector3.Normalize(Camera.main.transform.forward);
 
         //Color c = Color.white;
-        if (Input.GetButtonDown("Fire1") && ph.playerHealth > 0 && Time.time - SHOOT_LOCKOUT > lastShootTime)
+        if (Input.GetButton("Fire1") && ph.playerHealth > 0 && overheat < maxHeat) //&& Time.time - SHOOT_LOCKOUT > lastShootTime)
         {
-            lastShootTime = Time.time;
+            notFiring = false;
+
+            overheat += incVal; //increment heat
+            heating = true; //heat check
+
+            //lastShootTime = Time.time;
             speaker.PlayOneShot(gunshot);
 
             /*
@@ -97,28 +146,43 @@ public class GunScript : MonoBehaviour
             c = Color.red;
 
             //Blast from gun Code
-            Destroy(gunAnimContr);
-            gunAnimContr = Instantiate(shootAnimController, new Vector3(transform.position.x, transform.position.y, 
-                transform.position.z), Quaternion.identity) as GameObject;
-            gunAnimContr.transform.parent = this.transform;
-            gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
-            gunAnimContr.transform.localScale = spawnPoint.transform.localScale;
-            gunAnimContr.transform.localRotation = spawnPoint.transform.localRotation;
-            //gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
-            //gunAnimContr.transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
-             //  m_Camera.transform.rotation * Vector3.up);
+            gunAnimTimeLeft -= Time.deltaTime;
 
-            //Bullet Hole Code
-            Destroy(animContr);
-            animContr = Instantiate(animController, r.point + (r.normal * .0001f), Quaternion.identity) as GameObject;
-            //animContr.transform.position = animContr.transform.position + new Vector3(-.125f, 0, 0);
-            if (r.collider != null)
+            if (gunAnimTimeLeft <= 0)
             {
-                if (r.collider.CompareTag("Enemy"))
+                Destroy(gunAnimContr);
+                gunAnimContr = Instantiate(shootAnimController, new Vector3(transform.position.x, transform.position.y,
+                    transform.position.z), Quaternion.identity) as GameObject;
+                gunAnimTimeLeft = .1f;
+
+                gunAnimContr.transform.parent = this.transform;
+                gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
+                gunAnimContr.transform.localScale = spawnPoint.transform.localScale;
+                gunAnimContr.transform.localRotation = spawnPoint.transform.localRotation;
+                //gunAnimContr.transform.rotation = Quaternion.FromToRotation(Vector3.up, r.normal);
+                //gunAnimContr.transform.LookAt(transform.position + m_Camera.transform.rotation * Vector3.forward,
+                //  m_Camera.transform.rotation * Vector3.up);
+            }
+            //Bullet Hole Code
+
+            animTimeLeft -= Time.deltaTime;
+
+            if (animTimeLeft <= 0)
+            {
+                Destroy(animContr);
+                animContr = Instantiate(animController, r.point + (r.normal * .0001f), Quaternion.identity) as GameObject;
+                //animContr.transform.position = animContr.transform.position + new Vector3(-.125f, 0, 0);
+                animTimeLeft = .1f;
+
+
+                if (r.collider != null)
                 {
-                    animContr.transform.parent = r.transform;
+                    if (r.collider.CompareTag("Enemy"))
+                    {
+                        animContr.transform.parent = r.transform;
+                    }
+                    animContr.transform.rotation = Quaternion.FromToRotation(Vector3.forward, r.normal);
                 }
-                animContr.transform.rotation = Quaternion.FromToRotation(Vector3.forward, r.normal);
             }
 
             //TODO - HIT CODE GOES HERE
@@ -147,7 +211,13 @@ public class GunScript : MonoBehaviour
                     */
                 }
             }
+            
+            
+        } else {
+            notFiring = true;
+
         }
+
 
 
         if (Input.GetButtonUp("Fire1"))
@@ -158,4 +228,5 @@ public class GunScript : MonoBehaviour
 
         Debug.DrawLine(e, e + 100 * d, c);
     }
+
 }

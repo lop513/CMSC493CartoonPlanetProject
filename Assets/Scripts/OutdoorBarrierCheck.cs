@@ -36,11 +36,11 @@ public class OutdoorBarrierCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         // Spawn enemies until then, need to set to how many enemies we want to kill
-        if (outdoorKills >= 15)
+        if (outdoorKills >= 5)
         {
+           
             doorOpen.SetActive(true);
             barrier.SetActive(false);
             exitMeshRend.material = purpleMat;

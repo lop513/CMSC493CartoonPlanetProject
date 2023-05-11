@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int currHealth = 20;
+    public float currHealth = 20.0f;
     public static bool isEnemyDead = false;
     public Material fullHealthMat;
     public Material orangeMat;
@@ -56,25 +56,25 @@ public class EnemyHealth : MonoBehaviour
         {
             switch (currHealth)
             {
-                case 20:
+                case 20.0f:
                     healthSpriteRend.sprite = twentyHealthSprite;
                     break;
 
-                case 15:
+                case 15.0f:
                     healthSpriteRend.sprite = oneFiveHealthSprite;
                     break;
 
-                case 10:
+                case 10.0f:
                     healthSpriteRend.sprite = tenHealthSprite;
                     enemyMeshRend.material = orangeMat;
                     break;
 
-                case 5:
+                case 5.0f:
                     healthSpriteRend.sprite = fiveHealthSprite;
                     enemyMeshRend.material = redMat;
                     break;
 
-                case 0:
+                case 0.0f:
                     healthSpriteRend.sprite = zeroHealthSprite;
                     break;
             }
@@ -96,7 +96,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currHealth -= damage;
 

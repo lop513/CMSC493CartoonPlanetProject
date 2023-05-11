@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Net.Mime;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -35,10 +36,15 @@ public class PlayerMovement : MonoBehaviour
     private Scene currentScene;
     private string sceneName;
 
+    private float stopCheckTimeLeft = .2f;
+    private float stopTimeLeft = .2f;
+
     void Start()
     {
         acceleration = 5;
         maxWalkSpeed = 5;
+        stopTimeLeft = .2f;
+        stopCheckTimeLeft = .2f;
     }
 
     void Awake()
@@ -57,6 +63,30 @@ public class PlayerMovement : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
+
+        if ((Input.GetAxisRaw("Horizontal") == 0 && grounded) && (Input.GetAxisRaw("Vertical") == 0 && grounded))
+        {
+            stopCheckTimeLeft -= Time.deltaTime;
+            if (stopCheckTimeLeft <= 0)
+            {
+                stopTimeLeft -= Time.deltaTime;
+                acceleration = 0;
+                maxWalkSpeed = 0;
+
+                if (stopTimeLeft <= 0)
+                {
+                    acceleration = 5;
+                    maxWalkSpeed = 5;
+
+                }
+            } 
+
+        } 
+        else
+        {
+            stopTimeLeft = .2f;
+            stopCheckTimeLeft = .2f;
+        }
 
         if (Input.GetButtonUp("Shift")) {
             acceleration = 5;
@@ -179,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+
 
         if (grounded)
         {

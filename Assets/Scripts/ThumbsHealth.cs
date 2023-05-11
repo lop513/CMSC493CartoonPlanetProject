@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ThumbsHealth : MonoBehaviour
 {
-    public int currHealth = 25;
+    public float currHealth = 25.0f;
     public static bool isEnemyDead = false;
     private bool isEnemyDeadLocal = false;
     public Material fullHealthMat;
@@ -152,29 +152,29 @@ public class ThumbsHealth : MonoBehaviour
         {
             switch (currHealth)
             {
-                case 25:
+                case 25.0f:
                     healthSpriteRend.sprite = twoFiveHealthSprite;
                     break;
 
-                case 20:
+                case 20.0f:
                     healthSpriteRend.sprite = twentyHealthSprite;
                     break;
 
-                case 15:
+                case 15.0f:
                     healthSpriteRend.sprite = oneFiveHealthSprite;
                     break;
 
-                case 10:
+                case 10.0f:
                     healthSpriteRend.sprite = tenHealthSprite;
                     enemyMeshRend.material = orangeMat;
                     break;
 
-                case 5:
+                case 5.0f:
                     healthSpriteRend.sprite = fiveHealthSprite;
                     enemyMeshRend.material = redMat;
                     break;
 
-                case 0:
+                case 0.0f:
                     healthSpriteRend.sprite = zeroHealthSprite;
                     break;
             }
@@ -205,7 +205,7 @@ public class ThumbsHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currHealth -= damage;
 
@@ -221,13 +221,15 @@ public class ThumbsHealth : MonoBehaviour
             isEnemyDead = true;
             isEnemyDeadLocal = true;
 
-            //currHealth = 25;
+            
             //enemyMeshRend.material = fullHealthMat;
             //enemy.reset();
 
             GameObject o = GameObject.Find("FakeBarrier");
             if (o == null) return;
             o.GetComponent<OutdoorBarrierCheck>().make_outdoor_kill();
+
+            currHealth = 25.0f;
         }
         else
         {

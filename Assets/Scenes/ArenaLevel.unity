@@ -2959,9 +2959,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746857067}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 477, y: 47.7, z: -8}
-  m_LocalScale: {x: 64.632, y: 200, z: 2951.1}
+  m_LocalScale: {x: 64.631996, y: 200, z: 2951.1003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105261798}
@@ -6363,9 +6363,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450038662}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 53, y: 47.7, z: -509}
-  m_LocalScale: {x: 119.65, y: 200, z: 1050.8706}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 53, y: 47.7, z: -509.00003}
+  m_LocalScale: {x: 119.65001, y: 200, z: 1050.8705}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105261798}
@@ -6643,9 +6643,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534534649}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 52, y: 47.7, z: 425}
-  m_LocalScale: {x: 69.62, y: 200, z: 1009.64996}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 52, y: 47.7, z: 425.00003}
+  m_LocalScale: {x: 69.62, y: 200, z: 1009.6499}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105261798}
@@ -7282,9 +7282,9 @@ GameObject:
   - component: {fileID: 1633798478}
   - component: {fileID: 1633798477}
   - component: {fileID: 1633798476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ledge
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7296,9 +7296,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633798474}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37, y: 60, z: -416}
-  m_LocalScale: {x: 200, y: 20, z: 60}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.999878, y: 60, z: -416.00003}
+  m_LocalScale: {x: 199.99998, y: 19.999998, z: 60.000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105261798}
@@ -7639,8 +7639,8 @@ GameObject:
   - component: {fileID: 1746187509}
   - component: {fileID: 1746187508}
   - component: {fileID: 1746187507}
-  - component: {fileID: 1746187511}
   - component: {fileID: 1746187510}
+  - component: {fileID: 1746187511}
   m_Layer: 8
   m_Name: Exit
   m_TagString: Untagged
@@ -8654,9 +8654,9 @@ GameObject:
   - component: {fileID: 2068170674}
   - component: {fileID: 2068170673}
   - component: {fileID: 2068170672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enterance
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8668,9 +8668,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068170670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37, y: 90.7, z: -439.6}
-  m_LocalScale: {x: 100, y: 50, z: 20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.999878, y: 90.7, z: -439.60004}
+  m_LocalScale: {x: 99.99999, y: 50, z: 20.000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105261798}
