@@ -8,6 +8,7 @@ TagManager:
   - Plane
   - Enemy
   - Gun
+  - Button
   layers:
   - Default
   - TransparentFX
