@@ -168,7 +168,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void playEnemyHit_()
     {
-        speaker.PlayOneShot(enemy_hit);
+        //speaker.PlayOneShot(enemy_hit);
         
     }
 

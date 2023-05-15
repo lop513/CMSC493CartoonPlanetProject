@@ -134,7 +134,6 @@ public class GunScript : MonoBehaviour
             heating = true; //heat check
 
             //lastShootTime = Time.time;
-            speaker.PlayOneShot(gunshot);
 
             /*
             gunrgbd = gun.GetComponent<Rigidbody>();
@@ -158,6 +157,7 @@ public class GunScript : MonoBehaviour
                 gunAnimContr = Instantiate(shootAnimController, new Vector3(transform.position.x, transform.position.y,
                     transform.position.z), Quaternion.identity) as GameObject;
                 gunAnimTimeLeft = .1f;
+                speaker.PlayOneShot(gunshot);
 
                 gunAnimContr.transform.parent = this.transform;
                 gunAnimContr.transform.localPosition = spawnPoint.transform.localPosition;
@@ -173,6 +173,7 @@ public class GunScript : MonoBehaviour
 
             if (animTimeLeft <= 0)
             {
+
                 Destroy(animContr);
                 animContr = Instantiate(animController, r.point + (r.normal * .0001f), Quaternion.identity) as GameObject;
                 //animContr.transform.position = animContr.transform.position + new Vector3(-.125f, 0, 0);
@@ -230,7 +231,7 @@ public class GunScript : MonoBehaviour
         }
 
 
-        Debug.DrawLine(e, e + 100 * d, c);
+        //Debug.DrawLine(e, e + 100 * d, c);
     }
 
 }

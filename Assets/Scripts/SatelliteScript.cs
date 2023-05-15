@@ -45,7 +45,7 @@ public class SatelliteScript : MonoBehaviour
 
     public bool victory;
 
-    float test = 60.0f;
+    float test = 60f; //60.0f;
 
     public GameObject timerObj;
 
@@ -117,6 +117,8 @@ public class SatelliteScript : MonoBehaviour
     public Sprite oneSeconds;
     public Sprite zeroSeconds;
 
+    public AudioClip laser;
+    private AudioSource speaker;
 
     // Start is called before the first frame update
     void Start()
@@ -128,6 +130,8 @@ public class SatelliteScript : MonoBehaviour
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+        speaker = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -480,6 +484,7 @@ public class SatelliteScript : MonoBehaviour
         {
             Vector3 point = laserPts[(int)(currentPointHit / frameDelaySpaceshipKillLaser)];
 
+            if(currentPointHit % (2 * frameDelaySpaceshipKillLaser) == 0) speaker.PlayOneShot(laser);
 
             //Debug.DrawLine(point, point + new Vector3(0f, 10f, 0f));
             //Debug.Log(point);
