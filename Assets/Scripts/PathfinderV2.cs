@@ -339,7 +339,7 @@ public class PathfinderV2 : MonoBehaviour
                     {
                         c = Color.red;
                     }
-                    else if (hidden_pts.Contains(pt_i))
+                    else if (hidden_pts != null && hidden_pts.Contains(pt_i))
                     {
                         c = Color.magenta;
                     }
