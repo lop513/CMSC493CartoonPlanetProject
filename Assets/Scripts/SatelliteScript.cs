@@ -45,7 +45,7 @@ public class SatelliteScript : MonoBehaviour
 
     public bool victory;
 
-    float test = 5.0f;
+    float test = 60.0f;
 
     public GameObject timerObj;
 
