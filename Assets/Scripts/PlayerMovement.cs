@@ -72,55 +72,58 @@ public class PlayerMovement : MonoBehaviour
                 stopTimeLeft -= Time.deltaTime;
                 acceleration = 0;
                 maxWalkSpeed = 0;
-
+                
                 if (stopTimeLeft <= 0)
                 {
-                    acceleration = 5;
-                    maxWalkSpeed = 5;
+                    acceleration = 0;
+                    maxWalkSpeed = 0;
 
                 }
-            } 
+                
+            }
 
-        } 
+        }
+
         else
         {
             stopTimeLeft = .2f;
             stopCheckTimeLeft = .2f;
+
+
+
+            /*
+            if (Input.GetButtonUp("Shift")) {
+                acceleration = 5;
+                maxWalkSpeed = 5;
+            }
+            */
+
+            if (sceneName == "StarshipCockpit") // && Input.GetButtonDown("Shift"))
+            {
+                acceleration = 50;
+                maxWalkSpeed = 8;
+            }
+
+            if (sceneName == "StarshipCargoBay") // && Input.GetButtonDown("Shift"))
+            {
+                acceleration = 60;
+                maxWalkSpeed = 8;
+            }
+
+
+            if (sceneName == "FieldLevel") // && Input.GetButtonDown("Shift"))
+            {
+                acceleration = 75;
+                maxWalkSpeed = 8;
+            }
+
+
+            if (sceneName == "ArenaLevel") // && Input.GetButtonDown("Shift"))
+            {
+                acceleration = 75;
+                maxWalkSpeed = 8;
+            }
         }
-
-        /*
-        if (Input.GetButtonUp("Shift")) {
-            acceleration = 5;
-            maxWalkSpeed = 5;
-        }
-        */
-
-        if(sceneName == "StarshipCockpit") // && Input.GetButtonDown("Shift"))
-        {
-            acceleration = 50;
-            maxWalkSpeed = 8;
-        }
-
-        if (sceneName == "StarshipCargoBay") // && Input.GetButtonDown("Shift"))
-        {
-            acceleration = 60;
-            maxWalkSpeed = 8;
-        }
-
-
-        if (sceneName == "FieldLevel") // && Input.GetButtonDown("Shift"))
-        {
-            acceleration = 75;
-            maxWalkSpeed = 8;
-        }
-
-
-        if (sceneName == "ArenaLevel") // && Input.GetButtonDown("Shift"))
-        {
-            acceleration = 75;
-            maxWalkSpeed = 8;
-        }
-
 
         Jump();
         Move();
