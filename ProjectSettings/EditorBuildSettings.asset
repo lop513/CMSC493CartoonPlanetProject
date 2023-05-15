@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 8769c57a0b98a4e40b78fa27db3696a8
+  - enabled: 1
     path: Assets/Scenes/StarshipCockpit.unity
     guid: 3003cbcc0b30ae8459612b45c6fd154e
   - enabled: 1

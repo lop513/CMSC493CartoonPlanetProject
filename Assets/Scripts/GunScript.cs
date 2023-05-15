@@ -56,6 +56,8 @@ public class GunScript : MonoBehaviour
     float gunAnimTimeLeft = 0.0f;
     float animTimeLeft = 0.0f;
 
+    public GameObject overheatImg;
+
     //private Animation bulletHole;
 
     void Start()
@@ -85,7 +87,8 @@ public class GunScript : MonoBehaviour
 
         if (overheat >= maxHeat)
         {
-            UnityEngine.Debug.Log("OVERHEATED");
+            //UnityEngine.Debug.Log("OVERHEATED");
+            overheatImg.SetActive(true);
             heating = false;
 
             timeLeft -= Time.deltaTime;
@@ -93,6 +96,7 @@ public class GunScript : MonoBehaviour
             if (timeLeft <= 0)
             {
                 overheat = 0;
+                overheatImg.SetActive(false);
             }
 
         }

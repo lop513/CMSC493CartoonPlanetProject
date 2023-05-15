@@ -14,6 +14,9 @@ public class LockedScript : MonoBehaviour
     public Material openMat;
 
     public Renderer doorMeshRend;
+    public Renderer doorMeshRend2;
+    public Renderer doorMeshRend3;
+    public Renderer doorMeshRend4;
     public Renderer buttonMeshRend;
 
     public bool unlocked;
@@ -42,7 +45,7 @@ public class LockedScript : MonoBehaviour
         if (ray.collider != null)
         {
 
-            if (distance < 3 && unlocked != true && ray.collider.CompareTag("Button"))
+            if (distance < 40 && unlocked != true && ray.collider.CompareTag("Button"))
             {
                 pressE.SetActive(true);
             }
@@ -52,9 +55,12 @@ public class LockedScript : MonoBehaviour
                 pressE.SetActive(false);
             }
 
-            if ((distance < 3) && Input.GetKeyDown("e") && ray.collider.CompareTag("Button"))
+            if ((distance < 40) && Input.GetKeyDown("e") && ray.collider.CompareTag("Button"))
             {
                 doorMeshRend.material = openMat;
+                doorMeshRend2.material = openMat;
+                doorMeshRend3.material = openMat;
+                doorMeshRend4.material = openMat;
                 buttonMeshRend.material = openMat;
                 unlocked = true;
                 pressE.SetActive(false);
