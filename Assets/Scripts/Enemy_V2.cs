@@ -102,7 +102,7 @@ public class Enemy_V2 : MonoBehaviour
             Vector3 d = new Vector3(pf.player.position.x, e.y, pf.player.position.z);
             d = (d - e).normalized;
 
-            transform.position = e + (1f / tick) * d;
+            transform.position = e + (pf.cell_dim / tick) * d;
 
             /*
             Debug.Log(

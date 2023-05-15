@@ -54,12 +54,13 @@ public class ScuffedRadar : MonoBehaviour
 
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+        //Debug.Log(doorButton);
     }
 
     public void press_button()
     {
         hasPressedButton = true;
-
         Invoke("update_thumbs_s", 1f);
     }
 
@@ -223,6 +224,7 @@ public class ScuffedRadar : MonoBehaviour
             if (!hasPressedButton && doorButton == null) return;
             if (hasPressedButton && door == null) return;
 
+
             //Draw player 'path'
             Vector3 start;
             Vector2Int startPike, targetPike;
@@ -243,6 +245,8 @@ public class ScuffedRadar : MonoBehaviour
                 targetPike = pf.getClosestPike(door.transform.position, true).Value;
             }
 
+            //Debug.Log(targetPike);
+
             //TODO - create an array of intermediate transformed points (Vector3), starting from targetPike to startPike
             //Use Dijkstra dictionary, defined as: public Dictionary<Vector2Int, Vector2Int?> prev
             //Because we used getClosestPike with arg2=true, don't need to worry about null value, always a valid pike!
@@ -258,7 +262,7 @@ public class ScuffedRadar : MonoBehaviour
                 p.y = playerRenderObj.transform.position.y;
                 pathPoints.Add(p);
 
-                if (!pf.prev.ContainsKey(currentPike) || pf.prev[currentPike] == null) return; //TODO - This should never happen??? Why does it???
+                if (!pf.prev.ContainsKey(currentPike) || pf.prev[currentPike] == null) break; //TODO - This should never happen??? Why does it???
                 currentPike = pf.prev[currentPike].Value;
             }
 
