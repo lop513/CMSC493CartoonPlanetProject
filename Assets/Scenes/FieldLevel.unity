@@ -3080,7 +3080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1896625392532016775, guid: f43e7a3ff61098e46910171f7d2c3a7a, type: 3}
   swarm: []
-  SWARM_SIZE: 1
+  SWARM_SIZE: 50
   SWARM_TICK: 100
   random_seed: 777
   stall: 0

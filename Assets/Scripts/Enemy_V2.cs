@@ -84,7 +84,7 @@ public class Enemy_V2 : MonoBehaviour
                     Bounds bounds = meshCollider.bounds;
                     transform.position = new Vector3(
                         transform.position.x, 
-                        hit.point.y + 0.5f * bounds.extents.y, 
+                        hit.point.y + 1.01f * bounds.extents.y, 
                         transform.position.z
                     );
                 }
