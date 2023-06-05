@@ -75,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
                 
                 if (stopTimeLeft <= 0)
                 {
-                    acceleration = 0;
-                    maxWalkSpeed = 0;
+                    acceleration = 5;
+                    maxWalkSpeed = 5;
 
                 }
                 
@@ -91,34 +91,35 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-            /*
-            if (Input.GetButtonUp("Shift")) {
+            
+            if (Input.GetButtonUp("Shift")) 
+            {
                 acceleration = 5;
                 maxWalkSpeed = 5;
             }
-            */
+            
 
-            if (sceneName == "StarshipCockpit") // && Input.GetButtonDown("Shift"))
+            if ((sceneName == "StarshipCockpit") && Input.GetButtonDown("Shift"))
             {
                 acceleration = 50;
                 maxWalkSpeed = 8;
             }
 
-            if (sceneName == "StarshipCargoBay") // && Input.GetButtonDown("Shift"))
+            if ((sceneName == "StarshipCargoBay") && Input.GetButtonDown("Shift"))
             {
                 acceleration = 60;
                 maxWalkSpeed = 8;
             }
 
 
-            if (sceneName == "FieldLevel") // && Input.GetButtonDown("Shift"))
+            if ((sceneName == "FieldLevel") && Input.GetButtonDown("Shift"))
             {
                 acceleration = 75;
                 maxWalkSpeed = 8;
             }
 
 
-            if (sceneName == "ArenaLevel") // && Input.GetButtonDown("Shift"))
+            if ((sceneName == "ArenaLevel") && Input.GetButtonDown("Shift"))
             {
                 acceleration = 75;
                 maxWalkSpeed = 8;
@@ -224,52 +225,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    /*
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Door")
-        {
-            gameController.thisDoor = other.gameObject.GetComponent(DoorScript);
-        }
-    }
-    */
-    /*
 
-    void OnCollisionEnter(Collision coll)
-    {
-        foreach (ContactPoint contact in coll.contacts)
-        {
-            if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope)
-            {
-                isGndGrounded = true;
-                isPlaneGrounded = true;
-            }
-        }
-
-        if (coll.gameObject.tag.Equals("gnd"))
-        {
-            isGndGrounded = true;
-        }
-
-        if (coll.gameObject.tag.Equals("Plane"))
-        {
-            isPlaneGrounded = true;
-        }
-
-    }
-
-    void OnCollisionExit(Collision coll)
-    {
-
-        if (coll.gameObject.tag.Equals("gnd"))
-        {
-            isGndGrounded = false;
-        }
-
-        if (coll.gameObject.tag.Equals("Plane"))
-        {
-            isPlaneGrounded = false;
-        }
-    }
-    */
 }
